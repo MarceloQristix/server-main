@@ -1,0 +1,320 @@
+{
+  "size": "large",
+  "name": "Rao & Co HVAC Sales & Services",
+  "shortName": "raoandco",
+  "logo": "/images/logos/raoandco.jpg",
+  "qrCodeStickerLogo": "/images/logos/raoandco_qr.jpeg",
+  "code": "12HRT28W",
+  "owner": {
+    "name": "RCHVAC",
+    "uniqueId": "info@raoandco.in"
+  },
+  "roundupEmail": ["info@raoandco.in", "vijay@raoandco.in"],
+  "website": "",
+  "registeredAddress": "No.291/69 , 2nd Main , 38th Cross , Jayanagar 8th Block , Bangalore - 560082 , Karnataka",
+  "legalName": "Rao and Co HVAC Sales and Services Pvt.Ltd",
+  "support": {
+    "tollfree": "1800 890 3178",
+    "label4Numbers": "Landline",
+    "numbers": ["080-26637697"]
+  },
+  "qrSticker": {
+    "orientation": "portrait",
+    "topLine": ""
+  },
+  "ticket": {
+    "pmAssetPhotoRequired": false,
+    "autoAssignment": {
+      "isEnabled": false
+    },
+    "updateStatus": true,
+    "trackLocation": true,
+    "modifyAssetMapping": true,
+    "showPastDuePM": true,
+    "bdCheckList": {
+      "source": "pmCheckList"
+    },
+    "pmCheckList": {
+      "data": {
+        "yesNo": [
+          {
+            "id": "Yes",
+            "name": "Yes"
+          },
+          {
+            "id": "No",
+            "name": "No"
+          }
+        ],
+        "yesNoNA": [
+          {
+            "id": "Yes",
+            "name": "Yes"
+          },
+          {
+            "id": "No",
+            "name": "No"
+          },
+          {
+            "id": "N/A",
+            "name": "N/A"
+          }
+        ]
+      },
+      "sections": [
+        {
+          "name": "Check List",
+          "id": "Check List",
+          "choices": [
+            {
+              "id": "Yes",
+              "name": "Yes"
+            },
+            {
+              "id": "No",
+              "name": "No"
+            },
+            {
+              "id": "N/A",
+              "name": "N/A"
+            }
+          ],
+          "fields": [
+            {
+              "id": "CLEAN THE AIR FILTER",
+              "name": "CLEAN THE AIR FILTER",
+              "choices": "yesNo"
+            },
+            {
+              "id": "CLEAN THE DRAIN TRAY",
+              "name": "CLEAN THE DRAIN TRAY",
+              "choices": "yesNo"
+            },
+            {
+              "id": "CLEAN THE BLOWER",
+              "name": "CLEAN THE BLOWER",
+              "choices": "yesNo"
+            },
+            {
+              "id": "CLEAN THE EVAPORATOR COIL",
+              "name": "CLEAN THE EVAPORATOR COIL",
+              "choices": "yesNo"
+            },
+            {
+              "id": "INDOOR MOTOR/PCB WORKING",
+              "name": "INDOOR MOTOR/PCB WORKING",
+              "choices": "yesNo"
+            },
+            {
+              "id": "CLEAN THE DRAIN HOSE",
+              "name": "CLEAN THE DRAIN HOSE",
+              "choices": "yesNo"
+            },
+            {
+              "id": "INDOOR OUTDOOR 'WET' SERVICING",
+              "name": "INDOOR OUTDOOR 'WET' SERVICING",
+              "choices": "yesNo"
+            },
+            {
+              "id": "INDOOR OUTDOOR 'NORMAL' SERVICING",
+              "name": "INDOOR OUTDOOR 'NORMAL' SERVICING"
+            },
+            {
+              "id": "INDOOR OUT DOOR 'DRY' SERVICING",
+              "name": "INDOOR OUT DOOR 'DRY' SERVICING",
+              "choices": "yesNo"
+            },
+            {
+              "id": "VOLTAGE STABILIZER WORKING",
+              "name": "VOLTAGE STABILIZER WORKING",
+              "choices": "yesNoNA"
+            },
+            {
+              "id": "CLEAN THE CONDENSER COIL",
+              "name": "CLEAN THE CONDENSER COIL",
+              "choices": "yesNo"
+            },
+            {
+              "id": "CHECKED THE REFRIGERANT LEAKS",
+              "name": "CHECKED THE REFRIGERANT LEAKS",
+              "choices": "yesNo"
+            },
+            {
+              "id": "CHECKED TERMINAL WIRING OF MOTOR / COMP",
+              "name": "CHECKED TERMINAL WIRING OF MOTOR / COMP",
+              "choices": "yesNo"
+            },
+            {
+              "id": "CHECKED ELECTRICAL CONNECTION WIRING",
+              "name": "CHECKED ELECTRICAL CONNECTION WIRING",
+              "choices": "yesNo"
+            },
+            {
+              "id": "CHECKED AREA  CLEAN AROUND THE OUTDOOR UNIT",
+              "name": "CHECKED AREA  CLEAN AROUND THE OUTDOOR UNIT",
+              "choices": "yesNo"
+            },
+            {
+              "id": "CHECKED THE  AHU MOTOR",
+              "name": "CHECKED THE  AHU MOTOR",
+              "choices": "yesNoNA"
+            },
+            {
+              "id": "CHECKED THE AHU BELT CONDITION",
+              "name": "CHECKED THE AHU BELT CONDITION",
+              "choices": "yesNoNA"
+            },
+            {
+              "id": "CHECKED THE AHU PANEL WIRING",
+              "name": "CHECKED THE AHU PANEL WIRING",
+              "choices": "yesNoNA"
+            }
+          ]
+        },
+        {
+          "name": "Readings",
+          "id": "Readings",
+          "fields": [{
+              "id": "OUTDOOR AMPS (A)",
+              "name": "OUTDOOR AMPS (A)",
+              "initialValue": 10,
+              "type": "number"
+            },
+            {
+              "id": "CHECKED THE VOLTAGE (V)",
+              "name": "CHECKED THE VOLTAGE (V)",
+              "initialValue": 240 ,
+              "type": "number"
+            },
+            {
+              "id": "CHECKED THE EARTH TO NEUTRAL (V)",
+              "name": "CHECKED THE EARTH TO NEUTRAL (V)",
+              "initialValue": 2 ,
+              "type": "number"
+            },
+            {
+              "id": "CHECKED GRILLTEMPERATURE (°C)",
+              "name": "CHECKED GRILLTEMPERATURE (°C)",
+              "initialValue": 10 ,
+              "type": "number"
+            },
+            {
+              "id": "CHECKED CANVAS TEMPERATURE (°C)",
+              "name": "CHECKED CANVAS TEMPERATURE (°C)",
+              "initialValue": 12 ,
+              "type": "number"
+            },
+            {
+              "id": "CHECKED ROOM TEMPERATURE (°C)",
+              "name": "CHECKED ROOM TEMPERATURE (°C)",
+              "initialValue": 23 ,
+              "type": "number"
+            },
+            {
+              "id": "CHECKED GAS PRESSURE OF DIS (PSIG)",
+              "name": "CHECKED GAS PRESSURE OF DIS (PSIG)",
+              "initialValue": 240 ,
+              "type": "number"
+            },
+            {
+              "id": "CHECKED GAS  PRESSURE OF SEC (PSIG)",
+              "name": "CHECKED GAS  PRESSURE OF SEC (PSIG)",
+              "initialValue": 130 ,
+              "type": "number"
+            },
+            {
+              "id": "OTHERS",
+              "name": "OTHERS",
+              "type": "text",
+              "required": false
+            }
+          ]
+        }
+      ],
+      "technicianSignature": {
+        "name": "Signature of Engineer"
+      },
+      "customerSignature": {
+        "name": "Signature of Customer"
+      },
+      "remarks": {
+        "name": "Comments"
+      }
+    }
+  },
+  "sparePart": {
+    "code": false
+  },
+  "consumable": {
+    "code": false
+  },
+  "accessory": {
+    "code": false
+  },
+  "product": {
+    "code": false,
+    "manufacturer": false,
+    "hasMeters": false
+  },
+  "contract": {
+    "types": [
+      {
+        "id": "contract",
+        "name": "Contract"
+      },
+      {
+        "id": "warranty",
+        "name": "Warranty"
+      },
+      {
+        "id": "camc",
+        "name": "CAMC"
+      },
+      {
+        "id": "amc",
+        "name": "AMC"
+      }
+    ]
+  },
+  "model": {
+    "code": false,
+    "hasMeters": false
+  },
+  "asset": {
+    "hasMeter": false,
+    "fields": {
+      "serialNumber": {
+        "label": "Indoor Unit Serial Number",
+        "required": true
+      },
+      "secondarySerialNumber": {
+        "label": "Outdoor Unit Serial Number",
+        "required": true
+      },
+      "extraCode1": {
+        "label": "Actual Model Number"
+      }
+    },
+    "open":{
+      "actions": {
+        "raiseSupportTicket": true,
+        "requestForConsumables": true,
+        "raiseInstallationTicket": true,
+        "viewServiceHistory": true,
+        "captureMeterReading": false
+      }
+    }
+  },
+  "strings": {
+    "asset": {
+      "fields": {
+        "serialNumber": "Indoor Unit Serial Number",
+        "secondarySerialNumber":"Outdoor Unit Serial Number",
+        "extraCode1":  "Actual Model Number"
+      }
+    }
+  },
+  "attendance": {
+    "isEnabled":  true
+  }
+}

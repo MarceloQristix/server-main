@@ -1,0 +1,503 @@
+{
+  "technician": "Technician",
+  "auditLog": "Audit Log",
+  "orgUnitProfile": {
+    "label": "Settings",
+    "labels": "Settings",
+    "fields": {
+      "apiKey": "API Key",
+      "senderId": "Sender Id",
+      "sid": "SID",
+      "pe_id": "PE Id",
+      "smsTemplateLoginOTPId": "Login OTP Template ID",
+      "smsTemplateLoginOTPText": "Login OTP Template",
+      "smsTemplateBookingTrackerId": "Thank you for booking Template ID",
+      "smsTemplateBookingTrackerText": "Thank you for booking Template",
+      "smsTemplateBookingStatusUpdateId": "Booking Status Update Template ID",
+      "smsTemplateBookingStatusUpdateText": "Booking Status Update Template",
+      "smsTemplateTicketCreationId": "Ticket Creation Template ID",
+      "smsTemplateTicketCreationText": "Ticket Creation Template",
+      "smsTemplateTicketStatusUpdateId": "Ticket Status Update Template ID",
+      "smsTemplateTicketStatusUpdateText": "Ticket Status Update Template",
+      "smsTemplateTicketClosureId": "Ticket Closed Template ID",
+      "smsTemplateTicketClosureText": "Ticket Closed Template",
+      "feedbackUrl": "Customer Feedback Google Form Link"
+    }
+  },
+  "dashboard": {
+    "label": "Dashboard"
+  },
+  "report": {
+    "productName": "Product Name",
+    "closureRemarks": "Remarks",
+    "label": "Report",
+    "status": {
+      "active": "Active"
+    },
+    "fields": {
+      "name": "Name",
+      "status": "Status",
+      "creator": "Creator",
+      "createdOn": "Created On"
+    }
+  },
+  "form": {
+    "type": {
+      "PMCheckList": {
+        "label": "Preventive Maintenance Checklist"
+      },
+      "PDCheckList": {
+        "label": "Periodic Maintenance Checklist"
+      }
+    }
+  },
+  "campaign": {
+    "label": "Campaign",
+    "fields": {
+      "status": "Status",
+      "name": "Name",
+      "title": "Title",
+      "body": "Body",
+      "heroImage": "Hero Image"
+    }
+  },
+  "asset": {
+    "label": "Asset",
+    "auditLog": "Audit Log",
+    "serialNumber": "Serial Number",
+    "secondaryCode": "Equipment ID",
+    "code": "Code",
+    "raiseSupportRequest": "Request Support",
+    "fields": {
+      "address": "Address",
+      "locatedAt": "Located At",
+      "contact": "Contact",
+      "serialNumber": "Serial Number",
+      "secondaryCode": "Equipment ID",
+      "code": "Code",
+      "name": "Name",
+      "orgUnitName": "Branch",
+      "customerName": "Customer",
+      "contractCode": "Contract",
+      "contractNamePlain": "Name",
+      "technicianName": "Technician",
+      "status": "Status",
+      "contractName": "Contract",
+      "installedOn": "Installed On",
+      "supplier": "Supplier"
+    },
+    "status": {
+      "02_in_stock": "In Stock",
+      "04_in_use": "In Use"
+    }
+  },
+  "contract": {
+    "label": "Contract",
+    "serialNumber": "Serial Number",
+    "secondaryCode": "Equipment ID",
+    "code": "Code",
+    "fields": {
+      "contractStartDate": "Start Date",
+      "contractEndDate": "End Date",
+      "renewedContractCode": "Renewed Contract",
+      "sourceContractCode": "Source Contract",
+      "modelName": "Product/Model",
+      "numAssets": "Assets",
+      "code": "Contract Number",
+      "name": "Name",
+      "duration": "Duration",
+      "customerName": "Customer",
+      "contractCode": "Contract",
+      "contractName": "Contract Name",
+      "referenceNumber": "Reference Number",
+      "status": "Status",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "referenceNumber": "Contract Reference No",
+      "expiryType": "Expiry Type",
+      "slaTat": "TAT",
+      "slaResponseTime": "Response Time",
+      "slaPmFrequency": "No.of PM Calls",
+      "slaPmInterval": "Frequency",
+      "slaPmStartsAfter": "First PM Starts After",
+      "scheduleDayPreferenceDayOfTheMonth": "Preferred Day of the month for PM",
+      "chargesAmount": "Fixed Charges"
+    },
+    "status": {
+      "01_draft": "Draft",
+      "03_active": "Active",
+      "04_expired": "Expired",
+      "05_cancelled": "Cancelled"
+    },
+    "expiryType": {
+      "02_time_based": "Duration based",
+      "01_meter_based": "Meter based",
+      "04_later_target": "Duration + Meter whichever is later",
+      "03_early_target": "Duration + Meter whichever is early"
+    }
+  },
+  "customer": {
+    "label": "Customer",
+    "fields": {
+      "name": "Name",
+      "code": "Code(Auto)",
+      "secondaryCode": "Code",
+      "contactEmail": "Email Address",
+      "contactPhoneNumber": "Phone Number",
+      "numAssets": "No.of Assets Tagged",
+      "isActive": "Is Active",
+      "rateCardName": "Rate Card",
+      "contact": "Contact",
+      "remarks": "Remarks"
+    },
+    "isActive": {
+      "true": "Active",
+      "false": "In Active"
+    }
+  },
+  "ticket": {
+    "label": "Ticket",
+    "status": {
+      "01_open": "Open",
+      "03_on_hold": "Pending",
+      "05_closed": "Closed",
+      "06_cancelled": "Cancelled"
+    },
+    "sType": {
+      "support": "Support/Breakdown Request",
+      "pm": "Preventive Maintenance",
+      "consumable_req": "Consumables Request",
+      "installation": "Installation",
+      "inspection": "Inspection",
+      "pd": "Periodic Maintenance"
+    },
+    "fields": {
+      "sType": "Type",
+      "code": "Ticket Number",
+      "customerName": "Customer",
+      "assetName": "Asset",
+      "assetCode": "Asset Code",
+      "desc": "Description",
+      "sTypeText": "Ticket Type",
+      "statusText": "Status",
+      "status": "Status",
+      "sourceText": "Source",
+      "assigneeName": "Assigned",
+      "createdOn": "Age",
+      "lastModifiedOn": "Last Updated",
+      "closureRemarks": "Remarks",
+      "assetSerialNumber": "Asset Serial"
+    },
+    "type": {
+      "installation": {
+        "creationTitle": "Request for installation",
+        "additionalDetailsLabel": "Do you have any specific instructions for us?"
+      },
+      "support": {
+        "creationTitle": "Register Support Ticket",
+        "additionalDetailsLabel": "Additional Details"
+      },
+      "consumable_req": {
+        "creationTitle": "Request for Supplies",
+        "additionalDetailsLabel": "Additional Details"
+      }
+    },
+    "supportTicketRegistrationHeading": "Register Support Ticket",
+    "installationTicketRegistrationHeading": "Request for Installation",
+    "problemSelectionLabel": "Problem Description",
+    "additionalDetailsLabel": "Additional Details"
+  },
+  "sparePart": {
+    "label": "Spare Part",
+    "status": {
+      "active": "Active"
+    },
+    "fields": {
+      "name": "Name",
+      "code": "Code",
+      "expectedYieldOrLife":"Expected Yield/Life",
+      "uom":"UoM",
+      "packQuantity":"Quantity",
+      "listPrice":"List Price",
+      "warranty":"Warranty (No.of Months)",
+      "manufacturer":"Manufacturer/OEM",
+      "brand":"Brand",
+      "desc":"Description"
+    }
+  },
+  "model": {
+    "label": "Model",
+    "status": {
+      "active": "Active"
+    },
+    "fields": {
+      "productId": "Product",
+      "productName": "Product",
+      "name": "Name",
+      "code":"Code",
+      "uom":"UoM",
+      "desc":"Description",
+      "meterTypes":"Meter Types"
+    }
+  },
+  "orgUser": {
+    "label": "User",
+    "status": {
+      "blocked": "Blocked",
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "fields": {
+      "password": "New Password",
+      "remarks": "Remarks",
+      "name": "Name",
+      "code": "Employee Code",
+      "loginId": "Login Id",
+      "belongsToName": "Belongs To",
+      "reportsToName": "Reports To",
+      "roleText": "Role",
+      "dob": "Date of Birth",
+      "doj": "Date of Joining",
+      "role": "Role",
+      "siteId":"Site",
+      "clusterId":"Cluster",
+      "bloodGroup":"Blood Group",
+      "esin":"ESIN (employee state insurance number)",
+      "uan":"UAN (PF unique identification number)",
+      "globalUser.uniqueId":"Mobile No (Login Id)",
+      "globalUser.email":"Email",
+      "globalUser.phoneNumber": "Mobile No",
+      "belongsToId":"Belongs To",
+      "reportsToId":"Reports To",
+      "firstName":"First Name",
+      "lastName":"Last Name"
+    }
+  },
+  "orgUnit": {
+    "label": "Entity",
+    "status": {
+      "active": "Active"
+    },
+    "fields": {
+      "name": "Name",
+      "code": "Code",
+      "orgUnitType": "Type"
+    }
+  },
+  "partRequisition": {
+    "label": "Part Requisition",
+    "status": {
+      "open": "Open",
+      "hold": "Hold",
+      "fulfilled": "Fulfilled",
+      "cancelled": "Cancelled"
+    },
+    "fields": {
+      "name": "Name",
+      "sourceTicketCode": "Ticket",
+      "requesterName": "Requester",
+      "customerName": "Customer",
+      "status": "Status",
+      "holdReason": "Hold Reason",
+      "holdOn": "Put on Hold At",
+      "createdOn": "Requested On",
+      "fulfilledOn": "Fulfilled On",
+      "issuedToName": "Issued To",
+      "newTicketCode": "New Ticket",
+      "contractCode": "Contract",
+      "assetCode": "Asset",
+      "remarks": "Fulfilling Remarks",
+      "updateRemarks": "Update Remarks",
+      "holdRemarks": "Hold Remarks",
+      "assetSerialNumber": "Serial Number",
+      "assetLocatedAt": "Located At",
+      "assetAddress": "Address"
+    }
+  },
+  "productCategory": {
+    "label": "Product Category",
+    "status": {
+      "active": "Active"
+    },
+    "fields": {
+      "name": "Name",
+      "code": "Code"
+    }
+  },
+  "meterType": {
+    "label": "Meter Type",
+    "status": {
+      "active": "Active"
+    },
+    "fields": {
+      "name": "Name",
+      "code": "Code"
+    }
+  },
+  "site": {
+    "label": "Site",
+    "status": {
+      "active": "Active"
+    },
+    "section": {
+      "address": "Address",
+      "contact": "Contact"
+    },
+    "fields": {
+      "name": "Name",
+      "code": "Code",
+      "technician": "Technician",
+      "numAssets": "Total Assets",
+      "address": "Address",
+      "contact": "Contact",
+      "technicianId": "Technician",
+      "salesExecId": "Sales Exec",
+      "clusterName": "Cluster"
+    }
+  },
+  "service": {
+    "label": "Service",
+    "status": {
+      "active": "Active"
+    },
+    "fields": {
+      "name": "Name",
+      "ticketType": "Ticket Type"
+    }
+  },
+  "vendor": {
+    "label": "Vendor",
+    "status": {
+      "active": "Active"
+    },
+    "fields": {
+      "name": "Name",
+      "code": "Code",
+      "contact": "Contact",
+      "contactName": "Contact Name"
+    }
+  },
+  "commonProblem": {
+    "label": "Common Defect",
+    "status": {
+      "active": "Active"
+    },
+    "fields": {
+      "name": "Name",
+      "code": "Code"
+    }
+  },
+  "sku": {
+    "label": "SKU",
+    "status": {
+      "active": "Active"
+    },
+    "mType": {
+      "product": "Product",
+      "sparePart": "Spare Part",
+      "consumable": "Consumable",
+      "accessory": "Accessory"
+    },
+    "fields": {
+      "name": "Name",
+      "brand": "Brand"
+    }
+  },
+  "cluster": {
+    "label": "Cluster",
+    "status": {
+      "active": "Active"
+    },
+    "fields": {
+      "name": "Name",
+      "code": "Code",
+      "secondaryCode": "Code",
+      "sites": "Sites"
+    }
+  },
+  "consumable": {
+    "label": "Consumable",
+    "status": {
+      "active": "Active"
+    },
+    "fields": {
+      "name": "Name",
+      "code": "Code",
+      "expectedYieldOrLife":"Expected Yield/Life",
+      "uom":"UoM",
+      "packQuantity":"Quantity",
+      "listPrice":"List Price",
+      "warranty":"Warranty (No.of Months)",
+      "manufacturer":"Manufacturer/OEM",
+      "brand":"Brand",
+      "desc":"Description"
+    }
+  },
+  "product": {
+    "label": "Product",
+    "status": {
+      "active": "Active"
+    },
+    "fields": {
+      "name": "Product Name",
+      "code": "Product Code",
+      "categoryName": "Product Category",
+      "categoryId":"Product Category",
+      "manufacturer":"Manufacturer/OEM",
+      "brand":"Brand"
+    }
+  },
+  "purchaseOrder": {
+    "label1": "Purchase Order",
+    "label": "L.P.O",
+    "defaultTermsAndConditions": "",
+    "signatureLabel": "APPROVED BY",
+    "fields": {
+      "code": "P.O. #",
+      "vendorId": "Vendor",
+      "vendorName": "Vendor",
+      "vendorAddress": "Vendor Address",
+      "deliverTo": "Deliver To",
+      "deliverByDate": "Deliver By",
+      "deliveryAddress": "Delivery Address",
+      "poDate": "DATE",
+      "deliveryDate": "Deliver By",
+      "referenceNumber": "Reference No",
+      "itemsTitle": "LIST OF ITEMS",
+      "serialNumber": "SR. No",
+      "itemDesc": "ITEM DESCRIPTION",
+      "quantity": "QTY",
+      "amount": "RATE",
+      "termsAndConditions": "Terms & Conditions"
+    }
+  },
+  "technicianPerformance": {
+    "label": "Engineer Performance",
+    "fields": {
+      "name": "Name"
+    }
+  },
+  "task": {
+    "label": "Tasks"
+  },
+  "technicianLocation": {
+    "label": "Engineer's Location"
+  },
+  "enquiry": {
+    "label": "Enquiry",
+    "fields": {
+      "name": "Enquiry",
+      "customerName": "Customer",
+      "contactEmail": "Email",
+      "contactPhoneNumber": "Phone Number",
+      "dealer": "Dealer",
+      "createdOn": "Submitted On"
+    }
+  },
+  "orgUnitRunningStats": {
+    "label": "Status",
+    "fields": {
+      "name": "Name"
+    }
+  }
+}

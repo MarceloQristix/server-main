@@ -1,0 +1,54 @@
+{
+  "size": "medium",
+  "name": "Shreeji Marketing",
+  "shortName": "shreejimarketing",
+  "logo": "/images/logos/shreejimarketing.png",
+  "qrCodeStickerLogo": "/images/logos/shreejimarketing_qr.png",
+  "code": "M15TYYUE",
+  "owner": {
+    "name": "shreeji marketing",
+    "uniqueId": "info@shreejimarketing.com"
+  },
+  "roundupEmail": ["vivek@shreejimarketing.com"],
+  "website": "www.shreejimarketing.com",
+  "support": {
+    "numbers": ["080-26592950", "080-26594552"],
+    "email": "info@shreejimarketing.com",
+    "whatsapp": "+91 8048528320"
+  },
+  "product": {
+    "hasMeters": false
+  },
+  "model": {
+    "hasMeters": false
+  },
+  "sparePart": {
+    "code": false
+  },
+  "consumable": {
+    "code": false
+  },
+  "accessory": {
+    "code": false
+  },
+  "ticket": {
+    "updateStatus": true,
+    "trackLocation": true
+  },
+  "asset": {
+    "primaryIdentifier": "serialNumber",
+    "hasMeter": false,
+    "open":{
+      "actions": {
+        "raiseSupportTicket": true,
+        "requestForConsumables": true,
+        "raiseInstallationTicket": true,
+        "viewServiceHistory": true,
+        "captureMeterReading": false
+      }
+    }
+  },
+  "attendance": {
+    "isEnabled":  true
+  }
+}

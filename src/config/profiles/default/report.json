@@ -1,0 +1,148 @@
+{
+  "isEnabled": true,
+  "code": true,
+  "actions": {
+    "create": true,
+    "list": true,
+    "edit": false,
+    "download": true
+  },
+  "groups": [
+    {
+      "id": "Assets",
+      "name": "Assets/Equipments",
+      "description": "List reports related to assets/equipments",
+      "types": [
+        "mif",
+        "pm",
+        "complaints"
+      ]
+    },
+    {
+      "id": "Tickets",
+      "name": "Tickets/Work Orders",
+      "description": "List reports related to tickets/work-orders",
+      "types": [
+        "newTickets",
+        "onHoldTickets",
+        "closedTickets",
+        "repeatTickets",
+        "dailyTicketsReport"
+      ]
+    },
+    {
+      "id": "contracts",
+      "name": "Contracts",
+      "description": "List reports related to Contracts",
+      "types": [
+        "allContracts",
+        "expiringContracts",
+        "expiredContracts"
+      ]
+    },
+    {
+      "id": "SparePart",
+      "name": "Spare-Parts and Consumables",
+      "description": "List reports related to spare-parts and consumables",
+      "types": [
+        "partRequisitions",
+        "spareParts",
+        "consumables",
+        "sparePartsAndConsumables"
+      ]
+    },
+    {
+      "id": "Technician",
+      "name": "Technician/Engineer Performance",
+      "description": "List reports related to technician jobs",
+      "types": [
+        "technicianJobSummary"
+      ]
+    }
+  ],
+  "type": {
+    "assetReports": true,
+    "ticketReports": true,
+    "contractReports": true,
+    "sparePartsReports": true,
+    "technicianReports": true
+  },
+  "list": {
+    "actions": [
+      {
+        "id": "download",
+        "name": "",
+        "icon": "arrow-down-circle",
+        "urlField": "url"
+      }
+    ],
+    "fields": [
+      {
+        "id": "name",
+        "width": "60"
+      },
+      {
+        "id": "status",
+        "width": "20"
+      },
+      {
+        "id": "creator",
+        "width": "20"
+      },
+      {
+        "id": "createdOn",
+        "width": "20"
+      }
+    ]
+  },
+  "details": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name"
+          },
+          {
+            "id": "status"
+          },
+          {
+            "id": "creator"
+          },
+          {
+            "id": "createdOn"
+          }
+        ]
+      }
+    ]
+  },
+  "edit": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "ticketType",
+            "isPrimary": true
+          },
+          {
+            "id": "name",
+            "isPrimary": true
+          }
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "name": {
+    },
+    "status": {
+    },
+    "creator": {
+    },
+    "createdOn": {
+    }
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "isEnabled": true,
+  "actions": {
+    "create": true,
+    "list": true,
+    "tagRateCard": true,
+    "updateAccountManager": true,
+    "edit": true,
+    "activate":true,
+    "deactivate":true
+  },
+  "accountManager": {
+    "isEnabled": false
+  },
+  "types": [
+    {
+      "id": "business",
+      "name": "Business"
+    },
+    {
+      "id": "individual",
+      "name": "Individual"
+    }
+  ],
+  "grades": [
+    {
+      "id": "regular",
+      "name": "Regular"
+    },
+    {
+      "id": "vip",
+      "name": "VIP"
+    }
+  ],
+  "isActive": [
+    "active",
+    "inactive"
+  ],
+  "list": {
+    "fields": [
+      {
+        "id": "name",
+        "width": "20",
+        "target": "customer",
+        "targetIdField": "id"
+      },
+      {
+        "id": "code",
+        "width": "20"
+      },
+      {
+        "id": "secondaryCode",
+        "width": "20"
+      },
+      {
+        "id": "contactEmail",
+        "width": "20"
+      },
+      {
+        "id": "contactPhoneNumber",
+        "width": "20"
+      },
+      {
+        "id": "numAssets",
+        "width": "20"
+      },
+      {
+        "id": "isActive",
+        "width": "20"
+      },
+      {
+        "id": "rateCardName",
+        "width": "20"
+      }
+    ]
+  },
+  "details": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name"
+          },
+          {
+            "id": "code"
+          },
+          {
+            "id": "numAssets"
+          },
+          {
+            "id": "isActive"
+          },
+          {
+            "id": "rateCardName"
+          },
+          {
+            "id": "remarks"
+          }
+        ]
+      },
+      {
+        "id": "contactDetails",
+        "name": "Address/Contact",
+        "fields": [
+          {
+            "id": "address",
+            "type": "address"
+          },
+          {
+            "id": "contactEmail"
+          },
+          {
+            "id": "contactPhoneNumber"
+          }
+        ]
+      }
+    ],
+    "actions":[
+      {
+        "id":"activate",
+        "name":"Activate"
+      },
+      {
+        "id":"deactivate",
+        "name":"Deactivate"
+      }
+    ]
+  },
+  "edit": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "size": "col-8",
+        "fields": [
+          {
+            "id": "name",
+            "required": true,
+            "isPrimary": true
+          }
+        ]
+      },
+      {
+        "id": "contact",
+        "name": "Contact",
+        "size": "col-8",
+        "type": "contact",
+        "fields": [
+          {
+            "id":"contact",
+            "type": "contact",
+            "isPrimary": true
+          }        
+        ]
+      },
+      {
+        "id": "address",
+        "name": "Address",
+        "size": "col-8",
+        "type": "address",
+        "fields": [
+          {
+            "id":"address",
+            "type": "address",
+            "isPrimary": true
+          }
+        ]
+      }
+    ]
+  },
+  "actionDialogs":{
+    "activate":{
+      "title":"Do you want to activate?",
+      "sections": [
+        {
+          "id": "act",
+          "name": "",
+          "fields": [
+            {
+              "id": "remarks",
+              "required": true,
+              "isPrimary": true
+            }
+          ]
+        }
+      ],
+      "submit": {
+        "name": "Activate"
+      }
+    },
+    "deactivate":{
+      "title":"Do you want to deactivate?",
+      "sections": [
+        {
+          "id": "deact",
+          "name": "",
+          "fields": [
+            {
+              "id": "remarks",
+              "required": true,
+              "isPrimary": true
+            }
+          ]
+        }
+      ],
+      "submit": {
+        "name": "Deactivate"
+      }
+    }
+  },
+  "fields": {
+    "remarks": {
+      
+    },
+    "name": {
+      "type":"text"
+    },
+    "code": {
+    },
+    "secondaryCode": {
+
+    },
+    "address": {
+      "type": "address"
+    },
+    "contactEmail": {
+      "path": "contact.email"
+    },
+    "contactPhoneNumber": {
+      "path": "contact.phoneNumber"
+    },
+    "numAssets": {
+    },
+    "rateCardName": {
+      "path": "rateCard.name"
+    },
+    "isActive": {
+    },
+    "contact":{
+      "type": "contact"
+    }
+  }
+}

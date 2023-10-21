@@ -1,0 +1,61 @@
+{
+  "isEnabled": true,
+  "code": true,
+  "actions": {
+    "create": true,
+    "list": true,
+    "edit": true
+  },
+  "list": {
+    "fields": [
+      {
+        "id": "name",
+        "width": "60",
+        "target": "product-category",
+        "targetIdField": "id"
+      },
+      {
+        "id":"code",
+        "width":"40"
+      }
+    ]
+  },
+  "details": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "code"
+          },
+          {
+            "id": "name"
+          }
+        ]
+      }
+    ]
+  },
+  "edit": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name",
+            "isPrimary": true,
+            "required":true
+          }
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "name": {
+    },
+    "code": {
+
+    }
+  }
+}

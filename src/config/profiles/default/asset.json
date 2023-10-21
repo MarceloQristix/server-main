@@ -1,0 +1,279 @@
+{
+  "isEnabled": true,
+  "isPartOfContract": true,
+  "qrCode": {
+    "isEnabled": true
+  },
+  "service": {
+    "isEnabled": true
+  },
+  "technicianMapping": {
+    "isEnabled": true
+  },
+  "autoAssignStatus": true,
+  "criticalClassification": false,
+  "orgUnitMapping": {
+    "isEnabled": false
+  },
+  "status": [
+    "02_in_stock",
+    "04_in_use"
+  ],
+  "endStatuses": [],
+  "primaryIdentifier": "code",
+  "location": {
+    "upcountry": false
+  },
+  "ownershipTypes": [
+    {
+      "id": "customer_owned",
+      "name": "Customer Owned"
+    },
+    {
+      "id": "on_hire",
+      "name": "On Hire"
+    },
+    {
+      "id": "on_rental",
+      "name": "On Rental"
+    }
+  ],
+  "defaultOwnershipType": "customer_owned",
+  "advancedSection": false,
+  "actions": {
+    "list": true,
+    "create": false,
+    "upload": false,
+    "view": true,
+    "createTicket": true,
+    "updatePrimaryDetails": true,
+    "updateTechnician": true,
+    "updateCustomer": true,
+    "updateLocation": true,
+    "updateContact": true,
+    "update": {
+    }
+  },
+  "open": {
+    "actions": {
+      "raiseSupportTicket": true,
+      "requestForConsumables": true,
+      "raiseInstallationTicket": true,
+      "viewServiceHistory": true,
+      "captureMeterReading": false,
+      "showOpenTickets": false
+    }
+  },
+  "list": {
+    "actions": [
+      {
+        "id": "createTicket",
+        "name": "Create",
+        "icon": "ticket-perforated",
+        "routerLink": ["/", "ticket", "edit", "new", "asset"]
+      }
+    ],
+    "search": {
+      "isDisabled": false,
+      "placeholder": "Type Serial Number/Customer phone.."
+    },
+    "filters": [
+      {
+        "id": "customerId",
+        "type": "typeahead",
+        "entity": "customer",
+        "name": "Customer",
+        "placeholder": "Type customer name/phone"
+      },
+      {
+        "id": "status",
+        "type": "dropdown",
+        "name": "Status"
+      }
+    ],
+    "fields": [
+      {
+        "id": "name",
+        "width": "20",
+        "target": "asset",
+        "targetIdField": "id"
+      },
+      {
+        "id": "code",
+        "width": "20"
+      },
+      {
+        "id": "secondaryCode",
+        "width": "20"
+      },
+      {
+        "id": "serialNumber",
+        "width": "20"
+      },
+      {
+        "id": "address",
+        "width": "20"
+      },
+      {
+        "id": "locatedAt",
+        "width": "20"
+      },
+      {
+        "id": "customerName",
+        "target": "customer",
+        "targetIdField": "customer._id",
+        "width": "20"
+      },
+      {
+        "id": "technicianName",
+        "width": "20"
+      },
+      {
+        "id": "status",
+        "width": "20"
+      },
+      {
+        "id": "contractCode",
+        "width": "20"
+      }
+    ]
+  },
+  "details": {
+    "advancedSection": true,
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name"
+          },
+          {
+            "id": "code"
+          },
+          {
+            "id": "secondaryCode"
+          },
+          {
+            "id": "serialNumber"
+          },
+          {
+            "id": "installedOn"
+          }
+        ]
+      },
+      {
+        "id": "customerEtc",
+        "name": "Customer/Technician",
+        "fields": [
+          {
+            "id": "customerName",
+            "target": "customer",
+            "targetIdField": "customer._id"
+          },
+          {
+            "id": "contact",
+            "type": "contact"
+          },
+          {
+            "id": "locatedAt"
+          },
+          {
+            "id": "address",
+            "type": "address"
+          },
+          {
+            "id": "technicianName"
+          },
+          {
+            "id": "orgUnit"
+          }
+        ]
+      },
+      {
+        "id": "contract",
+        "name": "Contract",
+        "fields":[
+          {
+            "id": "contractNamePlain"
+          },
+          {
+            "id": "contractCode"
+          },
+          {
+            "id": "contractStartDate"
+          },
+          {
+            "id": "contractEndDate"
+          }
+        ]
+      },
+      {
+        "id": "qrCode",
+        "name": "QR Code",
+        "type": "qrCode"
+      }
+    ]
+  },
+  "fields": {
+    "locatedAt": {
+    },
+    "contact": {
+    },
+    "address": {
+      "type": "address"
+    },
+    "customerName": {
+      "path": "customer.name"
+    },
+    "technicianName": {
+      "path": "technician.name"
+    },
+    "contractStartDate": {
+      "type": "date",
+      "path": "contract.startDate"
+    },
+    "contractEndDate": {
+      "type": "date",
+      "path": "contract.endDate"
+    },
+    "contractNamePlain": {
+      "path": "contract.name"
+    },
+    "contractName": {
+      "path": "contract.name",
+      "target": "contract",
+      "targetIdField": "contract._id"
+    },
+    "contractCode": {
+      "path": "contract.code",
+      "target": "contract",
+      "targetIdField": "contract._id"
+    },
+    "serialNumber": {
+      "label": "Serial Number"
+    },
+    "orgUnitName": {
+      "path": "orgUnit.name",
+      "depFeatureFlag": "asset.orgUnitMapping.isEnabled"
+    },
+    "code": {
+      "visibility": {
+        "tobeDeprecated": true,
+        "list": true
+      }
+    },
+    "status": {
+      "translateNameSpace": "status"
+    },
+    "supplier": {
+
+    },
+    "name": {
+    },
+    "installedOn": {
+      "type": "date",
+      "format": "d MMM YY"
+    }
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "actions": {
+    "manage": true
+  },
+  "items": {},
+  "sections": [
+    {
+      "id": "main",
+      "name": "Quick Access",
+      "items":[
+        {
+          "id": "dashboard",
+          "name": "Dashboard",
+          "entity": "dashboard",
+          "route": ["/dashboard"],
+          "requires": "view",
+          "icon": "quick-access/dashboard.svg"
+        },
+        {
+          "id": "ticketList",
+          "name": "Tickets",
+          "entity": "ticket",
+          "requires": "list",
+          "icon": "quick-access/tickets.svg"
+        },
+        {
+          "id": "partRequisition",
+          "name": "Part Requisitions",
+          "route": ["/part-requisition"],
+          "entity": "partRequisition",
+          "requires": "list",
+          "icon": "quick-access/requisitions.svg"
+        },
+        {
+          "id": "contractList",
+          "name": "Contracts",
+          "entity": "contract",
+          "requires": "list",
+          "icon": "quick-access/contract1.svg"
+        },
+        {
+          "id": "assetList",
+          "name": "Assets",
+          "entity": "asset",
+          "requires": "list",
+          "icon": "quick-access/assets.svg"
+        },
+        {
+          "id": "enquiryList",
+          "name": "Enquiries",
+          "entity": "enquiry",
+          "requires": "list",
+          "icon": "quick-access/enquiries.jpeg"
+        },
+        {
+          "id": "campaignsList",
+          "entity": "campaign",
+          "name": "Campaigns",
+          "requires": "list",
+          "icon": "quick-access/campaigns.svg"
+        },
+        {
+          "id": "purchaseOrderList",
+          "name": "Purchase Orders",
+          "route": ["/purchase-order"],
+          "entity": "purchaseOrder",
+          "requires": "list",
+          "icon": "quick-access/purchase-order.svg"
+        },
+        {
+          "id": "report",
+          "name": "Reports",
+          "route": ["/report"],
+          "entity": "report",
+          "requires": "list",
+          "icon": "quick-access/reports.svg"
+        },
+        {
+          "id": "attendance",
+          "name": "Attendance",
+          "entity": "attendance",
+          "requires": "list",
+          "icon": "quick-access/attendance.svg"
+        },
+        {
+          "id": "siteList",
+          "name": "Sites",
+          "entity": "site",
+          "requires": "list",
+          "icon": "quick-access/sites.svg"
+        },
+        {
+          "id": "customerList",
+          "entity": "customer",
+          "name": "Customers",
+          "requires": "list",
+          "icon": "quick-access/customers.svg"
+        },
+        {
+          "id": "technicianPerformance",
+          "entity": "technicianPerformance",
+          "route": ["/technician-performance"],
+          "name": "Engineer's performance",
+          "requires": "list",
+          "icon": "quick-access/technician-performance.svg"
+        },
+        {
+          "id": "technicianLocation",
+          "entity": "technicianLocation",
+          "route": ["/technician-location"],
+          "name": "Engineer's Location",
+          "requires": "list",
+          "icon": "quick-access/location.svg"
+        },
+        {
+          "id": "task",
+          "entity": "task",
+          "route": ["/task"],
+          "name": "Tasks/Uploads",
+          "requires": "list",
+          "icon": "quick-access/task.svg"
+        },
+        {
+          "id": "orgUnitRunningStatsList",
+          "entity": "orgUnitRunningStats",
+          "route": ["/org-unit-running-stats"],
+          "name": "Booking Updates History",
+          "requires": "list",
+          "icon": "quick-access/updates-sent.svg"
+        }
+      ]
+    },
+    {
+      "id": "masterData",
+      "name": "Masters",
+      "items": [
+        {
+          "id": "productCategoryList",
+          "entity": "productCategory",
+          "route": ["/product-category"],
+          "name": "Product Categories",
+          "requires": "list",
+          "icon": "masters/categories.svg"
+        },
+        {
+          "id": "skuList",
+          "entity": "sku",
+          "name": "SKUs",
+          "requires": "list",
+          "icon": "masters/models.svg"
+        },
+        {
+          "id": "productList",
+          "entity": "product",
+          "name": "Products",
+          "requires": "list",
+          "icon": "masters/products.svg"
+        },
+        {
+          "id": "modelList",
+          "entity": "model",
+          "name": "Models",
+          "requires": "list",
+          "icon": "masters/models.svg"
+        },
+        {
+          "id": "sparePartList",
+          "entity": "sparePart",
+          "name": "SpareParts",
+          "requires": "list",
+          "icon": "masters/spares.svg",
+          "route": ["/spare-part"]
+        },
+        {
+          "id": "consumablesList",
+          "entity": "consumable",
+          "name": "Consumables",
+          "requires": "list",
+          "icon": "masters/consumables.svg"
+        },
+        {
+          "id": "meterType",
+          "entity": "meterType",
+          "route": ["/meter-type"],
+          "name": "Meter Types",
+          "requires": "list",
+          "icon": "masters/meters.svg"
+        },
+        {
+          "id": "serviceList",
+          "entity": "service",
+          "route": ["/service"],
+          "name": "Services",
+          "requires": "list",
+          "icon": "masters/services.svg"
+        },
+        {
+          "id": "rateCardList",
+          "entity": "rateCard",
+          "route": ["/rate-card"],
+          "name": "Rate Cards",
+          "requires": "list",
+          "icon": "masters/ratecard.svg"
+        },
+        {
+          "id": "commonProblems",
+          "entity": "commonProblem",
+          "route": ["/common-problem"],
+          "name": "Common Defects",
+          "requires": "list",
+          "icon": "masters/defects.svg"
+        },
+        {
+          "id": "vendorList",
+          "entity": "vendor",
+          "name": "Vendors",
+          "requires": "list",
+          "icon": "masters/vendors.svg"
+        }
+      ]
+    },
+    {
+      "id": "manage",
+      "name": "Manage",
+      "items": [
+        {
+          "id": "clusterList",
+          "entity": "cluster",
+          "name": "Clusters",
+          "requires": "list",
+          "icon": "manage/cluster.svg"
+        },
+        {
+          "id": "userList",
+          "route": ["/org-user"],
+          "entity": "orgUser",
+          "name": "Users",
+          "requires": "list",
+          "icon": "manage/users.svg"
+        },
+        {
+          "id": "orgUnitList",
+          "entity": "orgUnit",
+          "route": ["/org-unit"],
+          "name": "Entities",
+          "requires": "list",
+          "icon": "manage/entities.svg"
+        },
+        {
+          "id": "orgUnitProfileList",
+          "entity": "orgUnitProfile",
+          "route": ["/org-unit-profile/self"],
+          "name": "Settings",
+          "requires": "list",
+          "icon": "manage/settings.svg"
+        }
+      ]
+    }
+  ]
+}

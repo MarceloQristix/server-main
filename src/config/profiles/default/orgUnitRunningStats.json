@@ -1,0 +1,82 @@
+{
+  "isEnabled": false,
+  "actions": {
+    "list": true
+  },
+  "list": {
+    "search": {
+      "isDisabled": false
+    },
+    "filters": [
+      {
+        "id": "updateStatus",
+        "type": "dropdown",
+        "size": "col-3",
+        "name": "Filter",
+        "choices": [
+          {
+            "id": "activeBookings",
+            "name": "Active Bookings"
+          },
+          {
+            "id": "noActiveBookings",
+            "name": "No Active Bookings"
+          },
+          {
+            "id": "notTriggeredInLastMonth",
+            "name": "Not Sent in the last month"
+          },
+          {
+            "id": "triggeredInLastMonth",
+            "name": "Sent int the last month"
+          }
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "id": "name",
+        "width": "60"
+      },
+      {
+        "id":"activeBookings",
+        "width":"20"
+      },
+      {
+        "id": "lastCommunicationTriggeredAt"
+      }
+    ]
+  },
+  "details1": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "code"
+          },
+          {
+            "id": "name"
+          },
+          {
+            "id": "contact",
+            "type":"contact"
+          }
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "name": {
+      "path": "orgUnit.name"
+    },
+    "activeBookings": {
+      "path": "stats.activeBookings"
+    },
+    "lastCommunicationTriggeredAt": {
+      "path": "events.lastCommunicationTriggeredAt",
+      "type": "date"
+    }
+  }
+}

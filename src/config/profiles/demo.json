@@ -1,0 +1,86 @@
+{
+  "name": "Qristix Demo",
+  "shortName": "demo",
+  "code": "DEMO0001",
+  "logo": "/images/logos/demo.png",
+  "qrCodeStickerLogo": "/images/logos/qristix.png",
+  "website": "",
+  "support": {
+    "numbers": ["+91 96866 89997"],
+    "whatsapp": "+91 76187 46975"
+  },
+  "ticket": {
+    "pendingReasons": [
+      {
+        "id": "01_spares_not_available",
+        "name": "Spares Required",
+        "requiredFields": [
+          "spares"
+        ]
+      }
+    ],
+    "closingTypes": [
+      {
+      }
+    ],
+    "holdReasons": [
+      {
+        "id": "",
+        "name": ""
+      }
+    ]
+  },
+  "contract": {
+    "types": [
+      {
+        "id": "contract",
+        "name": "Contract"
+      },
+      {
+        "id": "warranty",
+        "name": "Warranty"
+      }
+    ]
+  },
+  "asset": {
+    "ownershipTypes": [
+      {
+        "id": "customer_owned",
+        "name": "Customer Owned"
+      },
+      {
+        "id": "on_hire",
+        "name": "On Hire"
+      },
+      {
+        "id": "on_rental",
+        "name": "On Rental"
+      }
+    ]
+  },
+  "customer": {
+    "types": [
+      {
+        "id": "business",
+        "name": "Business"
+      },
+      {
+        "id": "individual",
+        "name": "Individual"
+      }
+    ],
+    "grades": [
+      {
+        "id": "regular",
+        "name": "Regular"
+      },
+      {
+        "id": "vip",
+        "name": "VIP"
+      }
+    ]
+  },
+  "site": {
+    "isEnabled": true
+  }
+}

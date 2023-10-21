@@ -1,0 +1,258 @@
+{
+  "isEnabled": true,
+  "numberPrefix": "CN",
+  "fillNameFromType": false,
+  "isPMEnabled": true,
+  "types": [
+    {
+      "id": "contract",
+      "name": "Contract"
+    },
+    {
+      "id": "warranty",
+      "name": "Warranty"
+    },
+    {
+      "id": "amc",
+      "name": "AMC"
+    }
+  ],
+  "endStatuses": [
+    "04_expired",
+    "05_cancelled"
+  ],
+  "status": [
+    "01_draft",
+    "03_active",
+    "04_expired",
+    "05_cancelled"
+  ],
+  "actions": {
+    "create": true,
+    "list": true,
+    "revise": true,
+    "cancel": true,
+    "renew": true
+  },
+  "list": {
+    "filters": [
+      {
+        "id": "customerId",
+        "type": "typeahead",
+        "entity": "customer",
+        "name": "Customer",
+        "size": "col-3",
+        "placeholder": "Type customer name/phone"
+      },
+      {
+        "id": "status",
+        "type": "dropdown",
+        "name": "Status"
+      }
+    ],
+    "fields": [
+      {
+        "id": "code",
+        "width": "20",
+        "target": "contract",
+        "targetIdField": "id"
+      },
+      {
+        "id": "name",
+        "width": "20"
+      },
+      {
+        "id": "referenceNumber",
+        "width": "20"
+      },
+      {
+        "id": "customerName",
+        "width": "20"
+      },
+      {
+        "id": "startDate",
+        "width": "20"
+      },
+      {
+        "id": "endDate",
+        "width": "20"
+      },
+      {
+        "id": "modelName",
+        "width": "20"
+      },
+      {
+        "id": "numAssets",
+        "width": "20"
+      },
+      {
+        "id": "duration",
+        "width": "20"
+      },
+      {
+        "id": "chargesAmount",
+        "width": "20"
+      },
+      {
+        "id": "status",
+        "width": "20"
+      }
+    ]
+  },
+  "details": {
+    "actions": [
+
+    ],
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name"
+          },
+          {
+            "id": "referenceNumber"
+          },
+          {
+            "id": "startDate"
+          },
+          {
+            "id": "endDate"
+          },
+          {
+            "id": "duration"
+          },
+          {
+            "id": "expiryType"
+          },
+          {
+            "id": "renewedContractCode"
+          },
+          {
+            "id": "sourceContractCode"
+          }
+        ]
+      },
+      {
+        "id": "customer",
+        "name": "Customer",
+        "fields": [
+          {
+            "id":"customerName"
+          }
+        ]
+      },
+      {
+        "id": "sla",
+        "name": "SLA",
+        "fields": [
+          {
+            "id":"slaTat"
+          },
+          {
+            "id":"slaResponseTime"
+          }
+        ]
+      },
+      {
+        "id": "pm",
+        "name": "Preventive Maintenance",
+        "fields": [
+          {
+            "id":"slaPmFrequency"
+          },
+          {
+            "id":"slaPmInterval"
+          },
+          {
+            "id":"slaPmStartsAfter"
+          },
+          {
+            "id":"scheduleDayPreferenceDayOfTheMonth"
+          }
+        ]
+      },
+      {
+        "id": "charges",
+        "name": "Charges",
+        "fields": [
+          {
+            "id":"chargesAmount"
+          }
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "renewedContractCode": {
+      "path": "renewedContract.code",
+      "target": "contract",
+      "targetIdField": "renewedContract._id"
+    },
+    "sourceContractCode": {
+      "path": "sourceContract.code",
+      "target": "contract",
+      "targetIdField": "sourceContract._id"
+    },
+    "code": {
+      "target": "contract",
+      "targetIdField": "id"
+    },
+    "name": {
+    },
+    "serialNumber": {
+      "isUnique": true
+    },
+    "customerName": {
+      "path": "customer.name",
+      "target": "customer",
+      "targetIdField": "customer._id"
+    },
+    "referenceNumber" :{
+    },
+    "expiryType":{
+      "translateNameSpace":"expiryType"
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "modelName": {
+      "path": "model.name"
+    },
+    "numAssets": {
+    },
+    "duration": {
+    },
+    "referenceNumber": {
+
+    },
+    "chargesAmount": {
+      "path": "charges.amount"
+    },
+    "status": {
+      "translateNameSpace": "status"
+    },
+    "slaTat":{
+      "path":"sla.tat"
+    },
+    "slaResponseTime":{
+      "path": "sla.responseTime"
+    },
+    "slaPmFrequency":{
+      "path":"sla.pm.frequency"
+    },
+    "slaPmInterval":{
+      "path":"sla.pm.interval"
+    },
+    "slaPmStartsAfter":{
+      "path":"sla.pm.startsAfter"
+    },
+    "scheduleDayPreferenceDayOfTheMonth":{
+      "path":"scheduleDayPreference.dayOfTheMonth"
+    }
+  }
+}

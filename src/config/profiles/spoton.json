@@ -1,0 +1,72 @@
+{
+  "size": "medium",
+  "name": "Spoton Enterprises",
+  "shortName": "spoton",
+  "logo": "/images/logos/spoton.webp",
+  "qrCodeStickerLogo": "/images/logos/spoton_qr.webp",
+  "code": "058H52KU",
+  "owner": {
+    "name": "Spoton Enterprises",
+    "uniqueId": "spotonenterprises1@gmail.com"
+  },
+  "roundupEmail": ["spotonenterprises1@gmail.com"],
+  "website": "www.spotonfnb.in",
+  "registeredAddress": "Ground Floor , Shop No 15 ,Jeevan Dharma Building , Opp.Fire Station , Near Doulat Nagar , Kopri , Thane East, Thane - 400603 , Maharashtra",
+  "legalName": "Spoton",
+  "support": {
+    "title4Numbers": "In case of emergency",
+    "numbers": ["+91 9702284646", "+91 9702294646"],
+    "email": "spotonenterprises1@gmail.com",
+    "whatsapp": ""
+  },
+  "qrSticker": {
+    "topLine": "Scan this QRCode to Request Service or Order Supplies.",
+    "size": "large",
+    "includePrimaryIdentifier": false
+  },
+  "product": {
+    "code": false
+  },
+  "model": {
+    "code": false
+  },
+  "sparePart": {
+    "code": false
+  },
+  "accessory": {
+    "code": false
+  },
+  "consumable": {
+    "isEnabled": true,
+    "code": false
+  },
+  "ticket": {
+    "updateStatus": true,
+    "trackLocation": true,
+    "notifyCustomerTicketStatusUpdate": true,
+    "isSMSEnabled": true
+  },
+  "asset": {
+    "primaryIdentifier": "serialNumber",
+    "hasMeter": false,
+    "open":{
+      "actions": {
+        "raiseSupportTicket": true,
+        "requestForConsumables": true,
+        "raiseInstallationTicket": true,
+        "viewServiceHistory": true,
+        "captureMeterReading": false
+      }
+    }
+  },
+  "attendance": {
+    "isEnabled":  true
+  },
+  "contract": {
+    "isPMEnabled": false
+  },
+  "orgUnitProfile": {
+    "isEnabled": true,
+    "isGlobal": true
+  }
+}

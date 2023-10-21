@@ -1,0 +1,80 @@
+{
+  "size": "medium",
+  "name": "Essjay Copier Pvt Ltd",
+    "shortName": "essjay",
+    "logo": "/images/logos/essjay_logo.jpg",
+    "code": "8X520TXM",
+    "qrCodeStickerLogo": "/images/logos/essjay_qr_logo.jpg",
+    "website": "http://www.essjaycopier.com/",
+    "owner": {
+      "name": "Essjay Copier",
+      "uniqueId": "info@essjaycopier.com"
+    },
+    "roundupEmail-disabled": ["essjaysiby@hotmail.com", "service@essjaycopier.com", "pramod@essjaycopier.com"],
+    "support": {
+      "title4Numbers": "In case of emergency",
+      "email": "service@essjaycopier.com",
+      "numbers": ["+91 7045111444"]
+    },
+    "qrSticker": {
+      "topLine": "Scan this QR Code to Request Service or Order Supplies.",
+      "size": "large"
+    },
+    "ticket": {
+    },
+    "model": {
+      "code": false,
+      "hasMeters": true
+    },
+    "contract": {
+      "types": [
+        {
+            "id": "contract",
+            "name": "Contract"
+        },
+        {
+            "id": "warranty",
+            "name": "Warranty"
+        }
+      ]
+    },
+    "asset": {
+      "open": {
+        "actions": {
+          "captureMeterReading": true
+        }
+      },
+      "ownershipTypes": [
+        {
+          "id": "customer_owned",
+          "name": "Customer Owned"
+        },
+        {
+          "id": "on_hire",
+          "name": "On Hire"
+        },
+        {
+          "id": "on_rental",
+          "name": "On Rental"
+        }
+      ],
+      "defaultOwnershipType": "customer_owned"
+    },
+    "product": {
+    },
+    "customer": {
+      "types": [
+        {
+          "id": "business",
+          "name": "Business"
+        },
+        {
+          "id": "individual",
+          "name": "Individual"
+        }
+      ]
+    },
+    "orgUnit": {
+      "isEnabled": false
+    }
+  }

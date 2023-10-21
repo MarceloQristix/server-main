@@ -1,0 +1,39 @@
+{
+  "name": "AapsUps",
+  "shortName": "aapsups",
+  "logo": "/images/logos/aapsups.png",
+  "qrCodeStickerLogo": "/images/logos/aapsups_qr.png",
+  "code": "D21X4144",
+  "owner": {
+    "name": "Aapsups",
+    "uniqueId": "sales@aapsups.com"
+  },
+  "roundupEmail-disabled": ["sales@aapsups.com"],
+  "website": "https://www.aapsups.com/",
+  "support": {
+    "numbers": ["9902029725", "080-23307412"],
+    "title4Numbers": "In case of emergency",
+    "email": "sales@aapsups.com"
+  },
+  "qrSticker": {
+    "topLine": "Scan this QR Code to register a complaint or to request service."
+  },
+  "ticket": {
+
+  },
+  "model": {
+    "hasMeters": false
+  },
+  "asset": {
+    "hasMeter": false,
+    "open":{
+      "actions": {
+        "raiseSupportTicket": true,
+        "requestForConsumables": true,
+        "raiseInstallationTicket": true,
+        "viewServiceHistory": true,
+        "captureMeterReading": false
+      }
+    }
+  }
+}

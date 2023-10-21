@@ -1,0 +1,146 @@
+{
+  "isEnabled": true,
+  "label": "Purchase Order",
+  "seqCodePrefix": "PO/",
+  "seqCodePadding": 6,
+  "codeTemplate": "${paddedSeqId}/${year}",
+  "actions": {
+    "create": true,
+    "print": true,
+    "list": true,
+    "edit": true
+  },
+  "list": {
+    "fields": [
+      {
+        "id": "code",
+        "target": "purchase-order",
+        "targetIdField": "id"
+      },
+      {
+        "id": "poDate",
+        "width": "20"
+      },
+      {
+        "id": "vendorName",
+        "target": "vendor",
+        "targetIdField": "vendor._id"
+      }
+    ]
+  },
+  "details": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "code"
+          },
+          {
+            "id": "deliveryAddress"
+          }
+        ]
+      }
+    ]
+  },
+  "edit": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Delivery Details",
+        "size": "col-7",
+        "fields": [
+          {
+            "id": "vendorId",
+            "type": "select",
+            "entity": "vendor",
+            "required": true,
+            "isPrimary": true
+          },
+          {
+            "id": "deliverTo",
+            "required": true,
+            "isPrimary": true
+          },
+          {
+            "id": "deliveryAddress",
+            "required": true,
+            "isPrimary": true
+          }
+        ]
+      },
+      {
+        "id": "poRelated",
+        "name": "LPO Details",
+        "size": "col-5",
+        "fields": [
+          {
+            "id": "referenceNumber",
+            "required": true,
+            "isPrimary": true
+          },
+          {
+            "id": "poDate",
+            "required": true,
+            "isPrimary": true
+          },
+          {
+            "id": "deliverByDate",
+            "required": true,
+            "isPrimary": true
+          }
+        ]
+      },
+      {
+        "id": "items",
+        "type": "poItems",
+        "size": "col-12",
+        "required": true,
+        "isPrimary": true
+      }
+    ]
+  },
+  "fields": {
+    "items": {
+
+    },
+    "code": {
+
+    },
+    "referenceNumber": {
+
+    },
+    "poDate": {
+      "type": "date",
+      "format": "DD-MM-YYYY"
+    },
+    "deliverByDate": {
+      "type": "date",
+      "format": "DD-MM-YYYY"
+    },
+    "vendorCode": {
+
+    },
+    "vendorId": {
+    },
+    "vendorName": {
+      "path": "vendor.name"
+    },
+    "vendorAddress": {
+      "type": "address",
+      "path": "vendor.address"
+    },
+    "deliverTo": {
+
+    },
+    "deliveryAddress": {
+      "type": "address"
+    },
+    "name": {
+    },
+    "totalAmount": {
+
+    }
+  }
+}

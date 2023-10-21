@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>QR Codes for Sites of <%= name %> <%= fileName %></title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border-spacing: 0;
+        }
+
+        :root {
+            --page-width: 936pt;
+            --page-height: 1368pt;
+        }
+
+
+        body {
+            font-family: "Roboto", sans-serif;
+            width: 936pt;
+            font-size: 10pt;
+            line-height: 12pt;
+        }
+
+        .large-text {
+            font-size: 12pt;
+            line-height: 14pt;
+        }
+
+        .page-container {
+            width: 936pt;
+            min-height: 1368pt;
+            margin-top: 20pt;
+            margin-left: 20pt;
+            margin-right: 20pt;
+            margin-bottom: 20pt;
+            /*background: white;*/
+            padding: 10pt;
+        }
+
+        .border {
+            border-collapse: collapse;
+            border: 1pt dashed dimgray;
+        }
+
+        .qrsticker-container {
+            margin: 10pt;
+            padding: 5pt;
+
+            width: 275pt;
+            height: 190pt;
+
+            border: 1pt solid grey;
+            text-align: center;
+
+            /*display: block;*/
+            /*break-inside: avoid;*/
+        }
+
+        .unique-code {
+            font-weight: bold;
+            font-size: 10pt;
+            line-height: 15pt;
+        }
+
+        .qrcode-image {
+            width: 110pt;
+            height: 110pt;
+        }
+
+        .qrcode-image-container {
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 120pt;
+            height: 60pt;
+            margin-top: 1pt;
+            margin-bottom: 1pt;
+        }
+
+        .qristix-logo {
+            height: 15pt;
+        }
+
+        .center {
+            vertical-align: middle;
+            horiz-align:center;
+            text-align: center;
+        }
+        .end {
+            vertical-align: middle;
+            horiz-align: right;
+            text-align: right;
+        }
+        .start {
+            vertical-align: middle;
+            horiz-align: left;
+            text-align: left;
+        }
+
+        @media print {
+            .pagebreak { page-break-after: always; } /* page-break-after works, as well */
+        }
+
+        @page {
+            size: 936pt 1368pt;
+        }
+
+    </style>
+</head>
+<body>
+<% for (let index = 0 ; index < records.length;){ %>
+    <div class="page-container pagebreak">
+        <table>
+            <tbody>
+            <% for (let rowCount=0; (rowCount< 6)&& (index < records.length); rowCount++){ %>
+                <tr style="border: 10pt solid transparent;">
+                    <% for (let colCount=0; (colCount< 3) && (index < records.length); colCount++, index++){ %>
+                        <td class="border center">
+                            <table class="qrsticker-container">
+                                <tbody>
+                                <tr>
+                                    <td class="center"
+                                        style="width: 50%"
+                                        rowspan="2"
+                                        colspan="2">
+                                        <img class="logo" src="<%= baseUrl + qrCodeStickerLogo %>"/>
+                                    </td>
+                                    <td class="center">
+                                        <span class="unique-code">
+                                            <%= records[index].code %>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center"
+                                        style="width: 50%;"
+                                        rowspan="4">
+                                        <div class="qrcode-image-container">
+                                            <img class="qrcode-image"
+                                                 src="<%= baseUrl + records[index].qrCodeImageUrl %>"
+                                                 title="<%= records[index].qrCodeImageUrl %>"
+                                            />
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="vertical-align:middle; horiz-align: right; width: 10%;text-align: right;">
+                                        <img src="<%= baseUrl+'/images/whatsapp_logo_sm.png'%>">
+                                    </td>
+                                    <td class="center large-text"
+                                        style="width:40%;">
+                                        <span><%=support.whatsapp[0]%></span> <br />
+                                        <span><%=support.whatsapp[1]%></span> <br />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                    <td class="center large-text">
+                                        <span><%=support.email%></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+
+                                <tr><!-- powered by -->
+                                    <td  class="center"
+                                         colspan="2"
+                                         style="width: 50%;">
+                                            <span >
+                                                Powered by
+                                            </span>&nbsp;
+                                        <img class="qristix-logo"
+                                             src="<%= baseUrl+'/images/logos/qristix-poweredby.png' %>" />
+                                    </td>
+                                    <td class="center">
+                                        <span><%=qrSticker.helpText[0]%></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="center"
+                                        colspan="2">
+                                        <span>https://www.qristix.com </span>
+                                    </td>
+                                    <td class="center">
+                                        <span><%=qrSticker.helpText[1]%></span>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </td>
+                    <%}%>
+                </tr>
+            <%}%>
+            </tbody>
+        </table>
+    </div>
+<%}%>
+</body>
+</html>
+

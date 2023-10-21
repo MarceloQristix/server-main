@@ -1,0 +1,91 @@
+{
+  "isEnabled": true,
+  "code": true,
+  "actions": {
+    "list": true
+  },
+  "list": {
+    "search": {
+      "isDisabled": true
+    },
+    "filters": [
+
+    ],
+    "fields": [
+      {
+        "id":"name",
+        "width":"40",
+        "target": "org-user",
+        "targetIdField": "id"
+      }
+    ]
+  },
+  "fields": {
+    "lastName":{
+    },
+    "firstName":{
+    },
+    "name": { 
+    },
+    "code": {
+      "required": true
+    },
+    "loginId":{
+      "path":"globalUser.uniqueId"
+    },
+    "globalUser.uniqueId":{
+      "path":"globalUser.uniqueId"
+    },
+    "globalUser.email":{
+      "path":"globalUser.email" 
+    },
+    "globalUser.phoneNumber":{
+      "path":"globalUser.phoneNumber"
+    },
+    "role":{
+    },
+    "belongsToName":{
+      "path":"orgUnit.name"
+    },
+    "reportsToName":{
+      "path":"reportsTo.name"
+    },
+    "belongsToId":{
+      "path":"orgUnit._id",
+      "formFieldPath": "orgUnit"
+    },
+    "reportsToId":{
+      "path":"reportsTo._id"
+    },
+    "clusterId":{
+      "reference":"cluster"
+    },
+    "siteId":{
+      "reference":"site"
+    },
+    "dob":{
+      "type":"date",
+      "format": "d MMM YY"
+    },
+    "doj":{
+      "type":"date",
+      "format": "d MMM YY"
+    },
+    "globalUser.status":{
+      "path":"globalUser.status",
+      "translateNameSpace": "status"
+    },
+    "uan":{
+
+    },
+    "esin":{
+
+    },
+    "bloodGroup":{
+
+    },
+    "remarks": {
+
+    }
+  }
+}

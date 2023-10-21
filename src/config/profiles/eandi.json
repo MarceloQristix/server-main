@@ -1,0 +1,159 @@
+{
+  "size": "medium",
+  "name": "E and I Technical Experts LLC",
+  "i18n": {
+    "timezone": "",
+    "localeCode": "en-AE"
+  },
+  "shortName": "eandi",
+  "logo": "/images/logos/eandi_logo.jpg",
+  "code": "MY25URT4",
+  "countryCode": "AE",
+  "currency": "AED",
+  "qrCodeStickerLogo": "/images/logos/eandi_qr_logo.jpg",
+  "website": "www.eanditech.ae",
+  "registeredAddress": "P.O Box No.34477 , Al Abbas Building - 1, Khalid Bin Al Waleed Road",
+  "legalName": "E&I Technical Experts LLC",
+  "owner": {
+    "name": "Mohsin Raza",
+    "uniqueId": "eanditec@eanditech.ae"
+  },
+  "roundupEmail": [
+    "Mohsin.Raza@eanditech.ae",
+    "Shanmuga.Sundaram@alabbas.com",
+    "Raul@eanditech.ae"
+  ],
+  "support": {
+    "title4Numbers": "In case of emergency",
+    "email": "eanditec@eanditech.ae",
+    "numbers": [
+      "043599599"
+    ]
+  },
+  "qrSticker": {
+    "topLine": "Scan this QR Code to Request Service or Order Supplies.",
+    "size": "large"
+  },
+  "strings": {
+    "purchaseOrder": {
+      "label": "L.P.O",
+      "signatureLabel": "APPROVED BY",
+      "taxTermsAndConditions": "5% VAT is exclusive",
+      "defaultTermsAndConditions": "Invoice to be written in the name of \"E And I Technical Experts LLC\"",
+      "fields":{
+        "code": "LPO",
+        "VendorName": "Company",
+        "VendorAddress": "Site",
+        "date": "DATE",
+        "referenceNumber": "Reference Number",
+        "itemsTitle": "LIST OF ITEMS",
+        "serialNumber": "SR. No",
+        "itemDesc": "ITEM DESCRIPTION",
+        "quantity": "QTY",
+        "amount": "RATE",
+        "termsAndConditions": "Terms & Conditions",
+        "signatureLabel": "APPROVED BY"
+      }
+    }
+  },
+  "ticket": {
+    "updateStatus": true,
+    "trackWorkDuration": true,
+    "categories": [
+      {
+        "id": "Electrical",
+        "name": "Electrical",
+        "desc": true
+      },
+      {
+        "id": "Plumbing",
+        "name": "Plumbing",
+        "desc": true
+      },
+      {
+        "id": "Civil",
+        "name": "Civil",
+        "desc": true
+      },
+      {
+        "id": "AC",
+        "name": "AC",
+        "desc": true
+      },
+      {
+        "id": "Carpentry",
+        "name": "Carpentry",
+        "desc": true
+      }
+    ]
+  },
+  "model": {
+    "code": false,
+    "hasMeters": true
+  },
+  "contract": {
+    "types": [
+      {
+        "id": "contract",
+        "name": "Contract"
+      },
+      {
+        "id": "warranty",
+        "name": "Warranty"
+      }
+    ]
+  },
+  "asset": {
+    "open": {
+      "actions": {
+        "captureMeterReading": true
+      }
+    },
+    "ownershipTypes": [
+      {
+        "id": "customer_owned",
+        "name": "Customer Owned"
+      },
+      {
+        "id": "on_hire",
+        "name": "On Hire"
+      },
+      {
+        "id": "on_rental",
+        "name": "On Rental"
+      }
+    ],
+    "defaultOwnershipType": "customer_owned"
+  },
+  "product": {
+    "code": false
+  },
+  "customer": {
+    "types": [
+      {
+        "id": "business",
+        "name": "Business"
+      },
+      {
+        "id": "individual",
+        "name": "Individual"
+      }
+    ]
+  },
+  "orgUnit": {
+    "isEnabled": false
+  },
+  "purchaseOrder": {
+    "isEnabled": true,
+    "seqCodePrefix": "EI/",
+    "seqCodePadding": 4,
+    "list": {
+
+    },
+    "fields": {
+      "code": {
+
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "size": "medium",
+  "name": "Sri Sai Communications",
+  "shortName": "ssc",
+  "logo": "/images/logos/ssc_logo.png",
+  "qrCodeStickerLogo": "/images/logos/ssc_qr.png",
+  "qrCodeStickerLogo1": "/images/logos/rkcopiers_qr.png",
+  "code": "WPRC8KY4",
+  "owner": {
+    "name": "Sri Sai Communication",
+    "uniqueId": "srisaicommunications1818@gmail.com"
+  },
+  "roundupEmail": ["srisaicommunications1818@gmail.com"],
+  "website": "",
+  "registeredAddress": "Bindu Copiers ,Plot No.110 , Road No.1 , Samskruthi Avenues , Near Ramky One Marvel , Gajularamaram , Qutubullapur Mandal , Hyderabad - 500055 , Telangana",
+  "legalName": "Bindu Copiers",
+  "support": {
+    "numbers": ["+91 9490171818"],
+    "title4Numbers": "In case of emergency",
+    "email": "srisaicommunications1818@gmail.com",
+    "email1": "rkcopiers1818@gmail.com"
+  },
+  "qrSticker": {
+    "topLine": "Scan this QR Code to request for Service or to order Supplies."
+  },
+  "subscription": {
+    "status": "subscribed",
+    "subStatus": "paymentDue",
+    "dueDate": "",
+    "message": "Dear Customer, your subscription expired on 16 August 2023. To keep using the QRisTix FSM application without interruption, please pay the subscription charges by 23 October 2023."
+  },
+  "ticket": {
+    "updateStatus": true,
+    "trackLocation": true
+  },
+  "sparePart": {
+    "code": false
+  },
+  "consumable": {
+    "code": false
+  },
+  "accessory": {
+    "code": false
+  },
+  "product": {
+    "code": false,
+    "manufacturer": false,
+    "hasMeters": true
+  },
+  "model": {
+    "code": false,
+    "hasMeters": true
+  },
+  "asset": {
+    "hasMeter": true,
+    "fields": {
+      "serialNumber": {
+        "label": "Serial Number",
+        "required": true
+      }
+    },
+    "open":{
+      "actions": {
+        "raiseSupportTicket": true,
+        "requestForConsumables": true,
+        "raiseInstallationTicket": true,
+        "viewServiceHistory": true,
+        "captureMeterReading": true
+      }
+    }
+  },
+  "orgUnit": {
+    "isEnabled": true,
+    "types": [
+      {
+        "id": "branch",
+        "name": "Branch",
+        "isLeaf": true
+      }
+    ]
+  },
+  "attendance": {
+    "isEnabled":  true
+  }
+}

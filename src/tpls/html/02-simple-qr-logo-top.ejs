@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>QR Codes for Assets of <%= name %> <%= fileName %></title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border-spacing: 0;
+        }
+
+        :root {
+            --page-width: 936pt;
+            --page-height: 1368pt;
+        }
+
+
+        body {
+            font-family: "Roboto", sans-serif;
+            width: 936pt;
+            font-size: 8pt;
+            line-height: 10pt;
+        }
+
+        .page-container {
+            width: 936pt;
+            min-height: 1368pt;
+            margin-top: 20pt;
+            margin-left: 20pt;
+            margin-right: 20pt;
+            margin-bottom: 20pt;
+            /*background: white;*/
+            padding: 10pt;
+        }
+
+        .border {
+            border-collapse: collapse;
+            border: 1pt dashed dimgray;
+        }
+
+        .qrsticker-container {
+            margin: 10pt;
+            padding: 5pt;
+
+            width: 110pt;
+            height: 195pt;
+
+            border: 1pt solid grey;
+            text-align: center;
+
+            /*display: block;*/
+            /*break-inside: avoid;*/
+        }
+
+        .asset-code {
+            font-weight: bold;
+            font-size: 8pt;
+            line-height: 10pt;
+            border: 1pt dashed dimgray;
+        }
+
+        .small {
+            font-size: 5pt;
+            line-height: 7pt;
+        }
+
+        .qrcode-image {
+            width: 110pt;
+            height: 110pt;
+        }
+
+        .qrcode-image-container {
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 112pt;
+            height: 30pt;
+            margin-top: 1pt;
+            margin-bottom: 1pt;
+        }
+
+        .qristix-logo {
+            height: 15pt;
+        }
+
+        .center {
+            vertical-align: middle;
+            horiz-align: center;
+            text-align: center;
+        }
+
+        .end {
+            vertical-align: middle;
+            horiz-align: right;
+            text-align: right;
+        }
+
+        .start {
+            vertical-align: middle;
+            horiz-align: left;
+            text-align: left;
+        }
+
+        @media print {
+            .pagebreak {
+                page-break-after: always;
+            }
+
+            /* page-break-after works, as well */
+        }
+
+        @page {
+            size: 936pt 1368pt;
+        }
+
+    </style>
+</head>
+<body>
+<% for (let index = 0 ; index < assets.length;){ %>
+    <div class="page-container pagebreak">
+        <table>
+            <tbody>
+            <% for (let rowCount = 0; (rowCount < 5) && (index < assets.length); rowCount++){ %>
+                <tr style="border: 10pt solid transparent;">
+                    <% for (let colCount = 0; (colCount < 6) && (index < assets.length); colCount++, index++){ %>
+                        <td class="border center">
+                            <table class="qrsticker-container">
+                                <tbody>
+                                <tr>
+                                    <td class="center"
+                                        colspan="2">
+                                        <img class="logo" src="<%= baseUrl + qrCodeStickerLogo %>"/>
+                                    </td>
+                                </tr>
+
+                                <tr style="padding-top: 2pt; padding-bottom: 2pt">
+                                    <td class="center small"
+                                        colspan="2">
+                                        <span><%=qrSticker.topLine%></span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="center" colspan="2">
+                                        <div class="qrcode-image-container">
+                                            <img class="qrcode-image"
+                                                 src="<%= baseUrl + assets[index].qrCodeImageUrl %>"
+                                                 title="<%= assets[index].qrCodeImageUrl %>"
+                                            />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <%if(qrSticker.includePrimaryIdentifier){%>
+                                        <td class="start" style="padding:2pt">
+                                            <span class="asset-code">
+                                                &nbsp;&nbsp;<%= assets[index].primaryIdentifier %>&nbsp;&nbsp;
+                                            </span>
+                                        </td>
+                                        <td class="end" style="padding:2pt">
+                                            <span class="asset-code">
+                                                &nbsp;&nbsp;<%= assets[index].code %>&nbsp;&nbsp;
+                                            </span>
+                                        </td>
+                                    <%} else {%>
+                                        <td class="center" colspan="2" style="padding:2pt">
+                                            <span class="asset-code">
+                                                &nbsp;&nbsp;<%= assets[index].code %>&nbsp;&nbsp;
+                                            </span>
+                                        </td>
+                                    <%}%>
+                                </tr>
+                                <tr class="small">
+                                    <td class="center"
+                                        style="width: 50%;" colspan="2">
+                                            <span>
+                                                Powered by
+                                            </span>&nbsp;
+                                        <img class="qristix-logo"
+                                             src="<%= baseUrl + '/images/logos/qristix-poweredby.png' %>"/>
+                                    </td>
+                                </tr>
+                                <tr class="small">
+                                    <td class="center"
+                                        colspan="2">
+                                        <span>https://www.qristix.com </span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    <% } %>
+                </tr>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+<% } %>
+</body>
+</html>
+

@@ -1,0 +1,55 @@
+{
+  "name": "Joy Vending",
+  "shortName": "joybrews",
+  "logo": "/images/logos/joybrews.jpeg",
+  "qrCodeStickerLogo": "/images/logos/joybrews_qr.jpeg",
+  "code": "81XHYME4",
+  "owner": {
+    "name": "Joy Vending",
+    "uniqueId": "vendksa@gmail.com"
+  },
+  "roundupEmail-disabled": ["vendksa@gmail.com", "mail@joyvend.com"],
+  "website": "www.joyvend.com",
+  "support": {
+    "numbers": ["012 6547205", "0508504370"],
+    "email": "mail@joyvend.com",
+    "callLabel": "Tel"
+  },
+  "qrSticker": {
+    "topLine": "Scan this QR Code to request for Service or to order Supplies."
+  },
+  "countryCode": "SA",
+  "currency": "SAR",
+  "ticket": {
+    "descSuggestions": [
+      {
+        "id": "Machine not switching on",
+        "name": "Machine not switching on"
+      },
+      {
+        "id": "Water leakage",
+        "name": "Water leakage"
+      },
+      {
+        "id": "Machine not heating",
+        "name": "Machine not heating"
+      },
+      {
+        "id": "Too much noise",
+        "name": "Too much noise"
+      }
+    ]
+  },
+  "asset": {
+    "hasMeter": true,
+    "open":{
+      "actions": {
+        "raiseSupportTicket": true,
+        "requestForConsumables": true,
+        "raiseInstallationTicket": true,
+        "viewServiceHistory": true,
+        "captureMeterReading": false
+      }
+    }
+  }
+}

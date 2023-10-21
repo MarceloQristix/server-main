@@ -1,0 +1,83 @@
+{
+  "isEnabled": true,
+  "code": true,
+  "actions": {
+    "create": true,
+    "list": true,
+    "edit": true
+  },
+  "list": {
+    "fields": [
+      {
+        "id": "name",
+        "width": "60",
+        "target": "vendor",
+        "targetIdField": "id"
+      },
+      {
+        "id": "code",
+        "width": "20"
+      },
+      {
+        "id":"contactName",
+        "width":"20"
+      }
+    ]
+  },
+  "details": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "code"
+          },
+          {
+            "id": "name"
+          },
+          {
+            "id": "contact",
+            "type":"contact"
+          }
+        ]
+      }
+    ]
+  },
+  "edit": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name",
+            "required": true,
+            "isPrimary": true
+          },
+          {
+            "id":"contact",
+            "type": "contact",
+            "isPrimary": true
+          }
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "name": {
+    },
+    "code": {
+
+    },
+    "address": {
+      "type": "address"
+    },
+    "contact": {
+      "type": "contact"
+    },
+    "contactName":{
+      "path": "contact.name"
+    }
+  }
+}

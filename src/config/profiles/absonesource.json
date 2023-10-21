@@ -1,0 +1,31 @@
+{
+  "name": "ABS One Source",
+  "shortName": "absonesource",
+  "logo": "/images/logos/absonesource.png",
+  "qrCodeStickerLogo": "/images/logos/absonesource_qr.png",
+  "code": "PDRHKEWP",
+  "owner": {
+    "name": "ABS One Source",
+    "uniqueId": "absonesource@gmail.com"
+  },
+  "roundupEmail-disabled": ["abssharp@gmail.com"],
+  "website": "",
+  "support": {
+    "numbers": ["7022665101", "9448396412"],
+    "email": "absonesource@gmail.com"
+  },
+  "ticket": {
+  },
+  "asset": {
+    "hasMeter": true,
+    "open":{
+      "actions": {
+        "raiseSupportTicket": true,
+        "requestForConsumables": true,
+        "raiseInstallationTicket": true,
+        "viewServiceHistory": true,
+        "captureMeterReading": false
+      }
+    }
+  }
+}

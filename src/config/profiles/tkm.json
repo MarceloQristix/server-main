@@ -1,0 +1,508 @@
+{
+  "name": "Toyota",
+  "shortName": "tkm",
+  "useShortName": true,
+  "flavor": "Booking Tracker Application",
+  "logo": "/images/logos/BST-BADGE.png ",
+  "qrCodeStickerLogo": "/images/logos/galaxytoyota-logo.png ",
+  "code": "W0YT42ER",
+  "subDomain": "bta",
+  "owner": {
+    "name": "Toyota",
+    "uniqueId": "tkm@qristix.com"
+  },
+  "legalName": "Toyota",
+  "registeredAddress": "69/1A, Najafgarh Road, Moti Nagar Crossing, Delhi, Delhi-110015",
+  "usageTerms": "By clicking the 'Accept' button, you consent to receiving any communication related to but not limited to your vehicle booking,  promotional messages, offers etc in electronic format including by email, in app messaging or on the service provider's application from the dealership or their service providers or partners.",
+  "stringsPath": "tkm/strings.json",
+  "subFiles": [
+    "asset",
+    "ticket",
+    "orgUnitProfile",
+    "sku"
+  ],
+  "home": {
+    "help": {
+      "isEnabled": true,
+      "headText": "To start with , refer to this document and add your SMS & feedback form related parameters",
+      "userManualLink": "/images/app-images/tkm/GroupDealershipManual.pdf",
+      "footerText": "If you have any questions , call Anil on 91 9686689997"
+    },
+    "actions": {
+      "menu": true,
+      "help": true
+    },
+    "layout": {
+      "default": "menu"
+    }
+  },
+  "menu": {
+    "items": {
+      "assetList": {
+        "name": "Bookings",
+        "icon": "quick-access/bookings.svg",
+        "isDisabled": false
+      },
+      "customerList": {
+        "icon": "quick-access/Customertkm.svg"
+      },
+      "campaignsList": {
+        "isDisabled": false
+      },
+      "ticketList": {
+        "name": "Tickets",
+        "icon": "quick-access/tickets-tkm.svg"
+      },
+      "skuList": {
+        "name": "Vehicle Models"
+      }
+    },
+    "sectionItems": {
+      "main": {
+        "items": [
+          "assetList",
+          "enquiryList",
+          "campaignsList",
+          "customerList",
+          "ticketList",
+          "orgUnitRunningStatsList"
+        ]
+      }
+    }
+  },
+  "dashboard": {
+    "isEnabled": false
+  },
+  "partRequisition": {
+    "isEnabled": false
+  },
+  "productCategories": {
+    "isEnabled": false
+  },
+  "meterType": {
+    "isEnabled": false
+  },
+  "service": {
+    "isEnabled": false
+  },
+  "rateCard": {
+    "isEnabled": false
+  },
+  "commonProblem": {
+    "isEnabled": false
+  },
+  "productCategory": {
+    "isEnabled": false
+  },
+  "vendor": {
+    "isEnabled": false
+  },
+  "dashboard": {
+    "isEnabled": false
+  },
+  "purchaseOrder": {
+    "isEnabled": false
+  },
+  "report": {
+    "isEnabled": false
+  },
+  "customer": {
+    "isLoginEnabled": true
+  },
+  "orgUser": {
+    "fields": {
+      "code": {
+        "required": false
+      }
+    },
+    "roles": [
+      {
+        "id": "sbu_head",
+        "name": "SBU Head",
+        "dataScope": {
+          "default": "orgUnit",
+          "asset": "all"
+        },
+        "access": "*",
+        "belongsTo": "sbu",
+        "weight": 3
+      },
+      {
+        "id": "sbu_managers",
+        "name": "SBU Manager",
+        "dataScope": {
+          "default": "orgUnit",
+          "asset": "all"
+        },
+        "access": {
+          "appV1": false,
+          "home": {
+            "menu": true
+          },
+          "ticket": "*",
+          "asset": "*",
+          "enquiry": "*",
+          "campaign": {
+            "create": true,
+            "list": true
+          }
+        },
+        "belongsTo": "sbu",
+        "weight": 4
+      },
+      {
+        "id": "CCTeamLead",
+        "name": "Call Center Team Lead",
+        "dataScope": {
+        },
+        "access": {
+          "appV1": false,
+          "home": {
+            "menu": true
+          },
+          "orgUser": {
+            "list": true,
+            "edit": true,
+            "create": true
+          },
+          "ticket": {
+            "list": true
+          },
+          "asset": {
+            "list": true
+          },
+          "orgUnitRunningStats": {
+            "list": true
+          }
+        },
+        "weight": 5
+      },
+      {
+        "id": "CCAgent",
+        "name": "Call Center Agent",
+        "dataScope": {
+        },
+        "access": {
+          "appV1": false,
+          "home": {
+            "menu": true
+          },
+          "ticket": {
+            "list": true
+          },
+          "asset": {
+            "list": true
+          },
+          "orgUnitRunningStats": {
+            "list": true
+          }
+        },
+        "weight": 6
+      },
+      {
+        "id": "business_head",
+        "name": "Business Head",
+        "dataScope": {
+          "default": "orgUnit"
+        },
+        "access": {
+          "appV1": false,
+          "home": {
+            "menu": true,
+            "help": true
+          },
+          "ticket": "*",
+          "task": "*",
+          "asset": "*",
+          "enquiry": "*",
+          "campaign": {
+            "create": true,
+            "list": true
+          },
+          "orgUser": "*",
+          "orgUnitProfile": "*",
+          "sendUpdatesTask": "*"
+        },
+        "belongsTo": "groupDealership",
+        "hasReports": false,
+        "weight": 7
+      },
+      {
+        "id": "salesAdvisor",
+        "name": "Sales Officer",
+        "dataScope": {
+          "default": "orgUnit"
+        },
+        "access": {
+          "appV1": false,
+          "home": {
+            "menu": true
+          },
+          "asset": {
+            "list": true
+          },
+          "campaign": {
+            "create": true,
+            "list": true
+          }
+        },
+        "belongsTo": "dealership",
+        "weight": 14
+      },
+      {
+        "id": "teamLeadSales",
+        "name": "Team Lead Sales",
+        "dataScope": {
+          "default": "orgUnit"
+        },
+        "access": {
+          "appV1": false,
+          "home": {
+            "menu": true
+          },
+          "asset": {
+            "list": true
+          },
+          "campaign": {
+            "create": true,
+            "list": true
+          }
+        },
+        "belongsTo": "dealership",
+        "weight": 14
+      },
+      {
+        "id": "operationsManager",
+        "name": "Manager - GR",
+        "dataScope": {
+          "default": "orgUnit"
+        },
+        "access": {
+          "appV1": false,
+          "home": {
+            "menu": true
+          },
+          "ticket": "*",
+          "task": "*",
+          "asset": "*",
+          "campaign": {
+            "create": true,
+            "list": true
+          }
+        },
+        "belongsTo": "dealership",
+        "weight": 10
+      },
+      {
+        "id": "customer",
+        "name": "Customer",
+        "isVirtual": true,
+        "dataScope": {
+          "default": "self",
+          "asset": "customer"
+        },
+        "access": {
+          "appV1": false,
+          "asset": {
+            "list": false
+          }
+        },
+        "usageTerms": "By clicking the 'Accept' button, you consent to receiving any communication related to but not limited to your vehicle booking,  promotional messages, offers etc in electronic format including by email, in app messaging or on the service provider's application from the dealership or their service providers or partners.",
+        "weight": -1
+      }
+    ]
+  },
+  "orgUnit": {
+    "isEnabled": true,
+    "actions": {
+      "create": true,
+      "update": true,
+      "list": true
+    },
+    "types": [
+      {
+        "id": "sbu",
+        "name": "SBU",
+        "contains": "dealership",
+        "isLeaf": false,
+        "weight": 3
+      },
+      {
+        "id": "groupDealership",
+        "name": "Group Dealership",
+        "profile": {
+          "isEnabled": true
+        },
+        "isLeaf": false,
+        "weight": 4
+      },
+      {
+        "id": "dealership",
+        "name": "Dealership",
+        "parent": "groupDealership",
+        "isLeaf": true,
+        "weight": 5
+      },
+      {
+        "id": "department",
+        "name": "Department",
+        "parent": "dealership",
+        "isLeaf": true,
+        "weight": 6
+      }
+    ],
+    "details": {
+      "sections": [
+        {
+          "id": "basic",
+          "name": "Overview",
+          "fields": [
+            {
+              "id": "name",
+              "width": "40"
+            },
+            {
+              "id": "code",
+              "width": "40"
+            },
+            {
+              "id": "orgUnitType",
+              "width": "40"
+            },
+            {
+              "id": "parentName"
+            },
+            {
+              "id": "feedbackUrl"
+            }
+          ]
+        }
+      ]
+    },
+    "edit": {
+      "sections": [
+        {
+          "id": "basic",
+          "name": "Overview",
+          "fields": [
+            {
+              "id": "name",
+              "isPrimary": true,
+              "required": true
+            },
+            {
+              "id": "code",
+              "isPrimary": true,
+              "required": true
+            },
+            {
+              "id": "orgUnitType",
+              "isPrimary": true,
+              "required": true,
+              "type": "select"
+            },
+            {
+              "id": "parent",
+              "width": "40",
+              "isPrimary": true,
+              "type": "select"
+            }
+          ]
+        }
+      ]
+    },
+    "fields": {
+      "name": {
+      },
+      "code": {
+      },
+      "orgUnitType": {
+      },
+      "feedbackUrl": {
+        "type": "text",
+        "path": "custom.feedbackUrl"
+      }
+    }
+  },
+  "sku": {
+    "attributes": [
+      {
+        "name": "color",
+        "id": "color"
+      },
+      {
+        "name": "Fuel Type",
+        "id": "fuelType"
+      },
+      {
+        "name": "Transmission",
+        "id": "transmission"
+      }
+    ]
+  },
+  "campaign": {
+    "actions": {
+      "send2Customers": false,
+      "send2EnquiryCustomers": true
+    },
+    "templateTypes": [
+      {
+        "id": "default",
+        "name": "default"
+      }
+    ]
+  },
+  "form": {
+    "isEnabled": true,
+    "access": {
+      "create": true,
+      "update": true,
+      "activate": true,
+      "deactivate": true
+    },
+    "type": {
+    }
+  },
+  "uploadTask": {
+    "isEnabled": true
+  },
+  "site": {
+    "isEnabled": false
+  },
+  "cluster": {
+    "isEnabled": false
+  },
+  "contract": {
+    "isEnabled": false
+  },
+  "attendance": {
+    "isEnabled": false
+  },
+  "model": {
+    "isEnabled": false
+  },
+  "product": {
+    "isEnabled": false
+  },
+  "accessory": {
+    "isEnabled": false
+  },
+  "consumable": {
+    "isEnabled": false
+  },
+  "sparePart": {
+    "isEnabled": false
+  },
+  "technicianPerformance": {
+    "isEnabled": false
+  },
+  "technicianLocation": {
+    "isEnabled": false
+  },
+  "orgUnitRunningStats": {
+    "isEnabled": true
+  },
+  "enquiry": {
+    "isEnabled": true
+  }
+}

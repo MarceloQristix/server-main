@@ -1,0 +1,220 @@
+{
+  "size": "small",
+  "name": "Godrej Vending Services",
+  "shortName": "godrej",
+  "logo": "/images/logos/qristix-latest.png",
+  "qrCodeStickerLogo": "/images/logos/expert time_qr.png",
+  "code": "HKY8DTEH",
+  "owner": {
+    "name": "Godrej Vending Services",
+    "uniqueId": "ksagar@godrej.com"
+  },
+  "roundupEmail": [
+    "ksagar@godrej.com",
+    "danishs@godrej.com"
+  ],
+  "website": "www.experttimeindustries.com",
+  "support": {
+    "title4Numbers": "In case of emergency",
+    "numbers": [
+      "+91 9820626789"
+    ],
+    "email": "experttimeindustries@gmail.com",
+    "whatsapp": ""
+  },
+  "qrSticker": {
+    "orientation": "landscape",
+    "topLine": "Scan this QRCode to Request Service or Order Supplies.",
+    "size": "large",
+    "includePrimaryIdentifier": true
+  },
+  "product": {
+    "code": false
+  },
+  "model": {
+    "code": false
+  },
+  "sparePart": {
+    "code": false
+  },
+  "accessory": {
+    "code": false
+  },
+  "consumable": {
+    "isEnabled": true,
+    "code": false
+  },
+  "ticket": {
+    "updateStatus": true,
+    "trackLocation": true,
+    "creationByTechnician": true,
+    "periodicMaintenance": true,
+    "pdCheckList": {
+      "sections": [
+        {
+          "name": "Clean the following with cleaning agent",
+          "id": "Clean the following with cleaning agent",
+          "choices": [
+            {
+              "id": "YES",
+              "name": "YES"
+            },
+            {
+              "id": "NO",
+              "name": "NO"
+            }
+          ],
+          "fields": [
+            {
+              "id": "Funnel Mixing Bowl\n\nCleaned",
+              "name": "Funnel Mixing Bowl\n\nCleaned"
+            },
+            {
+              "id": "Whipper Blade\n\nCleaned",
+              "name": "Whipper Blade\n\nCleaned"
+            },
+            {
+              "id": "Steam Trap( Both)\n\nCleaned",
+              "name": " Steam Trap( Both)\n\nCleaned"
+            },
+            {
+              "id": " Drain Tray\n\nCleaned",
+              "name": " Drain Tray\n\nCleaned"
+            },
+            {
+              "id": "Canister Spout\n\nCleaned",
+              "name": " Canister Spout\n\nCleaned"
+            }
+          ]
+        },
+        {
+          "name": " Clean the following with descaling agent/Dry cloth ",
+          "id": " Clean the following with descaling agent/Dry cloth",
+          "choices": [
+            {
+              "id": "YES",
+              "name": "YES"
+            },
+            {
+              "id": "NO",
+              "name": "NO"
+            }
+          ],
+          "fields": [
+            {
+              "id": "Heater \n\nCleaned ",
+              "name": "Heater \n\nCleaned "
+            },
+            {
+              "id": "Hot Water Tank \n\nCleaned ",
+              "name": " Hot Water Tank \n\nCleaned "
+            },
+            {
+              "id": "Temperature Sensor \n\nCleaned ",
+              "name": "Temperature Sensor \n\nCleaned "
+            },
+            {
+              "id": "Waterlevel Sensor \n\nCleaned ",
+              "name": "Waterlevel Sensor \n\nCleaned "
+            }
+          ]
+        },
+        {
+          "name": " Machine body parts & others ",
+          "id": " Machine body parts & others ",
+          "choices": [
+            {
+              "id": "YES",
+              "name": "YES"
+            },
+            {
+              "id": "NO",
+              "name": "NO"
+            }
+          ],
+          "fields": [
+            {
+              "id": "Clean the Canister From outer side ",
+              "name": "Clean the Canister From outer side "
+            },
+            {
+              "id": "  Clean canister surrounding area ",
+              "name": "   Clean canister surrounding area "
+            },
+            {
+              "id": "Clean the Back panel",
+              "name": " Clean the Back panel"
+            },
+            {
+              "id": "Remove & Clean exhaust pipe",
+              "name": " Remove & Clean exhaust pipe"
+            },
+            {
+              "id": "Clean the PCB with blower",
+              "name": " Clean the PCB with blower"
+            },
+            {
+              "id": "Check all the O ring & rubber parts",
+              "name": " Check all the O ring & rubber parts"
+            },
+            {
+              "id": " Clean the capacitor with brush ",
+              "name": " Clean the capacitor with brush "
+            },
+            {
+              "id": " Clean the bean hopper ",
+              "name": " Clean the bean hopper "
+            },
+            {
+              "id": " Clean the grinder ",
+              "name": " Clean the grinder "
+            },
+            {
+              "id": " Clean compressor/condensor with soft brush ",
+              "name": " Clean compressor/condensor with soft brush "
+            },
+            {
+              "id": " Pest Sightnig if any  ",
+              "name": " Pest Sightnig if any  "
+            },
+            {
+              "id": " Temperature set in machine programming in degree Centigrade ",
+              "name": " Temperature set in machine programming in degree Centigrade ",
+              "type": "number"
+            },
+            {
+              "id": " Output beverage temperature in degree Centigrade ",
+              "name": " Output beverage temperature in degree Centigrade ",
+              "type": "number"
+            }
+          ]
+        }
+      ],
+      "technicianSignature": {
+        "name": "Signature of Engineer"
+      },
+      "customerSignature": {
+        "name": "Signature of User"
+      },
+      "remarks": {
+        "name": "Comments"
+      }
+    }
+  },
+  "asset": {
+    "primaryIdentifier": "serialNumber",
+    "hasMeter": false,
+    "open": {
+      "actions": {
+        "raiseSupportTicket": true,
+        "requestForConsumables": true,
+        "raiseInstallationTicket": true,
+        "viewServiceHistory": true,
+        "captureMeterReading": false
+      }
+    }
+  },
+  "attendance": {
+    "isEnabled": true
+  }
+}

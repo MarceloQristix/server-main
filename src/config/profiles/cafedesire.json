@@ -1,0 +1,197 @@
+{
+  "name": "Cafe Desire",
+  "shortName": "cafedesire",
+  "legalName": "Radiant Consumer Appliances Pvt Ltd",
+  "registeredAddress": "",
+  "logo": "/images/logos/cafedesire_logo.png",
+  "code": "1CR5Y14X",
+  "qrCodeStickerLogo": "/images/logos/cafedesire_white_on_black.png",
+  "website": "www.cafedesireonline.in",
+  "owner": {
+    "name": "Radiant Consumer Appliances Pvt Ltd",
+    "uniqueId": "vms@cafedesire.co.in"
+  },
+  "roundupEmail": [
+    "cmd@cafedesire.co.in",
+    "cmc@cafedesire.co.in",
+    "vms@cafedesire.co.in"
+  ],
+  "support": {
+    "title4Numbers": "In case of emergency",
+    "email": "cmc@cafedesire.co.in",
+    "numbers": [
+      "+91 9100936679",
+      "+91 9848887222"
+    ]
+  },
+  "qrSticker": {
+    "template": "03-vending-qr",
+    "theme": "dark",
+    "topLine": "Scan this QR Code to Request Service or Order Supplies.",
+    "headerLines": [
+      "Machine Breakdown?",
+      "Installation?",
+      "Premix Order?"
+    ],
+    "qrImageHeaderText": "SCAN THIS QR CODE",
+    "includePrimaryIdentifier": false
+  },
+  "ticket": {
+    "notifyCustomerTicketStatusUpdate": true,
+    "isSMSEnabled": true
+  },
+  "model": {
+    "code": false,
+    "hasMeters": true
+  },
+  "contract": {
+    "types": [
+      {
+        "id": "contract",
+        "name": "Contract"
+      },
+      {
+        "id": "warranty",
+        "name": "Warranty"
+      }
+    ]
+  },
+  "asset": {
+    "details": {
+      "sections": [
+        {
+          "id": "basic",
+          "name": "Overview",
+          "fields": [
+            {
+              "id": "name"
+            },
+            {
+              "id": "code"
+            },
+            {
+              "id": "secondaryCode"
+            },
+            {
+              "id": "serialNumber"
+            },
+            {
+              "id": "installedOn"
+            },
+            {
+              "id": "supplier"
+            }
+          ]
+        },
+        {
+          "id": "customerEtc",
+          "name": "Customer/Technician",
+          "fields": [
+            {
+              "id": "customerName",
+              "target": "customer",
+              "targetIdField": "customer._id"
+            },
+            {
+              "id": "contact",
+              "type": "contact"
+            },
+            {
+              "id": "locatedAt"
+            },
+            {
+              "id": "address",
+              "type": "address"
+            },
+            {
+              "id": "technicianName"
+            },
+            {
+              "id": "orgUnit"
+            }
+          ]
+        },
+        {
+          "id": "contract",
+          "name": "Contract",
+          "fields": [
+            {
+              "id": "contractNamePlain"
+            },
+            {
+              "id": "contractCode"
+            }
+          ]
+        }
+      ]
+    },
+    "fields": {
+      "serialNumber": {
+        "label": "Serial Number",
+        "required": false,
+        "isOptional": true,
+        "isUnique": true
+      },
+      "code": {
+        "visibility": {
+          "list": true
+        }
+      },
+      "supplier": {
+      }
+    },
+    "open": {
+      "actions": {
+        "captureMeterReading": true
+      }
+    },
+    "ownershipTypes": [
+      {
+        "id": "customer_owned",
+        "name": "Customer Owned"
+      },
+      {
+        "id": "on_hire",
+        "name": "On Hire"
+      },
+      {
+        "id": "on_rental",
+        "name": "On Rental"
+      }
+    ],
+    "defaultOwnershipType": "customer_owned"
+  },
+  "product": {
+    "code": false
+  },
+  "customer": {
+    "types": [
+      {
+        "id": "business",
+        "name": "Business"
+      },
+      {
+        "id": "individual",
+        "name": "Individual"
+      }
+    ]
+  },
+  "orgUnit": {
+    "isEnabled": false
+  },
+  "technicianLocation": {
+    "isEnabled": true
+  },
+  "orgUnitProfile": {
+    "isEnabled": true,
+    "isGlobal": true
+  },
+  "strings": {
+    "asset": {
+      "raiseSupportRequest": "Log Complaint",
+      "fields": {
+        "supplier": "Purchased From"
+      }
+    }
+  }
+}

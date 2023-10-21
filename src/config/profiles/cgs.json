@@ -1,0 +1,89 @@
+{
+  "name": "Compu Graphics Systems",
+  "shortName": "cgs",
+  "logo": "/images/logos/cgs.png",
+  "qrCodeStickerLogo": "/images/logos/cgs_qr.png",
+  "code": "T8RDR1PE",
+  "owner": {
+    "name": "Compu Graphics Systems",
+    "uniqueId": "service@compugraphics.co.in"
+  },
+  "roundupEmail-disabled": ["amit@compugraphics.co.in", "gurunath@compugraphics.co.in", "admin@compugraphics.co.in"],
+  "website": "www.compugraphics.co.in",
+  "support": {
+    "numbers": ["+91 7660070707"],
+    "email": "service@compugraphics.co.in"
+  },
+  "ticket": {
+    "descSuggestions": [
+      {
+        "id": "PAPER JAM",
+        "name": "PAPER JAM"
+      },
+      {
+        "id": "COPY QUALITY ISSUES",
+        "name": "COPY QUALITY ISSUES"
+      },
+      {
+        "id": "SOUND PROBLEM",
+        "name": "SOUND PROBLEM"
+      },
+      {
+        "id": "CONTROL PANEL/TOUCH ISSUES",
+        "name": "CONTROL PANEL/TOUCH ISSUES"
+      },
+      {
+        "id": "SCANNING ISSUES",
+        "name": "SCANNING ISSUES"
+      },
+      {
+        "id": "PRINTING ISSUES",
+        "name": "PRINTING ISSUES"
+      },
+      {
+        "id": "ERROR CODE",
+        "name": "ERROR CODE"
+      },
+      {
+        "id": "PAPER DETECTION",
+        "name": "PAPER DETECTION"
+      },
+      {
+        "id": "DADF ISSUES",
+        "name": "DADF ISSUES"
+      },
+      {
+        "id": "LOGIN ISSUES",
+        "name": "LOGIN ISSUES"
+      },
+      {
+        "id": "USB NOT WORKING",
+        "name": "USB NOT WORKING"
+      },
+      {
+        "id": "DOOR NOT FIXING",
+        "name": "DOOR NOT FIXING"
+      },
+      {
+        "id": "PAPER FEEDING",
+        "name": "PAPER FEEDING"
+      },
+      {
+        "id": "OTHERS",
+        "name": "OTHERS"
+      }
+    ]
+  },
+  "asset": {
+    "hasMeter": true,
+    "open":{
+      "actions": {
+        "raiseSupportTicket": true,
+        "requestForConsumables": true,
+        "raiseInstallationTicket": true,
+        "viewServiceHistory": true,
+        "captureMeterReading": false
+      }
+    }
+  }
+}

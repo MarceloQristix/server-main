@@ -1,0 +1,71 @@
+{
+  "size": "small",
+  "name": "Elanprofessional Appliances Private Limited",
+  "legalName": "Elanprofessional Appliances Private Limited",
+  "registeredAddress": "C 95 KSSIDC INDUSTRIAL AREA,MAHADEVPURA,BANGALORE",
+  "shortName": "elanpro",
+  "logo": "/images/logos/elanpro.jpeg",
+  "qrCodeStickerLogo": "/images/logos/elanpro.jpeg",
+  "code": "KC18TUH0",
+  "owner": {
+    "name": "Elanpro",
+    "uniqueId": "ramesh@elanpro.net"
+  },
+  "roundupEmail": [
+    "ramesh@elanpro.net", "shashanksaksena@elanpro.net" , "amitmenon@elanpro.net"
+  ],
+  "website": "",
+  "support": {
+    "title4Numbers": "In case of emergency",
+    "numbers": [
+      "+91 8882302532"
+    ],
+    "email": "care@elanpro.net",
+    "whatsapp": ""
+  },
+  "qrSticker": {
+    "orientation": "landscape",
+    "topLine": "Scan this QRCode to Request Service or Order Supplies.",
+    "size": "large",
+    "includePrimaryIdentifier": true
+  },
+  "product": {
+    "code": false
+  },
+  "model": {
+    "code": false
+  },
+  "sparePart": {
+    "code": false
+  },
+  "accessory": {
+    "code": false
+  },
+  "consumable": {
+    "isEnabled": true,
+    "code": false
+  },
+  "ticket": {
+    "updateStatus": true,
+    "trackLocation": true
+  },
+  "asset": {
+    "primaryIdentifier": "serialNumber",
+    "hasMeter": false,
+    "open": {
+      "actions": {
+        "raiseSupportTicket": true,
+        "requestForConsumables": true,
+        "viewServiceHistory": true,
+        "captureMeterReading": false
+      }
+    }
+  },
+  "attendance": {
+    "isEnabled": true
+  },
+  "site": {
+    "isEnabled": true,
+    "isQRCodesEnabled": true
+  }
+}

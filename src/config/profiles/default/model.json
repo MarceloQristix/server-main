@@ -1,0 +1,112 @@
+{
+  "hasMeters": true,
+  "isEnabled": true,
+  "code": true,
+  "actions": {
+    "create": true,
+    "list": true,
+    "edit": true
+  },
+  "list": {
+    "fields": [ 
+      {
+        "id": "name",
+        "width": "60",
+        "target": "model",
+        "targetIdField": "id"
+      },
+      {
+        "id": "productName",
+        "width": "40"
+      },
+      {
+        "id":"code",
+        "width":"40"
+      }
+    ]
+  },
+  "details": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "productName"
+          },
+          {
+            "id": "name"
+          },
+          {
+            "id": "code"
+          },
+          {
+            "id": "desc"
+          },
+          {
+            "id": "meterTypes",
+            "type": "array"
+          }
+        ]
+      }
+    ]
+  },
+  "edit": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "productId",
+            "isPrimary": true,
+            "required": true,
+            "type":"select"
+          },
+          {
+            "id": "name",
+            "isPrimary": true,
+            "required": true
+          },
+          {
+            "id": "code",
+            "isPrimary": true,
+            "required": true
+          },
+          {
+            "id": "desc",
+            "isPrimary": true
+          },
+          {
+            "id": "meterTypes",
+            "isPrimary": true,
+            "type": "multiselect"
+          },
+          {
+            "id": "hasMeters"
+          }
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "productId": {
+      "path":"product._id",
+      "formFieldPath":"productId"
+    },
+    "productName": {
+      "path":"product.name"
+    },
+    "name": {
+    },
+    "code":{
+    },
+    "desc":{
+    },
+    "meterTypes":{
+    },
+    "hasMeters": {
+
+    }
+  }
+}

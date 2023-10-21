@@ -1,0 +1,272 @@
+{
+  "size": "small",
+  "name": "Tili Kitchens",
+  "shortName": "tilikitchens",
+  "logo": "/images/logos/tilikitchens.png",
+  "qrCodeStickerLogo": "/images/logos/tilikitchens_qr.png",
+  "code": "WDEHXR5Y",
+  "owner": {
+    "name": "Tili",
+    "uniqueId": "tilikitchens@gmail.com"
+  },
+  "roundupEmail": [
+    "tilikitchens@gmail.com"
+  ],
+  "website": "www.tilikitchens.in",
+  "registeredAddress": "",
+  "legalName": "Tili Kitchens",
+  "support": {
+    "email": "info@tilikitchens.in",
+    "whatsapp": [
+      "+91 93531 04446 /",
+      "+91 9742252500"
+    ]
+  },
+  "qrSticker": {
+    "site": {
+      "orientation": "landscape"
+    },
+    "helpText": [
+      "Scan for Project Details ",
+      "& Service Request"
+    ]
+  },
+  "site": {
+    "isEnabled": true,
+    "isQRCodesEnabled": true,
+    "qrCode": {
+      "isEnabled": true
+    },
+    "autoCreateFromCustomer": true
+  },
+  "ticket": {
+    "pmAssetPhotoRequired": false,
+    "actions": {
+      "quickClose": true
+    },
+    "actionsDef": {
+      "quickClose": {
+        "cond": {
+          "subType": "*"
+        }
+      }
+    },
+    "scope": {
+      "site": {
+        "quickClose": true
+      }
+    },
+    "autoAssignment": {
+      "isEnabled": false
+    },
+    "actions": {
+      "quickClose": true
+    },
+    "fields": {
+      "referralName": {
+        "id": "contact.name"
+      },
+      "referralPhoneNumber": {
+        "id": "contact.phoneNumber"
+      }
+    },
+    "details": {
+      "sections": [
+        {
+          "id": "basic",
+          "name": "Referral Details",
+          "filterCond": {
+            "subType": "referFriend"
+          },
+          "fields": [
+            {
+              "id": "referralName"
+            },
+            {
+              "id": "referralPhoneNumber"
+            }
+          ]
+        },
+        {
+          "id": "basic",
+          "name": "Customer Details",
+          "fields": [
+            {
+              "id": "customerName"
+            }
+          ]
+        }
+      ],
+      "actions":[
+        {
+          "id":"quickClose",
+          "name":"Close"
+        }
+      ]
+    },
+    "actionDialogs": {
+      "quickClose": {
+        "title": "Close Request",
+        "sections": [
+          {
+            "id": "quickClose",
+            "name": "Close Request",
+            "fields": [
+              {
+                "id": "closureRemarks",
+                "required": true,
+                "isPrimary": true
+              }
+            ]
+          }
+        ],
+        "submit": {
+          "name": "Close"
+        }
+      }
+    },
+    "updateStatus": true,
+    "trackLocation": true,
+    "showPastDuePM": true,
+    "subTypes": [
+      {
+        "id": "requestDrawing",
+        "name": "Request Final Drawing"
+      },
+      {
+        "id": "referFriend",
+        "name": "Refer a friend"
+      }
+    ],
+    "termsAndConditions": {
+      "title": "T&C*",
+      "lines": [
+        {
+          "text": "1st Year: No service cost."
+        },
+        {
+          "text": "2nd Year Onwards:",
+          "points": [
+            "Option 1: We offer an Annual Maintenance Contract (AMC) at a cost of Rs 10,000/- for a duration of three (3) years, which can be renewed once the AMC duration is completed.",
+            "Option 2: A service charge of Rs 2,500/- will be charged, excluding hardware costs. Customers can choose either option."
+          ]
+        }
+      ]
+    }
+  },
+  "sparePart": {
+    "code": false
+  },
+  "consumable": {
+    "code": false
+  },
+  "accessory": {
+    "code": false
+  },
+  "product": {
+    "code": false,
+    "manufacturer": false,
+    "hasMeters": false
+  },
+  "contract": {
+    "types": [
+      {
+        "id": "contract",
+        "name": "Contract"
+      },
+      {
+        "id": "warranty",
+        "name": "Warranty"
+      },
+      {
+        "id": "camc",
+        "name": "CAMC"
+      },
+      {
+        "id": "amc",
+        "name": "AMC"
+      }
+    ]
+  },
+  "model": {
+    "code": false,
+    "hasMeters": false
+  },
+  "asset": {
+    "hasMeter": false,
+    "qrCode": {
+      "isEnabled": false
+    },
+    "fields": {
+      "serialNumber": {
+        "label": "Serial Number",
+        "isOptional": true,
+        "isUnique": false
+      }
+    },
+    "open": {
+      "menu": {
+        "items": [
+          {
+            "id": "raiseSupportTicket",
+            "type": "internalLink",
+            "route": ["ticket", "new"],
+            "name": "Request Service",
+            "icon": "/images/app-icons/tilikitchens/open/reapir.png",
+            "size": "xs-6",
+            "data": {
+              "sType": "support"
+            }
+          },
+          {
+            "id": "requestDrawing",
+            "type": "internalLink",
+            "route": ["ticket", "new", "subType", "requestDrawing"],
+            "name": "Request Drawing",
+            "icon": "/images/app-icons/tilikitchens/open/request_drawing.png",
+            "size": "xs-6",
+            "data": {
+              "sType": "support",
+              "name": "Request Drawing"
+            }
+          },
+          {
+            "id": "referFriend",
+            "type": "internalLink",
+            "route": ["ticket", "new", "subType", "referFriend"],
+            "name": "Refer a Friend",
+            "icon": "/images/app-icons/tilikitchens/open/referral.png",
+            "size": "xs-6"
+          },
+          {
+            "id": "giveFeedback",
+            "type": "externalLink",
+            "name": "Feedback",
+            "icon": "/images/app-icons/tilikitchens/open/feedback.png",
+            "size": "xs-6",
+            "link": "https://g.page/r/CTEx40KicCpHEBM/review"
+          },
+          {
+            "id": "visitWebsite",
+            "type": "externalLink",
+            "name": "Visit Website",
+            "icon": "/images/app-icons/tilikitchens/open/website_visit.png",
+            "size": "xs-6",
+            "link": "https://tilikitchens.in/"
+          }
+        ]
+      }
+    }
+  },
+  "strings": {
+    "ticket": {
+      "fields": {
+        "referralName": "Referral Name",
+        "referralPhoneNumber": "Referral Phone Number"
+      }
+    }
+  },
+  "attendance": {
+    "isEnabled": false
+  }
+}

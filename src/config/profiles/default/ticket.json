@@ -1,0 +1,643 @@
+{
+  "isEnabled": true,
+  "seqCodePrefix": "TKT",
+  "regType": "asset",
+  "watchers": {
+    "isEnabled": false
+  },
+  "endStatuses": [
+    "05_closed",
+    "06_cancelled"
+  ],
+  "lifeCycle": "default",
+  "periodicMaintenance": false,
+  "creationByTechnician": false,
+  "closePartPending": false,
+  "manualPMCreation": false,
+  "pmAssetPhotoRequired": true,
+  "autoAssignment": {
+    "isEnabled": true
+  },
+  "actions": {
+    "create": true,
+    "list": true,
+    "details": true,
+    "updateDueDate": true,
+    "updateStatus": true,
+    "assign": true,
+    "cancel": true,
+    "close": true,
+    "work": true,
+    "quickClose": false
+  },
+  "updateStatus": true,
+  "showPastDuePM": false,
+  "charges": false,
+  "trackWorkDuration": false,
+  "trackLocation": true,
+  "closure": {
+    "fields": {
+      "jobDone": {
+        "label": "Action Taken Details",
+        "required": false
+      }
+    }
+  },
+  "statusFlow": {
+    "sections": {
+      "sparesAndConsumablesRequired": {
+      },
+      "consumablesRequired": {
+      },
+      "technicianHoldRemarks": {
+      },
+      "sparesReplaced": {
+      },
+      "sparesAndConsumablesReplaced": {
+      },
+      "consumablesFulfilled": {
+      },
+      "services": {
+      },
+      "pmCheckList": {
+      },
+      "bdCheckList": {
+      },
+      "commissioningCheckList": {
+      },
+      "inspectionCheckList": {
+      },
+      "installationCheckList": {
+      },
+      "technicianClosingRemarks": {
+      },
+      "technicianSignature": {
+        "required": false
+      },
+      "customerSignature": {
+        "required": true
+      },
+      "serviceFeedback": {
+        "required": false
+      },
+      "serviceRating": {
+        "required": true
+      },
+      "assetPhoto": {
+        "required": true
+      },
+      "assetPhoto1": {
+        "required": true
+      },
+      "documentAtClosure": {
+        "required": false
+      }
+    },
+    "jobCompleted": {
+      "reasons": [
+        {
+          "id": "job_completed",
+          "name": "Job Completed",
+          "types": [
+            "support"
+          ],
+          "sections": [
+            {
+              "id": "technicianClosingRemarks",
+              "required": false
+            },
+            {
+              "id": "services",
+              "required": true
+            },
+            {
+              "id": "meterReadings",
+              "required": true
+            },
+            {
+              "id": "assetPhoto",
+              "required": true
+            },
+            {
+              "id": "assetPhoto1",
+              "required": false
+            },
+            {
+              "id": "documentAtClosure",
+              "required": false
+            },
+            {
+              "id": "customerSignature",
+              "required": false
+            },
+            {
+              "id": "bdCheckList",
+              "required": false
+            }
+          ],
+          "actions": [
+            {
+              "id": "customer_education",
+              "name": "Educated the Customer",
+              "sections": [
+                {
+                  "id": "jobDone",
+                  "required": false
+                },
+                {
+                  "id": "bdCheckList",
+                  "required": false
+                }
+              ]
+            },
+            {
+              "id": "repair_adjustment",
+              "name": "Repaired / Adjusted",
+              "sections": [
+                {
+                  "id": "jobDone",
+                  "required": false
+                },
+                {
+                  "id": "bdCheckList",
+                  "required": false
+                }
+              ]
+            },
+            {
+              "id": "spares_consumables_replaced",
+              "name": "Spares/Consumables Replaced",
+              "sections": [
+                {
+                  "id": "sparesAndConsumablesReplaced",
+                  "required": true
+                },
+                {
+                  "id": "bdCheckList",
+                  "required": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "not_repairable",
+          "name": "Not Repairable",
+          "types": [
+            "support"
+          ],
+          "sections": [
+            {
+              "id": "technicianClosingRemarks",
+              "required": true
+            },
+            {
+              "id": "assetPhoto",
+              "required": true
+            },
+            {
+              "id": "assetPhoto1",
+              "required": false
+            }
+          ]
+        },
+        {
+          "id": "fulfillment",
+          "name": "Fulfillment",
+          "types": [
+            "consumable_req"
+          ],
+          "sections": [
+            {
+              "id": "consumablesFulfilled",
+              "required": true
+            },
+            {
+              "id": "services",
+              "required": true
+            },
+            {
+              "id": "packageDetails",
+              "required": true
+            },
+            {
+              "id": "technicianClosingRemarks",
+              "required": false
+            },
+            {
+              "id": "meterReadings",
+              "required": true
+            }
+          ]
+        },
+        {
+          "id": "preventiveMaintenance",
+          "name": "Preventive Maintenance",
+          "types": [
+            "pm"
+          ],
+          "sections": [
+            {
+              "id": "pmCheckList",
+              "required": true
+            },
+            {
+              "id": "meterReadings",
+              "required": true
+            },
+            {
+              "id": "assetPhoto",
+              "required": true
+            },
+            {
+              "id": "assetPhoto1",
+              "required": false
+            },
+            {
+              "id": "customerSignature",
+              "required": false
+            }
+          ]
+        },
+        {
+          "id": "installation",
+          "name": "Installation",
+          "types": [
+            "installation"
+          ],
+          "sections": [
+            {
+              "id": "services",
+              "required": true
+            },
+            {
+              "id": "meterReadings",
+              "required": true
+            },
+            {
+              "id": "technicianClosingRemarks",
+              "required": true
+            },
+            {
+              "id": "customerSignature",
+              "required": false
+            },
+            {
+              "id": "assetPhoto",
+              "required": true
+            },
+            {
+              "id": "assetPhoto1",
+              "required": false
+            },
+            {
+              "id": "documentAtClosure",
+              "required": false
+            }
+          ]
+        }
+      ]
+    },
+    "jobNotCompleted": {
+      "reasons": [
+        {
+          "id": "01_spares_not_available",
+          "name": "Need Spares / Consumables",
+          "assetInfoRequired": true,
+          "types": [
+            "support"
+          ],
+          "sections": [
+            {
+              "id": "assetPhoto",
+              "required": true
+            },
+            {
+              "id": "assetPhoto1",
+              "required": false
+            },
+            {
+              "id": "sparesAndConsumablesRequired",
+              "required": true
+            },
+            {
+              "id": "meterReadings",
+              "required": true
+            },
+            {
+              "id": "technicianRemarks",
+              "required": false
+            }
+          ]
+        },
+        {
+          "id": "02_customers_unavailable",
+          "name": "Customer wasn't Available",
+          "assetInfoRequired": false,
+          "types": [
+            "support",
+            "pm",
+            "installation",
+            "inspection",
+            "commissioning",
+            "consumable_req"
+          ],
+          "sections": [
+            {
+              "id": "technicianRemarks",
+              "required": false
+            },
+            {
+              "id": "modifyAssetMapping",
+              "required": false
+            }
+          ]
+        },
+        {
+          "id": "03_awaiting_customer_approval",
+          "name": "Repair Cost Pending Customer Approval",
+          "assetInfoRequired": true,
+          "types": [
+            "support",
+            "installation",
+            "inspection",
+            "commissioning",
+            "consumable_req"
+          ],
+          "sections": [
+            {
+              "id": "technicianRemarks",
+              "required": false
+            }
+          ]
+        },
+        {
+          "id": "04_consumables_not_available",
+          "name": "Consumables Not Available",
+          "types": [
+            "consumable_req"
+          ],
+          "assetInfoRequired": true,
+          "sections": [
+            {
+              "id": "consumablesRequired",
+              "required": true
+            },
+            {
+              "id": "technicianRemarks",
+              "required": false
+            }
+          ]
+        },
+        {
+          "id": "05_site_was_not_ready",
+          "name": "Site wasn't Ready",
+          "assetInfoRequired": false,
+          "types": [
+            "support",
+            "pm",
+            "installation",
+            "inspection",
+            "commissioning",
+            "consumable_req"
+          ],
+          "sections": [
+            {
+              "id": "technicianRemarks",
+              "required": false
+            }
+          ]
+        },
+        {
+          "id": "06_need_vendor_support",
+          "name": "Need vendor / OEM Support",
+          "assetInfoRequired": true,
+          "types": [
+            ""
+          ],
+          "sections": [
+            {
+              "id": "technicianRemarks",
+              "required": false
+            }
+          ]
+        },
+        {
+          "id": "10_other",
+          "name": "Other",
+          "assetInfoRequired": false,
+          "types": [
+            "support",
+            "pm",
+            "installation",
+            "inspection",
+            "commissioning",
+            "consumable_req"
+          ],
+          "sections": [
+            {
+              "id": "technicianRemarks",
+              "required": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "status":[
+    "01_open",
+    "03_on_hold",
+    "05_closed",
+    "06_cancelled"
+  ],
+  "sType":[
+    "support",
+    "pm",
+    "consumable_req",
+    "installation",
+    "inspection",
+    "pd"
+  ],
+  "list": {
+    "filters": [
+      {
+        "id": "customerId",
+        "type": "typeahead",
+        "entity": "customer",
+        "name": "Customer",
+        "placeholder": "Type customer name/phone"
+      },
+      {
+        "id": "assetId",
+        "type": "typeahead",
+        "entity": "asset",
+        "name": "Asset",
+        "placeholder": "Type asset name"
+      },
+      {
+        "id": "assigneeId",
+        "type": "typeahead",
+        "entity": "org-user",
+        "name": "Assignee",
+        "placeholder": "Type user name/phone"
+      },
+      {
+        "id": "status",
+        "size": "col-1",
+        "type": "dropdown",
+        "name": "Status"
+      },
+      {
+        "id": "sType",
+        "size": "col-1",
+        "type": "dropdown",
+        "name": "Ticket Type"
+      }
+    ],
+    "fields": [
+      {
+        "id": "code",
+        "width": "60",
+        "target": "ticket",
+        "targetIdField": "id"
+      },
+      {
+        "id":"customerName",
+        "width":"40",
+        "target": "customer",
+        "targetIdField": "customer._id"
+      },
+      {
+        "id":"assetName",
+        "width":"40",
+        "target": "asset",
+        "targetIdField": "asset._id"
+      },
+      {
+        "id":"assetSerialNumber",
+        "width":"40"
+      },
+      {
+        "id":"desc",
+        "width":"40"
+      },
+      {
+        "id":"sType",
+        "width":"40"
+      },
+      {
+        "id":"status",
+        "width":"40"
+      },
+      {
+        "id":"lastModifiedOn",
+        "width":"40"
+      },
+      {
+        "id":"sourceText",
+        "width":"40"
+      },
+      {
+        "id":"age",
+        "width":"40"
+      },
+      {
+        "id":"assigneeName",
+        "width":"40"
+      }
+    ]
+  },
+  "edit": {
+    "sections": [
+      {
+        "id": "primary",
+        "fields": [
+          {
+            "id": "name"
+          },
+          {
+            "id": "desc"
+          },
+          {
+            "id": "sType"
+          },
+          {
+            "id": "asset"
+          },
+          {
+            "id": "customerId"
+          }
+        ]
+      }
+    ]
+  },
+  "details": {
+    "sections": [
+      {
+        "id":"basic",
+        "fields": []
+      }
+    ]
+  },
+  "fields": {
+    "code": {
+    },
+    "customerName": {
+      "path":"customer.name"
+    },
+    "assetName":{
+      "path":"asset.name"
+    },
+    "assetCode":{
+      "path":"asset.code"
+    },
+    "assetSerialNumber": {
+      "path": "asset.serialNumber"
+    },
+    "name": {
+
+    },
+    "asset": {
+
+    },
+    "age": {
+
+    },
+    "desc":{
+    },
+    "sTypeText":{
+    },
+    "statusText":{
+    },
+    "sourceText":{
+    },
+    "assigneeName":{
+      "path":"assignee.name"
+    },
+    "createdOn":{
+    },
+    "lastModifiedOn":{
+      "type": "date"
+    },
+    "status":{
+      "translateNameSpace": "status"
+    },
+    "sType":{
+      "translateNameSpace": "sType"
+    }
+  },
+  "types": [
+    {
+      "id": "support",
+      "name": "Support/Breakdown"
+    },
+    {
+      "id": "consumable_req",
+      "name": "Request for Consumables"
+    },
+    {
+      "id": "installation",
+      "name": "Request for Installation"
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>QR Codes for Assets of <%= name %> <%= fileName %></title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* background: rgb(204, 204, 204); */
+            font-family: "Roboto", sans-serif;
+            font-size: 2mm;
+            line-height: 2.5mm;
+        }
+
+        #container {
+            width: 11in;
+            min-height: 17in;
+            margin: 0.5cm auto;
+            /* border: 1px #d3d3d3d3 solid;
+            background: white; */
+        }
+
+        @page {
+            size: 11in 17in;
+        }
+
+        .portrait {
+            width: 5cm;
+            height: 7.5cm;
+        }
+
+        .landscape {
+            width: 7.5cm;
+            height: 5cm;
+            border: 1px solid grey;
+        }
+
+        .qrsticker-container {
+            margin: 5mm;
+            padding: 1mm;
+            float: left;
+            text-align: center;
+            display: block;
+            break-inside: avoid;
+        }
+
+        @media print {
+            html,
+            body {
+                width: 11in;
+                height: 17in;
+            }
+            .landscape {
+                width: 7.5cm;
+                height: 5cm;
+                border: 1px solid grey;
+            }
+        }
+    </style>
+    <% if (qrSticker.template === 'leftLogo') { %>
+        <%- include('./qr/style-leftlogo', {baseUrl, qrSticker}); %>
+    <%} else { %>
+        <%- include('./qr/style', {baseUrl, qrSticker}); %>
+    <%}%>
+</head>
+<body>
+<div id="container">
+    <% for (let index = 0 ; index < assets.length; index++){ %>
+    <div class="qrsticker-container <%= qrSticker.orientation %>">
+
+        <% if (qrSticker.template === 'leftLogo') { %>
+        <table>
+            <tbody>
+            <tr>
+                <td style="width: 50%;vertical-align: middle">
+                    <img class="logo" src="<%= baseUrl + qrCodeStickerLogo %>"/>
+                </td>
+                <td style="width:50%;">
+                    <div class="qrcode-image-container">
+                        <img class="qrcode-image"
+                             src="<%= baseUrl + assets[index].qrCodeImageUrl %>"
+                             title="<%= assets[index].qrCodeImageUrl %>"
+                        />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">
+                    <% if (assets[index].primaryIdentifier !== assets[index].code) { %>
+                        <span class="primary-identifier">
+                            <%= assets[index].primaryIdentifier %>
+                        </span>
+                    <% } %>
+                </td>
+                <td style="text-align: center">
+                    <span class="asset-code">
+                        <%= assets[index].code %>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="powered-by-container" style="margin-top:-10px">
+                        <%- include('./qr/poweredby', {baseUrl, qrSticker}); %>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <%- include('./qr/contact-info', {support, website}); %>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <% } else { %>
+            <div class="logo-container">
+                <img class="logo" src="<%= baseUrl + qrCodeStickerLogo %>"/>
+            </div>
+
+            <% if (qrSticker.topLine) { %>
+                <p>
+                    <%= qrSticker.topLine %>
+                </p>
+            <% } %>
+            <% if (qrSticker.topLine2) { %>
+                <p>
+                    <%= qrSticker.topLine2 %>
+                </p>
+            <% } %>
+
+            <div class="qrcode-image-container">
+                <img class="qrcode-image"
+                     src="<%= baseUrl + assets[index].qrCodeImageUrl %>"
+                     title="<%= assets[index].qrCodeImageUrl %>"
+                />
+            </div>
+
+            <% if (qrSticker.bottomLine) { %>
+                <p>
+                    <%= qrSticker.bottomLine %>
+                </p>
+            <% } %>
+
+            <%- include('./contact-info', {support, website}); %>
+
+            <div class="ids-container">
+                <% if (assets[index].primaryIdentifier !== assets[index].code) { %>
+                    <div class="primary-identifier">
+                        <%= assets[index].primaryIdentifier %>
+                    </div>
+                <% } %>
+                <% if (qrSticker.orientation === 'landscape') { %>
+                    <%- include('./poweredby', {baseUrl, qrSticker}); %>
+                <% } %>
+                <div class="asset-code">
+                    <%= assets[index].code %>
+                </div>
+            </div>
+
+            <% if (qrSticker.orientation === 'portrait') { %>
+                <%- include('./poweredby', {baseUrl, qrSticker}); %>
+            <% } %>
+
+        <% } %>
+    </div>
+    <% } %>
+</div>
+</body>
+</html>
+

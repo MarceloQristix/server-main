@@ -1,0 +1,204 @@
+{
+  "size": "small",
+  "flavor": "QRisTix FSM platform",
+  "i18n": {
+    "timezone": "",
+    "localeCode": "en-IN"
+  },
+  "deploymentDate": "2022-04-01",
+  "currency": "INR",
+  "countryCode": "IN",
+  "countryCoordinates": {
+    "lat": 12.998121,
+    "lng": 77.598657
+  },
+  "email": {
+    "from": {
+      "name": "",
+      "email": "account-services@qristix.com"
+    }
+  },
+  "qrSticker": {
+    "template": "01-simple-qr",
+    "orientation": "portrait",
+    "topLine": "Scan this QR Code to request support, order supplies and to share your feedback.",
+    "bottomLine": "",
+    "size": "medium",
+    "includePrimaryIdentifier": true
+  },
+  "sms": {
+    "template": {
+      "loginOTP": {
+        "name": "loginOTP",
+        "id": "1407168171858584222",
+        "text": "Hello, OTP to login to your QRisTix account is ${otp}. For security reasons, please do not share this OTP with anyone."
+      },
+      "assetMapping2Customer": {
+        "name": "bookingTracker",
+        "id": "1407168234592503349",
+        "text": "Namaste ${title} ${firstName},\n\n A warm welcome to the Awesome Toyota Family. We are delighted to receive your booking for ${model} \n For updates on the estimated delivery period, visit https://qristix.com/appv2 \n\n Team - ${orgUnitName}"
+      },
+      "assetStatusUpdate": {
+        "name": "bookingStatusUpdate",
+        "id": "1407168386462635447",
+        "text": "Namaste ${title} ${firstName},\nWe have an update about your booking ${serialNumber} for Toyota ${model}.\nTo check the updates on the estimated delivery period, visit https://bta.qristix.com\nTeam ${orgUnitName}"
+      },
+
+      "ticketCreation": {
+        "name": "ticketCreation",
+        "id": "1407169475429779259",
+        "text": "Namaste, We have registered a ticket against your request for {#var#}. The ticket number is {#var#}. Team QRisTix"
+      },
+      "ticketStatusUpdate": {
+        "name": "ticketStatusUpdate",
+        "id": "1407169475441392291",
+        "text": "Namaste, We have an update on your ticket {#var#}. The {#var#}. Team QRisTix"
+      },
+      "ticketClosure": {
+        "name": "ticketClosure",
+        "id": "1407169475448275791",
+        "text": "Namaste, This is to inform you that your ticket {#var#} for {#var#} has been closed. Team QRisTix"
+      }
+    }
+  },
+  "home": {
+    "isEnabled": true,
+    "help": {
+      "isEnabled": false
+    },
+    "actions": {
+      "menu": true,
+      "help": false
+    }
+  },
+  "subscription": {
+    "status": "subscribed",
+    "subStatus": "",
+    "expiryDate": "",
+    "message": ""
+  },
+  "report": {
+    "isEnabled": true,
+    "preferredTransformationFunction": "fun"
+  },
+  "accessory": {
+    "isEnabled": true,
+    "actions": {
+      "create": true,
+      "list": true,
+      "update": true
+    },
+    "code": true
+  },
+  "rateCard": {
+    "isEnabled": true,
+    "actions": {
+      "create": true,
+      "list": true,
+      "update": true
+    }
+  },
+  "finance": {
+    "isEnabled": true
+  },
+  "payment": {
+    "modes": [
+      {
+        "id": "cash",
+        "name": "Cash"
+      },
+      {
+        "id": "cheque",
+        "name": "Cheque"
+      },
+      {
+        "id": "others",
+        "name": "Others"
+      }
+    ]
+  },
+  "attendance": {
+    "isEnabled": true,
+    "actions": {
+      "create": true,
+      "list": true,
+      "update": true
+    }
+  },
+  "services": {
+    "isEnabled": true
+  },
+  "simpleMasters": {
+    "isEnabled": true,
+    "location": {
+      "name": "Asset Location",
+      "isEnabled": false,
+      "type": "array"
+    },
+    "ticketSuggestions": {
+      "name": "Common Problems",
+      "isEnabled": true,
+      "type": "array"
+    },
+    "ticketCategories": {
+      "isEnabled": false,
+      "type": "array"
+    }
+  },
+  "productCategory": {
+    "isEnabled": true
+  },
+  "form": {
+    "isEnabled": true,
+    "types": [
+      {
+        "id": "PMCheckList",
+        "label": "form.type.PMCheckList.label"
+      },
+      {
+        "id": "PDCheckList",
+        "label": "form.type.PDCheckList.label"
+      }
+    ]
+  },
+  "technicianPerformance": {
+    "isEnabled": true,
+    "startDay": "2023-05-30",
+    "actions": {
+      "list": true
+    },
+    "list": {
+      "search": {
+        "isDisabled": true
+      },
+      "fields": [
+        {
+          "id": "name",
+          "width": "60"
+        }
+      ]
+    },
+    "fields": {
+      "name": {
+
+      }
+    }
+  },
+  "scheduledJobs": {
+    "isEnabled": false,
+    "jobs": [
+    ]
+  },
+  "technicianLocation": {
+    "isEnabled": false,
+    "actions": {
+      "list": true
+    },
+    "list": {
+      "fields": []
+    },
+    "fields": {
+
+    }
+  }
+}

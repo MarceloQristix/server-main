@@ -1,0 +1,42 @@
+{
+  "name": "Qristix",
+  "countryCode": "AE",
+  "currency": "AED",
+  "shortName": "tvm",
+  "logo": "/images/logos/qristix-latest.png",
+  "qrCodeStickerLogo": "/images/logos/tvm_qr.png",
+  "legalName": "Qristix",
+  "registeredAddress": "Bengaluru, Karnataka",
+  "code": "C4YHDCWC",
+  "owner": {
+    "name": "Prasad",
+    "uniqueId": "prasadk@granulesnbeans.com"
+  },
+  "website": "www.qristix.com",
+  "support": {
+    "numbers": ["+91 96866 89997"],
+    "whatsapp": "+91 76187 46975"
+  },
+  "ticket": {
+    "notifyCustomerTicketStatusUpdate": true
+  },
+  "asset": {
+    "hasMeter": true,
+    "open":{
+      "actions": {
+        "raiseSupportTicket": true,
+        "requestForConsumables": true,
+        "raiseInstallationTicket": true,
+        "viewServiceHistory": true,
+        "captureMeterReading": false
+      }
+    }
+  },
+  "campaign": {
+    "isEnabled": true,
+    "actions": {
+      "send2Customers": true,
+      "send2EnquiryCustomers": false
+    }
+  }
+}

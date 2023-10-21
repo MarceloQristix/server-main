@@ -1,0 +1,93 @@
+{
+  "db": {
+    "orgPrefix": "org_",
+    "server": {
+      "options": {
+        "useNewUrlParser": true,
+        "useUnifiedTopology": true,
+        "poolSize": 2
+      }
+    }
+  },
+  "credentialsFilePath": "secrets/credentials.json",
+  "apiServer": {
+    "port": 3005
+  },
+  "account": {
+    "passwordExpiry": 365,
+    "lockoutPolicy" :{
+      "limitAttempts": true,
+      "maxAttempts" : 100
+    },
+    "passwordReset": {
+      "ttl" : 120,
+      "maxLength" : 6,
+      "maxRetryCount" : 3
+    }
+  },
+  "roles": [
+    {
+      "id": "root",
+      "type": "system",
+      "privileges": [
+      ]
+    },
+    {
+      "id": "admin",
+      "privileges": [
+      ]
+    },
+    {
+      "id": "enduser",
+      "privileges": [
+      ]
+    }
+  ],
+  "orgDataDir": "../data/org/",
+  "orgs": [
+    "demo",
+    "qristix",
+    "ttkprestige",
+    "tvm",
+    "ssc",
+    "ugi",
+    "alabbasdubai",
+    "alabbasabudhabi",
+    "spoton",
+    "cafedesire",
+    "eandi",
+    "godrej",
+    "tilikitchens",
+    "tkm",
+    "alabbasoman",
+    "alabbasqatar",
+    "ccpl"
+  ],
+  "inactive": [
+    "raoandco",
+    "snackit",
+    "geminicoffee",
+    "shreejimarketing",
+    "primedeq",
+    "aapsups",
+    "absonesource",
+    "cgs",
+    "joybrews",
+    "geist",
+    "essjay",
+    "elanpro"
+  ],
+  "internalUserEmailDomain": "qristix.com",
+  "sysUser": {
+    "name": "System",
+    "uniqueId": "_system",
+    "role": "_system",
+    "status": "pending"
+  },
+  "rootUser": {
+    "name": "Root",
+    "uniqueId": "root",
+    "role": "_root",
+    "status": "active"
+  }
+}

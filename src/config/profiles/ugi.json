@@ -1,0 +1,78 @@
+{
+  "name": "Unigrand India",
+  "shortName": "ugi",
+  "logo": "/images/logos/ugi_logo.jpg",
+  "code": "8WE4HXCW",
+  "qrCodeStickerLogo": "/images/logos/ugi_qr_logo.jpg",
+  "website": "www.unigrandindia.com",
+  "owner": {
+    "name": "Unigrand India",
+    "uniqueId": "unigrandindia@gmail.com"
+  },
+  "roundupEmail-disabled": ["dasarathy@geminicoffeevendingindia.com"],
+  "support": {
+    "title4Numbers": "In case of emergency",
+    "email": "unigrandindia@gmail.com",
+    "numbers": ["+91 9886884162"]
+  },
+  "qrSticker": {
+    "topLine": "Scan this QR Code to Request Service or Order Supplies."
+  },
+  "ticket": {
+  },
+  "model": {
+    "code": false,
+    "hasMeters": true
+  },
+  "contract": {
+    "types": [
+      {
+        "id": "contract",
+        "name": "Contract"
+      },
+      {
+        "id": "warranty",
+        "name": "Warranty"
+      }
+    ]
+  },
+  "asset": {
+    "open": {
+      "actions": {
+        "captureMeterReading": true
+      }
+    },
+    "ownershipTypes": [
+      {
+        "id": "customer_owned",
+        "name": "Customer Owned"
+      },
+      {
+        "id": "on_hire",
+        "name": "On Hire"
+      },
+      {
+        "id": "on_rental",
+        "name": "On Rental"
+      }
+    ],
+    "defaultOwnershipType": "customer_owned"
+  },
+  "product": {
+  },
+  "customer": {
+    "types": [
+      {
+        "id": "business",
+        "name": "Business"
+      },
+      {
+        "id": "individual",
+        "name": "Individual"
+      }
+    ]
+  },
+  "orgUnit": {
+    "isEnabled": false
+  }
+}

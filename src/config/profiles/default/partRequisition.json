@@ -1,0 +1,268 @@
+{
+  "isEnabled": true,
+  "code": true,
+  "holdReasons": [
+    {
+      "id": "Waiting for parts",
+      "name": "Waiting for parts"
+    },
+    {
+      "id": "Waiting for customer approval",
+      "name": "Waiting for customer approval"
+    }
+  ],
+  "actions": {
+    "create": false,
+    "list": true,
+    "edit": false
+  },
+  "endStatuses": [
+    "fulfilled",
+    "cancelled"
+  ],
+  "status":[
+    "open",
+    "hold",
+    "fulfilled",
+    "cancelled"
+  ],
+  "list": {
+    "filters": [
+      {
+        "id": "requesterId",
+        "type": "typeahead",
+        "entity": "org-user",
+        "name": "Requester",
+        "placeholder": "Type requester name"
+      },
+      {
+        "id": "status",
+        "type": "dropdown",
+        "name": "Status"
+      },
+      {
+        "id": "holdReason",
+        "type": "dropdown",
+        "name": "Hold Reason"
+      }
+    ],
+    "fields": [
+      {
+        "id": "name",
+        "width": "60",
+        "target": "part-requisition",
+        "targetIdField": "id"
+      },
+      {
+        "id":"sourceTicketCode",
+        "width":"40"
+      },
+      {
+        "id":"requesterName",
+        "width":"40"
+      },
+      {
+        "id":"customerName",
+        "width":"40"
+      },
+      {
+        "id":"newTicketCode",
+        "width":"40"
+      },
+      {
+        "id":"status",
+        "width":"40"
+      },
+      {
+        "id":"holdReason",
+        "width":"40"
+      },
+      {
+        "id":"createdOn",
+        "width":"40"
+      },
+      {
+        "id":"fulfilledOn",
+        "width":"40"
+      },
+      {
+        "id":"issuedToName",
+        "width":"40"
+      }   
+    ]
+  },
+  "details": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name",
+            "width": "60"
+          },
+          {
+            "id":"sourceTicketCode",
+            "width":"40"
+          },
+          {
+            "id":"requesterName",
+            "width":"40"
+          },
+          {
+            "id":"createdOn",
+            "width":"40"
+          }
+        ]
+      },
+      {
+        "id": "asset",
+        "name": "Asset",
+        "fields": [
+          {
+            "id":"assetSerialNumber",
+            "width":"40"
+          },
+          {
+            "id":"assetLocatedAt",
+            "width":"40"
+          },
+          {
+            "id":"assetAddress",
+            "width":"40"
+          },
+          {
+            "id":"customerName",
+            "width":"40"
+          },
+          {
+            "id":"contractCode",
+            "width":"40"
+          }
+        ]
+      },
+      {
+        "id": "issue",
+        "name": "Fulfilling Details",
+        "fields": [
+          {
+            "id":"issuedToName",
+            "width":"40"
+          },
+          {
+            "id":"newTicketCode",
+            "width":"40"
+          },
+          {
+            "id":"fulfilledOn",
+            "width":"40"
+          },
+          {
+            "id":"remarks",
+            "width":"40"
+          },
+          {
+            "id": "updateRemarks"
+          },
+          {
+            "id":"holdReason",
+            "width":"40"
+          },
+          {
+            "id":"holdRemarks",
+            "width":"40"
+          },
+          {
+            "id":"holdOn",
+            "width":"40"
+          }
+        ]
+      }
+    ]
+  },
+  "edit": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name",
+            "isPrimary": true,
+            "required":true
+          }
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "name": {
+    },
+    "sourceTicketCode": {
+      "path": "sourceTicket.code",
+      "target": "ticket",
+      "targetIdField": "sourceTicket._id"
+    },
+    "requesterName": {
+      "path": "requester.name"
+    },
+    "customerName": {
+      "path": "asset.customer.name",
+      "target": "customer",
+      "targetIdField": "asset.customer._id"
+    },
+    "status": {
+      "translateNameSpace": "status"
+    },
+    "holdReason": {
+    },
+    "holdOn": {
+      "type": "date",
+      "format": "d MMM YY hh:mm a"
+    },
+    "holdRemarks": {
+    },
+    "updateRemarks": {
+    },
+    "remarks": {
+    },
+    "createdOn": {
+      "type": "date",
+      "format": "d MMM YY"
+    },
+    "fulfilledOn": {
+      "type": "date",
+      "format": "d MMM YY"
+    },
+    "issuedToName": {
+      "path": "issuedTo.name"
+    },
+    "newTicketCode": {
+      "path": "newTicket.code",
+      "target": "ticket",
+      "targetIdField": "newTicket._id"
+    },
+    "contractCode": {
+      "path": "asset.contract.code",
+      "target": "contract",
+      "targetIdField": "asset.contract._id"
+    },
+    "assetCode": {
+      "path": "asset.code",
+      "target": "asset",
+      "targetIdField": "asset._id"
+    },
+    "assetSerialNumber": {
+      "path": "asset.serialNumber",
+      "target": "asset",
+      "targetIdField": "asset._id"
+    },
+    "assetLocatedAt": {
+      "path": "assetExt.locatedAt"
+    },
+    "assetAddress": {
+      "path": "assetExt.address",
+      "type": "address"
+    }
+  }
+}

@@ -1,0 +1,471 @@
+{
+  "isEnabled": true,
+  "code": true,
+  "actions": {
+    "create": true,
+    "list": true,
+    "edit": true,
+    "update": true,
+    "updatePasswd": true,
+    "activate": true,
+    "deactivate": true,
+    "sendWelcomeEmail": true
+  },
+  "additionalDetails": {
+    "isEnabled": true
+  },
+  "welcomeMessage": {
+    "sms": false,
+    "email": "true"
+  },
+  "status":[
+    "active",
+    "blocked"
+  ],
+  "roles": [
+    {
+      "id": "officeStaff",
+      "name": "Office Staff",
+      "dataScope": {
+        "default": "self"
+      },
+      "access": {
+      },
+      "weight": 12
+    },
+    {
+      "id": "technician",
+      "name": "Technician",
+      "dataScope": {
+        "default": "self"
+      },
+      "access": {
+        "ticket": {
+          "updateDueDate": false,
+          "work": true
+        }
+      },
+      "weight": 10
+    },
+    {
+      "id": "manager",
+      "name": "Manager",
+      "dataScope": {
+        "org-user": "reports",
+        "attendance": "reports"
+      },
+      "access": {
+        "ticket": {
+          "updateDueDate": true,
+          "assign": true,
+          "cancel": true,
+          "work": true
+        },
+        "menu": {
+          "manage": true
+        },
+        "orgUser": {
+          "create": true,
+          "update": true,
+          "list": true,
+          "updatePasswd": true,
+          "deactivate": true
+        }
+      },
+      "hasReports": true,
+      "weight": 8
+    },
+    {
+      "id": "supervisor",
+      "name": "Supervisor",
+      "dataScope": {
+        "default": "reports"
+      },
+      "access": {
+        "ticket": {
+          "updateDueDate": true,
+          "updateStatus": true,
+          "assign": true,
+          "cancel": true,
+          "work": true
+        }
+      },
+      "hasReports": true,
+      "weight": 8
+    },
+    {
+      "id": "business_head",
+      "name": "Business Head",
+      "access": "*",
+      "hasReports": true,
+      "weight": 3
+    }
+  ],
+  "list": {
+    "filters": [ 
+      {
+        "id": "role",
+        "type": "dropdown",
+        "name": "Role"
+      },
+      {
+        "id": "globalUser.status",
+        "type": "dropdown",
+        "name": "Status"
+      },
+      {
+        "id": "reportsTo",
+        "type": "typeahead",
+        "entity": "org-user",
+        "name": "Reports To",
+        "placeholder": "Type user name/phone"
+      }
+    ],
+    "fields": [
+      {
+        "id":"name",
+        "width":"40",
+        "target": "org-user",
+        "targetIdField": "id"
+      },
+      {
+        "id":"code",
+        "width":"40"
+      },
+      {
+        "id":"loginId",
+        "width":"40"
+      },
+      {
+        "id":"belongsToName",
+        "width":"40"
+      },
+      {
+        "id":"reportsToName",
+        "width":"40"
+      },
+      {
+        "id":"roleText",
+        "width":"40"
+      }
+    ]
+  },
+  "details": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id":"name",
+            "width":"40"
+          },
+          {
+            "id":"code",
+            "width":"40"
+          },
+          {
+            "id":"loginId",
+            "width":"40"
+          },
+          {
+            "id":"belongsToName",
+            "width":"40"
+          },
+          {
+            "id":"reportsToName",
+            "width":"40"
+          },
+          {
+            "id":"roleText",
+            "width":"40"
+          },
+          {
+            "id":"globalUser.phoneNumber",
+            "width":"40"
+          },
+          {
+            "id":"globalUser.email",
+            "width":"40"
+          }
+        ]
+      },
+      {
+        "id": "additional",
+        "name": "Additional Details",
+        "fields": [
+          {
+            "id":"doj",
+            "width":"40"
+          },
+          {
+            "id":"dob",
+            "width":"40"
+          },
+          {
+            "id": "remarks"
+          }
+        ]
+      }
+    ],
+    "actions":[
+      {
+        "id":"activate",
+        "name":"Activate"
+      },
+      {
+        "id":"deactivate",
+        "name":"Deactivate"
+      },
+      {
+        "id": "updatePasswd",
+        "name": "Update Password"
+      }
+    ]
+  },
+  "actionDialogs":{
+    "activate":{
+      "title":"Do you want to activate?",
+      "sections": [
+        {
+          "id": "act",
+          "name": "",
+          "fields": [
+            {
+              "id": "remarks",
+              "required": true,
+              "isPrimary": true
+            }
+          ]
+        }
+      ],
+      "submit": {
+        "name": "Activate"
+      }
+    },
+    "deactivate":{
+      "title":"Do you want to deactivate?",
+      "sections": [
+        {
+          "id": "deact",
+          "name": "",
+          "fields": [
+            {
+              "id": "remarks",
+              "required": true,
+              "isPrimary": true
+            }
+          ]
+        }
+      ],
+      "submit": {
+        "name": "Deactivate"
+      }
+    },
+    "updatePasswd":{
+      "title":"Update Password",
+      "sections": [
+        {
+          "id": "updatepasswd",
+          "name": "",
+          "fields": [
+            {
+              "id": "password",
+              "required": true,
+              "isPrimary": true
+            }
+          ]
+        }
+      ],
+      "submit": {
+        "name": "Update"
+      }
+    }
+  },
+  "edit": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Primary Details",
+        "size": "col-4",
+        "fields": [
+          {
+            "id":"firstName",
+            "width":"40",
+            "isPrimary":true,
+            "required":true
+          },
+          {
+            "id":"lastName",
+            "width":"40",
+            "isPrimary":true
+          },
+          {
+            "id":"code",
+            "width":"40",
+            "isPrimary":true
+          },
+          {
+            "id":"globalUser.uniqueId",
+            "width":"40",
+            "isPrimary":true,
+            "required":true
+          },
+          {
+            "id":"globalUser.phoneNumber",
+            "width":"40",
+            "isPrimary":true
+          },
+          {
+            "id":"globalUser.email",
+            "width":"40",
+            "isPrimary":true
+          }
+        ]
+      },
+      {
+        "id": "org",
+        "name": "Organization",
+        "size": "col-4",
+        "fields": [
+          {
+            "id":"role",
+            "width":"40",
+            "type":"select",
+            "required": true,
+            "isPrimary":true
+          },
+          {
+            "id":"belongsToId",
+            "width":"40",
+            "isPrimary":true,
+            "type":"select"
+          },
+          {
+            "id":"reportsToId",
+            "width":"40",
+            "isPrimary":false,
+            "type":"select"
+          }
+        ],
+        "todifields":[
+          {
+            "id":"clusterId",
+            "width":"40",
+            "isPrimary":true,
+            "type":"select"
+          },
+          {
+            "id":"siteId",
+            "width":"40",
+            "isPrimary":true
+          }
+        ]
+      },
+      {
+        "id": "additional",
+        "name": "Additional Details",
+        "size": "col-4",
+        "fields": [
+          {
+            "id":"doj",
+            "width":"40",
+            "isPrimary":true
+          },
+          {
+            "id":"dob",
+            "width":"40",
+            "isPrimary":true
+          },
+          {
+            "id":"uan",
+            "width":"40",
+            "isPrimary":true
+          },
+          {
+            "id":"esin",
+            "width":"40",
+            "isPrimary":true
+          },
+          {
+            "id":"bloodGroup",
+            "width":"40",
+            "isPrimary":true,
+            "type":"select"
+          }
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "lastName":{
+    },
+    "firstName":{
+    },
+    "name": { 
+    },
+    "code": {
+      "required": true
+    },
+    "loginId":{
+      "path":"globalUser.uniqueId"
+    },
+    "globalUser.uniqueId":{
+      "path":"globalUser.uniqueId"
+    },
+    "globalUser.email":{
+      "path":"globalUser.email" 
+    },
+    "globalUser.phoneNumber":{
+      "path":"globalUser.phoneNumber"
+    },
+    "role":{
+    },
+    "belongsToName":{
+      "path":"orgUnit.name"
+    },
+    "reportsToName":{
+      "path":"reportsTo.name"
+    },
+    "belongsToId":{
+      "path":"orgUnit._id",
+      "formFieldPath": "orgUnit"
+    },
+    "reportsToId":{
+      "path":"reportsTo._id"
+    },
+    "clusterId":{
+      "reference":"cluster"
+    },
+    "siteId":{
+      "reference":"site"
+    },
+    "dob":{
+      "type":"date",
+      "format": "d MMM YY"
+    },
+    "doj":{
+      "type":"date",
+      "format": "d MMM YY"
+    },
+    "globalUser.status":{
+      "path":"globalUser.status",
+      "translateNameSpace": "status"
+    },
+    "uan":{
+
+    },
+    "esin":{
+
+    },
+    "bloodGroup":{
+
+    },
+    "remarks": {
+
+    },
+    "password": {
+
+    }
+  }
+}

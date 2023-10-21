@@ -1,0 +1,124 @@
+{
+  "id": "cancellationRequest",
+  "title": "Request for Cancellation",
+  "fields": [
+    {
+      "id": "name",
+      "name": "Reason for Cancellation",
+      "type": "select",
+      "isPrimary": true,
+      "choices": [
+        {
+          "id": "The waiting period is too long",
+          "name": "The waiting period is too long",
+          "requires": [
+            "paymentMode"
+          ]
+        },
+        {
+          "id": "My requirements / preferences have changed",
+          "name": "My requirements / preferences have changed"
+        },
+        {
+          "id": "Don't want to buy now",
+          "name": "Don't want to buy now"
+        },
+        {
+          "id": "Got a better deal elsewhere",
+          "name": "Got a better deal elsewhere"
+        }
+      ]
+    },
+    {
+      "id": "paymentMode",
+      "groupId": "custom",
+      "name": "Payment Mode",
+      "type": "select",
+      "isPrimary": true,
+      "choices": [
+        {
+          "id": "cash",
+          "name": "Cash",
+          "requires": [
+            "originalCashReceipts",
+            "cancelledCheque"
+          ]
+        },
+        {
+          "id": "debitCard",
+          "name": "Debit Card",
+          "requires": [
+            "cancelledChequeOfSameBankAccount"
+          ]
+        },
+        {
+          "id": "creditCard",
+          "name": "Credit Card",
+          "requires": [
+            "creditCardNumber",
+            "bankName"
+          ]
+        },
+        {
+          "id": "chq",
+          "name": "Chq",
+          "requires": []
+        },
+        {
+          "id": "NEFT_RTGS_IMPS",
+          "name": "NEFT/RTGS/IMPS",
+          "requires": [
+            "bankStatement"
+          ]
+        },
+        {
+          "id": "UPI_RazorPay_Payu_PAYTM",
+          "name": "UPI/Razor pay/Payu,PAYTM",
+          "requires": [
+            "bankStatement"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bankStatement",
+      "groupId": "media",
+      "type": "file",
+      "fileType": "image/*,application/pdf",
+      "name": "Bank Statement"
+    },
+    {
+      "id": "creditCardNumber",
+      "groupId": "custom",
+      "type": "creditCardNumber",
+      "name": "Credit card complete no"
+    },
+    {
+      "id": "bankName",
+      "groupId": "custom",
+      "type": "text",
+      "name": "Bank Name"
+    },
+    {
+      "id": "cancelledChequeOfSameBankAccount",
+      "groupId": "media",
+      "type": "file",
+      "fileType": "image/*,application/pdf",
+      "name": "Cancelled chq of same Bank Account"
+    },
+    {
+      "id": "cancelledCheque",
+      "groupId": "media",
+      "type": "file",
+      "fileType": "image/*,application/pdf",
+      "name": "Cancelled chq"
+    },
+    {
+      "id": "originalCashReceipts",
+      "groupId": "media",
+      "type": "file",
+      "fileType": "image/*,application/pdf",
+      "name": "Original Cash receipts"
+    }
+  ]
+}

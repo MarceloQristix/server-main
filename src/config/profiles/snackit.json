@@ -1,0 +1,109 @@
+{
+  "name": "Snack it",
+  "shortName": "snackit",
+  "logo": "/images/logos/snackit_without_text.png",
+  "qrCodeStickerLogo": "/images/logos/snackit_original.jpg",
+  "code": "EYC8W1H0",
+  "website": "https://www.snackit.in",
+  "qrSticker": {
+    "topLine": "Scan the QR Code to report any complaints or to share your experience.",
+    "bottomLine": ""
+  },
+  "owner": {
+    "name": "Ashish",
+    "uniqueId": "ashish@snackit.co.in"
+  },
+  "roundupEmail-disabled": ["ashish@snackit.co.in"],
+  "support": {
+    "email": "support@snackit.in"
+  },
+  "ticket": {
+    "categories": [
+      {
+        "id": "Product Related",
+        "name": "Product Related",
+        "desc": true
+      },
+      {
+        "id": "Refunds",
+        "name": "Refunds",
+        "desc": true,
+        "subCategories": [
+          {
+            "id": "Product did not drop",
+            "name": "Product did not drop"
+          },
+          {
+            "id": "Connection Problem",
+            "name": "Connection Problem"
+          },
+          {
+            "id": "Wrong Product Vend",
+            "name": "Wrong Product Vend"
+          },
+          {
+            "id": "Product Stuck",
+            "name": "Product Stuck"
+          },
+          {
+            "id": "Amount Deducted in system but not credited in machine",
+            "name": "Amount Deducted in system but not credited in machine"
+          },
+          {
+            "id": "Any other-Please Describe",
+            "name": "Any other-Please Describe",
+            "desc": true,
+            "exclude": true
+          }
+        ]
+      },
+      {
+        "id": "Machine Related",
+        "name": "Machine Related",
+        "desc": true
+      }
+    ]
+  },
+  "asset": {
+    "hasMeter": false,
+    "open":{
+      "actions": {
+        "raiseSupportTicket": true,
+        "requestForConsumables": true,
+        "raiseInstallationTicket": false,
+        "viewServiceHistory": false,
+        "captureMeterReading": false
+      }
+    },
+    "ownershipTypes": [
+      {
+        "id": "customer_owned",
+        "name": "Customer Owned"
+      },
+      {
+        "id": "on_hire",
+        "name": "On Hire"
+      },
+      {
+        "id": "on_rental",
+        "name": "On Rental"
+      }
+    ],
+    "defaultOwnershipType": "customer_owned"
+  },
+  "customer": {
+    "types": [
+      {
+        "id": "business",
+        "name": "Business"
+      },
+      {
+        "id": "individual",
+        "name": "Individual"
+      }
+    ]
+  },
+  "orgUnit": {
+    "isEnabled": false
+  }
+}

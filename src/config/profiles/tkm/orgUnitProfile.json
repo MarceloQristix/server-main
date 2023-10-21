@@ -1,0 +1,258 @@
+{
+  "isEnabled": true,
+  "code": true,
+  "actions": {
+    "list": true,
+    "edit": true
+  },
+  "list": {
+    "fields": [
+
+    ]
+  },
+  "details": {
+    "sections": [
+      {
+        "id": "smsCreds",
+        "name": "SMS Credentials",
+        "size": "col-6",
+        "fields": [
+          {
+            "id": "apiKey",
+            "width":"40"
+          },
+          {
+            "id": "senderId",
+            "width":"40"
+          },
+          {
+            "id": "sid",
+            "width":"40"
+          },
+          {
+            "id": "pe_id",
+            "width":"40"
+          }
+        ]
+      },
+      {
+        "id": "smsTemplates",
+        "name": "SMS Template Ids",
+        "size": "col-6",
+        "fields": [
+          {
+            "id": "smsTemplateLoginOTPId"
+          },
+          {
+            "id": "smsTemplateLoginOTPText"
+          },
+          {
+            "id": "smsTemplateBookingTrackerId"
+          },
+          {
+            "id": "smsTemplateBookingTrackerText"
+          },
+          {
+            "id": "smsTemplateBookingStatusUpdateId"
+          },
+          {
+            "id": "smsTemplateBookingStatusUpdateText"
+          }
+        ]
+      },
+      {
+        "id": "misc",
+        "name": "Other Details",
+        "size": "col-6",
+        "fields": [
+          {
+            "id": "feedbackUrl",
+            "name": "Feedback Google Form Link"
+          }
+        ]
+      }
+    ]
+  },
+  "edit": {
+    "sections": [
+      {
+        "id": "smsCreds",
+        "name": "SMS Credentials",
+        "size": "col-6",
+        "fields": [
+          {
+            "id": "apiKey",
+            "isPrimary":true,
+            "width":"40"
+          },
+          {
+            "id": "senderId",
+            "isPrimary":true,
+            "width":"40"
+          },
+          {
+            "id": "sid",
+            "isPrimary":true,
+            "width":"40"
+          },
+          {
+            "id": "pe_id",
+            "isPrimary":true,
+            "width":"40"
+          }
+        ]
+      },
+      {
+        "id": "smsTemplates",
+        "name": "SMS Template Ids",
+        "size": "col-6",
+        "fields": [
+          {
+            "id": "smsTemplateLoginOTPId",
+            "name": "Login OTP Template ID",
+            "isPrimary":true
+          },
+          {
+            "id": "smsTemplateLoginOTPText",
+            "name": "Login OTP Template",
+            "isPrimary":true,
+            "info": "Namaste, OTP to login to your booking tracker application account is #8177#. For security reasons, please do not share this OTP with anyone. Dealership_Name"
+          },
+
+          {
+            "id": "smsTemplateBookingTrackerId",
+            "name": "Thank you for booking Template ID",
+            "isPrimary":true
+          },
+          {
+            "id": "smsTemplateBookingTrackerText",
+            "name": "Thank you for booking Template",
+            "isPrimary":true,
+            "info": "Namaste #Mr Praveen#, A warm welcome to the Awesome Toyota Family. We are delighted to receive your booking for Toyota #Fortunner#. For updates on the estimated delivery period, visit https://bta.qristix.com . Dealership_Name"
+          },
+
+          {
+            "id": "smsTemplateBookingStatusUpdateId",
+            "name": "Booking Status Update Template ID",
+            "isPrimary":true
+          },
+          {
+            "id": "smsTemplateBookingStatusUpdateText",
+            "name": "Booking Status Update Template",
+            "isPrimary":true,
+            "info": "Namaste #Mr Praveen#, We have an update about your booking #BG01AORD963852147 for Toyota Innova Hycross#. To check the updates on the estimated delivery period, visit https://bta.qristix.com . Dealership_Name"
+          },
+
+          {
+            "id": "smsTemplateTicketCreationId",
+            "name": "Ticket Creation Template ID",
+            "isPrimary":true
+          },
+          {
+            "id": "smsTemplateTicketCreationText",
+            "name": "Ticket Creation Template",
+            "isPrimary":true,
+            "info": "Namaste, We have registered a ticket against your request for {#var#}. The ticket number is {#var#}. Dealership_Name"
+          },
+
+          {
+            "id": "smsTemplateTicketStatusUpdateId",
+            "name": "Ticket Status Update Template ID",
+            "isPrimary":true
+          },
+          {
+            "id": "smsTemplateTicketStatusUpdateText",
+            "name": "Ticket Status Update Template",
+            "isPrimary":true,
+            "info": "Namaste, We have an update on your ticket {#var#}. The {#var#}. Dealership_Name"
+          },
+
+          {
+            "id": "smsTemplateTicketClosureId",
+            "name": "Ticket Closed Template ID",
+            "isPrimary":true
+          },
+          {
+            "id": "smsTemplateTicketClosureText",
+            "name": "Ticket Closed Template",
+            "isPrimary":true,
+            "info": "Namaste, This is to inform you that your ticket {#var#} for {#var#} has been closed. Dealership_Name"
+          }
+        ]
+      },
+      {
+        "id": "misc",
+        "name": "Other Details",
+        "size": "col-12",
+        "fields": [
+          {
+            "id": "feedbackUrl",
+            "isPrimary":true,
+            "name": "Customer Feedback Google Form Link"
+          }
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "apiKey": {
+      "path": "custom.apiKey"
+
+    },
+    "senderId": {
+      "path": "custom.senderId"
+    },
+    "sid":{
+      "path": "custom.sid"
+    },
+    "pe_id":{
+      "path": "custom.pe_id"
+    },
+    "feedbackUrl":{
+      "path": "custom.feedbackUrl"
+    },
+    "smsTemplateLoginOTPId": {
+      "path": "custom.smsTemplates.loginOTP.id"
+    },
+    "smsTemplateLoginOTPText": {
+      "path": "custom.smsTemplates.loginOTP.text",
+      "type": "textarea"
+    },
+    "smsTemplateBookingTrackerId": {
+      "path": "custom.smsTemplates.bookingTracker.id"
+    },
+    "smsTemplateBookingTrackerText": {
+      "path": "custom.smsTemplates.bookingTracker.text",
+      "type": "textarea"
+    },
+    "smsTemplateBookingStatusUpdateId": {
+      "path": "custom.smsTemplates.bookingStatusUpdate.id"
+    },
+    "smsTemplateBookingStatusUpdateText": {
+      "path": "custom.smsTemplates.bookingStatusUpdate.text",
+      "type": "textarea"
+    },
+    "smsTemplateTicketCreationId": {
+      "path": "custom.smsTemplates.ticketCreation.id"
+    },
+    "smsTemplateTicketCreationText": {
+      "path": "custom.smsTemplates.ticketCreation.text",
+      "type": "textarea"
+    },
+    "smsTemplateTicketStatusUpdateId": {
+      "path": "custom.smsTemplates.ticketStatusUpdate.id"
+    },
+    "smsTemplateTicketStatusUpdateText": {
+      "path": "custom.smsTemplates.ticketStatusUpdate.text",
+      "type": "textarea"
+    },
+    "smsTemplateTicketClosureId": {
+      "path": "custom.smsTemplates.ticketClosure.id"
+    },
+    "smsTemplateTicketClosureText": {
+      "path": "custom.smsTemplates.ticketClosure.text",
+      "type": "textarea"
+    }
+  }
+
+}

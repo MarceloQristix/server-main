@@ -1,0 +1,97 @@
+{
+  "isEnabled": false,
+  "actions": {
+    "create": false,
+    "list": true
+  },
+  "list": {
+    "fields": [
+      {
+        "id": "customerName",
+        "width": "20"
+      },
+      {
+        "id": "contactPhoneNumber",
+        "width": "20"
+      },
+      {
+        "id": "contactEmail",
+        "width": "20"
+      },
+      {
+        "id": "dealer"
+      },
+      {
+        "id": "createdOn"
+      }
+    ]
+  },
+  "details": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Customer",
+        "fields": [
+          {
+            "id": "customerName"
+          },
+          {
+            "id": "contactEmail",
+            "width": "20"
+          },
+          {
+            "id": "contactPhoneNumber",
+            "width": "20"
+          },
+          {
+            "id": "dealer"
+          },
+          {
+            "id": "createdOn"
+          }
+        ]
+      }
+    ]
+  },
+  "edit": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "size": "col-8",
+        "fields": [
+          {
+            "id": "name",
+            "required": true,
+            "isPrimary": true
+          }
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "title": {
+      "type": "select"
+    },
+    "name": {
+      "type":"text"
+    },
+    "code": {
+    },
+    "customerName": {
+      "path": "customer.name"
+    },
+    "dealer": {
+      "path": "orgUnit.name"
+    },
+    "contactPhoneNumber": {
+      "path": "customer.contact.phoneNumber"
+    },
+    "contactEmail": {
+      "path": "customer.contact.email"
+    },
+    "createdOn": {
+      "type": "date"
+    }
+  }
+}

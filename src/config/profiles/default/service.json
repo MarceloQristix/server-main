@@ -1,0 +1,64 @@
+{
+  "isEnabled": true,
+  "code": true,
+  "actions": {
+    "create": true,
+    "list": true,
+    "edit": true
+  },
+  "list": {
+    "fields": [
+      {
+        "id": "name",
+        "width": "60",
+        "target": "service",
+        "targetIdField": "id"
+      },
+      {
+        "id": "ticketType",
+        "width": "20"
+      }
+    ]
+  },
+  "details": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "ticketType"
+          },
+          {
+            "id": "name"
+          }
+        ]
+      }
+    ]
+  },
+  "edit": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "ticketType",
+            "isPrimary": true
+          },
+          {
+            "id": "name",
+            "isPrimary": true
+          }
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "name": {
+    },
+    "ticketType": {
+
+    }
+  }
+}

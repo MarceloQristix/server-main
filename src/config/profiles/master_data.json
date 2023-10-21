@@ -1,0 +1,157 @@
+{
+  "collection_prefix"  : "Master_",
+  "collections": [
+    {
+      "id": "product",
+      "load_fresh": true,
+      "src": [
+        {
+          "name": "ProductMaster",
+          "ID_FIELD": ["Product_Name","Product_Model", "Defect_code"],
+          "fields": [
+            {
+              "name": "Product_Name",
+              "type": "String",
+              "required": true
+            },
+            {
+              "name": "Product_Model",
+              "type": "String",
+              "required": true
+            },
+            {
+              "name": "MAKE",
+              "target": "make",
+              "type": "String",
+              "required": false
+            },
+            {
+              "name": "PRODUCT CODE",
+              "type": "String"
+            },
+            {
+              "name": "Product_Warranty",
+              "type": "String",
+              "required": true
+            },
+            {
+              "name": "Product_Visiting_Charges",
+              "type": "Number",
+              "required": true
+            },
+            {
+              "name": "Product_Service_Charges",
+              "type": "Number",
+              "required": true
+            },
+            {
+              "name": "Product_Installation_Charges",
+              "type": "Number",
+              "required": true
+            },
+            {
+              "name": "Product_Service_Provice_At",
+              "type": "String",
+              "required": true
+            },
+            {
+              "name": "Deffect_code",
+              "type": "String",
+              "required": true
+            },
+            {
+              "name": "DEFECT",
+              "type": "String",
+              "required": true
+            },
+            {
+              "name": "Traditional",
+              "target": "is_traditional",
+              "type": "String",
+              "required": true
+            },
+            {
+              "name": "TAT",
+              "type": "String",
+              "required": true
+            },
+            {
+              "name": "Installable",
+              "target": "is_installable",
+              "type": "String",
+              "required": true
+            },
+            {
+              "name": "Installation_Charges_Applicable_for_UnderWarranty",
+              "target": "is_installation_charges_applicable_for_uw",
+              "type": "String",
+              "required": false
+            },
+            {
+              "name": "Product_Service_Charges_LOCAL",
+              "type": "Number",
+              "required": true
+            },
+            {
+              "name": "Product_Service_Charges_UPCOUNTRY",
+              "type": "Number",
+              "required": true
+            },
+            {
+              "name": "Product_Installation_Charges_LOCAL",
+              "type": "Number",
+              "required": true
+            },
+            {
+              "name": "Product_Installation_Charges_UPCOUNTRY",
+              "type": "Number",
+              "required": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spare_part",
+      "src": [
+        {
+          "name": "SpareMaster",
+          "ID_FIELD": ["PRODUCT","SPARE CODE"],
+          "fields": [
+            {
+              "name"      : "PRODUCT",
+              "type"      : "String",
+              "required"  : true
+            },
+            {
+              "name"      : "SPARE DESCRIPTION",
+              "type"      : "String",
+              "target"    : "name"
+            },
+            {
+              "name"      : "SPARE CODE",
+              "type"      : "String",
+              "target"    : "code",
+              "required"  : true
+            },
+            {
+              "name"      : "Unit Price",
+              "type"      : "Number",
+              "target"    : "price"
+            },
+            {
+              "name"      : "MINIMUM OR SAFETY STOCK",
+              "type"      : "String",
+              "required"  : true
+            },
+            {
+              "name"      : "CHARGEABLE UNDER WARRANTY",
+              "type"      : "String",
+              "required"  : true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

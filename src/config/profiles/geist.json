@@ -1,0 +1,81 @@
+{
+    "name": "Geist Brewing Company",
+    "shortName": "geist",
+    "logo": "/images/logos/geist_logo.png",
+    "code": "PCPPUT4Y",
+    "qrCodeStickerLogo": "/images/logos/geist_qr_logo.png",
+    "website": "www.geist.in",
+    "owner": {
+      "name": "Siddhant Vinod",
+      "uniqueId": "siddhant.vinod@gmail.com"
+    },
+    "roundupEmail-disabled": ["siddhant@geist.in", "harsha@geist.in", "sannath@geist.in"],
+    "support": {
+      "title4Numbers": "In case of emergency",
+      "email": "service@geist.in",
+      "numbers": ["+91 9886492884","+91 9886912121"]
+    },
+    "qrSticker": {
+      "topLine": "Scan this QR Code to Request Service or Order Supplies.",
+      "size": "large"
+    },
+    "ticket": {
+      "updateStatus": true,
+      "trackWorkDuration": true
+    },
+    "model": {
+      "code": false,
+      "hasMeters": true
+    },
+    "contract": {
+      "types": [
+        {
+          "id": "contract",
+          "name": "Contract"
+        },
+        {
+          "id": "warranty",
+          "name": "Warranty"
+        }
+      ]
+    },
+    "asset": {
+      "open": {
+        "actions": {
+          "captureMeterReading": true
+        }
+      },
+      "ownershipTypes": [
+        {
+          "id": "customer_owned",
+          "name": "Customer Owned"
+        },
+        {
+          "id": "on_hire",
+          "name": "On Hire"
+        },
+        {
+          "id": "on_rental",
+          "name": "On Rental"
+        }
+      ],
+      "defaultOwnershipType": "customer_owned"
+    },
+    "product": {
+    },
+    "customer": {
+      "types": [
+        {
+          "id": "business",
+          "name": "Business"
+        },
+        {
+          "id": "individual",
+          "name": "Individual"
+        }
+      ]
+    },
+    "orgUnit": {
+      "isEnabled": false
+    }
+  }

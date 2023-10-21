@@ -1,0 +1,165 @@
+{
+  "name": "Qristix Demo",
+  "shortName": "efl",
+  "code": "TC80CUX1",
+  "logo": "/images/logos/qristix.png",
+  "qrCodeStickerLogo": "/images/logos/qristix.png",
+  "website": "",
+  "support": {
+    "numbers": ["+91 96866 89997"],
+    "whatsapp": "+91 76187 46975"
+  },
+  "owner": {
+    "name": "Vinay",
+    "uniqueId": "vinay@qristix.com"
+  },
+  "roundupEmail": ["vinay@qristix.com"],
+  "ticket": {
+    "updateStatus": true,
+    "trackLocation": true,
+    "trackWorkDuration": true
+  },
+  "contract": {
+    "types": [
+      {
+        "id": "contract",
+        "name": "Contract"
+      },
+      {
+        "id": "warranty",
+        "name": "Warranty"
+      },
+      {
+        "id": "amc",
+        "name": "AMC"
+      },
+      {
+        "id": "tg",
+        "name": "TG"
+      }
+    ]
+  },
+  "attendance": {
+    "isEnabled":  true
+  },
+  "asset": {
+    "ownershipTypes": [
+      {
+        "id": "customer_owned",
+        "name": "Customer Owned"
+      },
+      {
+        "id": "on_hire",
+        "name": "On Hire"
+      },
+      {
+        "id": "on_rental",
+        "name": "On Rental"
+      }
+    ],
+    "defaultOwnershipType": "customer_owned"
+  },
+  "product": {
+  },
+  "model": {
+    "hasMeters": true
+  },
+  "customer": {
+    "types": [
+      {
+        "id": "business",
+        "name": "Business"
+      },
+      {
+        "id": "individual",
+        "name": "Individual"
+      }
+    ],
+    "grades": [
+      {
+        "id": "regular",
+        "name": "Regular"
+      },
+      {
+        "id": "vip",
+        "name": "VIP"
+      }
+    ]
+  },
+  "orgUser" : {
+    "roles": [
+      {
+        "id": "technician",
+        "name": "Engineer",
+        "dataScope": {
+          "default": "self"
+        },
+        "access": {
+          "ticket": {
+            "assign": true,
+            "updateDueDate": false,
+            "updateStatus": true,
+            "work": true
+          }
+        },
+        "weight": 10
+      },
+      {
+        "id": "manager",
+        "name": "Manager",
+        "access": {
+          "ticket": {
+            "updateDueDate": true,
+            "updateStatus": true,
+            "assign": true,
+            "cancel": true,
+            "work": true
+          }
+        },
+        "hasReports": true,
+        "weight": 6
+      },
+      {
+        "id": "dispatcher",
+        "name": "Dispatcher",
+        "access": {
+          "ticket": {
+            "updateDueDate": true,
+            "assign": true,
+            "cancel": true,
+            "work": true
+          }
+        },
+        "hasReports": false,
+        "weight": 10
+      },
+      {
+        "id": "supervisor",
+        "name": "Supervisor",
+        "dataScope": {
+          "default": "reports"
+        },
+        "access": {
+          "ticket": {
+            "updateDueDate": true,
+            "updateStatus": true,
+            "assign": true,
+            "cancel": true,
+            "work": true
+          }
+        },
+        "hasReports": true,
+        "weight": 8
+      },
+      {
+        "id": "business_head",
+        "name": "Business Head",
+        "access": "*",
+        "hasReports": true,
+        "weight": 3
+      }
+    ]
+  },
+  "orgUnit": {
+  }
+}

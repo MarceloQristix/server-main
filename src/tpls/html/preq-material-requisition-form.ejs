@@ -1,0 +1,235 @@
+<html>
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <style>
+        .underline {
+            text-decoration: underline;
+        }
+        body{
+            padding: 1em;
+            size: A4;
+            width: 21cm;
+            height: 29.7cm;
+            font-family: Roboto, Helvetica Neue, Helvetica, Arial;
+        }
+        table {
+            width: 100%;
+            margin: 1em;
+        }
+        #materials-table {
+            border-collapse:collapse;
+            border: 1px solid gray;
+        }
+        #materials-table td,th{
+            padding:3px;
+            border:1px solid black;
+        }
+        #entity-address {
+            text-align: center;
+        }
+        #entity-logo-container {
+
+        }
+        #entity-logo {
+
+        }
+        @media print {
+            @page {
+                size: A4;
+            }
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tbody>
+        <tr>
+            <td>
+                <div id="entity-logo-container">
+                    <img id="entity-logo" alt="Logo" src="<%=logo%>">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="entity-address">
+                    <%if(orgUnit?.legalName) {%>
+                    <%=orgUnit.legalName%>,
+                    <%}%>
+                    <%if(orgUnit?.registeredAddress){%>
+                    <%=orgUnit.registeredAddress%>
+                    <%}%>
+                </p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <hr />
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <p style="text-align: right;"><small>MATERIAL REQUISITION FORM(IN-STOCK ITEMS ONLY)</small></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <b>DATE</b>: <span class="underline"><%=ticket.requestDate%></span>
+                </td>
+                <td>
+                    <b>WORK ORDER #</b>: <span class="underline"><%=ticket.code%></span>
+                </td>
+                <td>
+                    <b>Requested By</b>: <span class="underline"><%=technician?.name||''%></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+        <tr>
+            <td>
+                <b>Customer Name & Address</b>:
+                <span class="underline"><%=customer.name%>, <%=address%></span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+        <tr>
+            <td>
+                <b>Asset Name &amp; ID </b>:
+                <span class="underline"><%=asset?.name||''%></span>&nbsp;&nbsp;&nbsp;
+                <span class="underline"><%=asset?.serialNumber%></span>
+            </td>
+            <td>
+                <b>Warranty/Contract No</b>:
+                <span class="underline"><%=contract?.code||'N/A'%></span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+        <tr>
+            <td>
+                <b>Remarks</b>: <span class="underline"><%=ticket.remarks||''%></span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+        <tr>
+            <td>
+                <b>BILL TO ACCOUNT. #</b>: <span class="underline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table style="margin-bottom: 0em;">
+        <tbody>
+        <tr>
+            <td style="text-align: center;">
+                INVENTORY MATERIAL ITEM (S) NEEDED FOR SERVICE
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table id="materials-table">
+        <thead>
+            <tr>
+                <th rowspan="2">
+                    SlNo #
+                </th>
+                <th rowspan="2">
+                    Material Name
+                </th>
+                <th rowspan="2">
+                    Code
+                </th>
+                <th colspan="4">
+                    Last Replacement
+                </th>
+                <th rowspan="2">
+                    Quantity
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    Quantity
+                </th>
+                <th>
+                    Meter Readings
+                </th>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Ticket
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        <% for(let index=0, materialCount= materialsRequired.length; index< materialCount; index++) {%>
+        <%let material=materialsRequired[index];%>
+            <tr>
+                <td style="text-align: center"><%=material.serial%></td>
+                <td><%=material.name%></td>
+                <td><%=material.code||''%></td>
+                <td>
+                    <%=material.lastReplacementTicket?.quantity%>
+                </td>
+                <td>
+                    <%=material.lastReplacementTicket?.meterReadingsText%>
+                </td>
+                <td>
+                    <%=material.lastReplacementTicket?.completedOn%>
+                </td>
+                <td>
+                    <%=material.lastReplacementTicket?.code%>
+                </td>
+                <td style="text-align: center"><%=material.quantity%></td>
+            </tr>
+        <%}%>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+        <tr>
+            <% if (media?.assetPhotoAtClosure?.base64) {%>
+            <td style="width:40%;vertical-align: center" >
+                <img width="300px" height="300px" src="<%=media.assetPhotoAtClosure.base64%>" />
+            </td>
+            <%}%>
+            <% for(let index=0, numMeters= meterReadings.length; index< numMeters; index++) {%>
+                <%let meter= meterReadings[index];%>
+                <td style="width:20%;vertical-align: center; text-align:center" >
+                    <b><%=meter.name%></b>: <%=meter.reading%>
+                </td>
+            <%}%>
+        </tr>
+        </tbody>
+    </table>
+
+    <p style="margin-top: 2em;">
+        <span>DEPARTMENT HEAD/SUPERVISOR APPROVAL SIGNATURE: &nbsp; &nbsp;</span>
+        <span class="underline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+
+    <p style="margin-top: 2em;">
+        <span>STORES/WAREHOUSE HEAD/SUPERVISOR APPROVAL SIGNATURE: &nbsp; &nbsp;</span>
+        <span class="underline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+<script type="text/javascript">
+    window.onload= ()=>{
+        window.print();
+    }
+</script>
+</body>
+</html>

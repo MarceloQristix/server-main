@@ -1,0 +1,81 @@
+{
+  "isEnabled": false,
+  "code": true,
+  "actions": {
+    "create": true,
+    "list": true,
+    "edit": true
+  },
+  "list": {
+    "fields": [
+      {
+        "id": "name",
+        "width": "60",
+        "target": "cluster",
+        "targetIdField": "id"
+      },
+      {
+        "id": "secondaryCode",
+        "width": "40"
+      }
+    ]
+  },
+  "details": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name"
+          },
+          {
+            "id": "secondaryCode"
+          },
+          {
+            "id": "sites",
+            "type": "multiselect",
+            "item": {
+              "type": "entity",
+              "entity": "site"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "edit": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name",
+            "isPrimary": true,
+            "required": true
+          },
+          {
+            "id": "secondaryCode",
+            "isPrimary": true
+          },
+          {
+            "id": "sites",
+            "isPrimary": true,
+            "type": "multiselect"
+          }
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "name": {
+    },
+    "code": {
+    },
+    "secondaryCode": {
+    },
+    "sites": {
+    }
+  }
+}

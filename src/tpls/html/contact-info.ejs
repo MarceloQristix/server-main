@@ -1,0 +1,45 @@
+<div class="contact-info-container">
+    <div class="contact-info">
+        <% if (support.numbers) { %>
+            <% if (support.title4Numbers) { %>
+                <p>
+                    <%= support.title4Numbers %>
+                </p>
+            <% } %>
+            <% if (support.tollfree) { %>
+                <p>
+                Call Toll Free:
+                <span>
+                    <b>
+                        <%= support.tollfree %>
+                    </b>
+                </span>
+                </p>
+            <% } %>
+            <p>
+                <%= support.label4Numbers || 'Call' %>:
+                <b><%- support.numbers.join(" / ") %> </b>
+            </p>
+        <% } %>
+        <% if (support.whatsapp) { %>
+            <p>
+                WhatsApp:&nbsp;<b><%= support.whatsapp %></b>
+            </p>
+        <% } %>
+        <% if (support.email) { %>
+            <p>Email:
+                <a href="mailto:<%= support.email %>">
+                    <%= support.email %>
+                </a>
+            </p>
+        <% } %>
+        <% if (website) { %>
+            <p>
+                Website:
+                <a href="<%= website %>">
+                    <%= website %>
+                </a>
+            </p>
+        <% } %>
+    </div>
+</div>

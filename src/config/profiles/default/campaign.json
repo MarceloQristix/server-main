@@ -1,0 +1,128 @@
+{
+  "isEnabled": true,
+  "templateTypes": [
+    {
+      "id": "default",
+      "name": "default"
+    }
+  ],
+  "actions": {
+    "create": true,
+    "list": true,
+    "edit": true,
+    "send2Customers": false,
+    "send2EnquiryCustomers": true
+  },
+  "list": {
+    "fields": [
+      {
+        "id": "name",
+        "width": "30",
+        "target": "campaign",
+        "targetIdField":"id"
+      },
+      {
+        "id":"code",
+        "width":"20"
+      },
+      {
+        "id": "title",
+        "width": "10"
+      },
+      {
+        "id": "status",
+        "width": "5"
+      }
+    ]
+  },
+  "details": {
+    "advancedSection": false,
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name"
+          },
+          {
+            "id": "title"
+          }
+        ]
+      },
+      {
+        "id":"image",
+        "name":"Hero Image",
+        "fields":[
+          {
+            "id": "heroImage"
+          }
+        ]
+      },
+      {
+        "id":"body",
+        "name":"Content",
+        "fields":[
+          {
+            "id": "body",
+            "type": "html"
+          }
+        ]
+      }
+    ]
+  },
+  "edit": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name",
+            "isPrimary": true,
+            "required":true
+          },
+          {
+            "id": "title",
+            "isPrimary": true
+          }
+        ]
+      },
+      {
+        "id":"image",
+        "name":"Hero Image",
+        "fields":[
+          {
+            "id": "heroImage",
+            "type":"file",
+            "fileTypes":"image/*",
+            "required":true,
+            "isPrimary": true
+          }
+        ]
+      },
+      {
+        "id":"body",
+        "name":"Content",
+        "type":"wysiwyg"
+      }
+    ]
+  },
+  "fields": {
+    "name": {
+    },
+    "code":{
+    },
+    "heroImage": {
+      "path":"media.heroImage.url"
+    },
+    "body": {
+      "path": "data.body"
+    },
+    "createdOn": {
+    },
+    "title": {
+      "path": "data.title"
+    }
+  }
+}

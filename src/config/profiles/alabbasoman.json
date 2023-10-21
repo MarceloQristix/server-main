@@ -1,0 +1,288 @@
+{
+  "deploymentDate": "2023-05-17",
+  "reportsStartDate": "2023-05-17",
+  "size": "small",
+  "useShortName": true,
+  "i18n": {
+    "timezone": "",
+    "localeCode": "en-AE"
+  },
+  "email": {
+    "from": {
+      "name": "AL ABBAS INTERNATIONAL"
+    }
+  },
+  "name": "AL ABBAS INTERNATIONAL",
+  "legalName": "AL ABBAS INTERNATIONAL",
+  "registeredAddress": "PO BOX: 1164, PC: 130, AZAIBA, SULTANATE OF OMAN",
+  "shortName": "alabbasoman",
+  "logo": "/images/logos/alabbas_oman.jpg",
+  "countryCode": "OM",
+  "countryCoordinates": {"lat": 25.276987, "lng": 55.296249},
+  "currency": "OMR",
+  "qrCodeStickerLogo": "/images/logos/alabbas_oman.jpg",
+  "code": "UHK10W4E",
+  "owner": {
+    "name": "AL ABBAS INTERNATIONAL",
+    "uniqueId": "bipin.prabha@alabbasoman.com"
+  },
+  "roundupEmail1": ["bipin.prabha@alabbasoman.com"],
+  "website": "www.alabbas.com",
+  "support": {
+    "numbers": ["Tel: 24793612", "Fax: 24793619"],
+    "title4Numbers": "In case of emergency",
+    "email": "service@alabbasoman.com"
+  },
+  "qrSticker": {
+    "topLine": "Scan this QR Code to Request Service or Order Supplies.",
+    "size": "large"
+  },
+  "strings": {
+    "technician": "Engineer",
+    "asset": {
+      "fields": {
+        "technicianName": "Engineer",
+        "orgUnit": "Branch"
+      }
+    },
+    "report":{
+    }
+  },
+  "orgUser" : {
+    "roles": [
+      {
+        "id": "technician",
+        "name": "Engineer",
+        "dataScope": {
+          "default": "self"
+        },
+        "access": {
+          "ticket": {
+            "assign": true,
+            "updateDueDate": false,
+            "updateStatus": true,
+            "work": true
+          }
+        },
+        "weight": 10
+      },
+      {
+        "id": "manager",
+        "name": "Manager",
+        "access": {
+          "ticket": {
+            "updateDueDate": true,
+            "updateStatus": true,
+            "assign": true,
+            "cancel": true,
+            "work": true
+          }
+        },
+        "hasReports": true,
+        "weight": 6
+      },
+      {
+        "id": "dispatcher",
+        "name": "Dispatcher",
+        "access": {
+          "ticket": {
+            "updateDueDate": true,
+            "assign": true,
+            "cancel": true,
+            "work": true
+          }
+        },
+        "hasReports": false,
+        "weight": 10
+      },
+      {
+        "id": "supervisor",
+        "name": "Supervisor",
+        "dataScope": {
+          "default": "reports"
+        },
+        "access": {
+          "ticket": {
+            "updateDueDate": true,
+            "updateStatus": true,
+            "assign": true,
+            "cancel": true,
+            "work": true
+          }
+        },
+        "hasReports": true,
+        "weight": 8
+      },
+      {
+        "id": "business_head",
+        "name": "Business Head",
+        "access": "*",
+        "hasReports": true,
+        "weight": 3
+      }
+    ]
+  },
+  "orgUnit": {
+    "isEnabled": true,
+    "actions": {
+      "create": true,
+      "update": true,
+      "list": true
+    },
+    "types": [
+      {
+        "id": "branch",
+        "name": "Branch",
+        "isLeaf": true
+      }
+    ]
+  },
+  "ticket": {
+    "notifyCustomerTicketStatusUpdate": true,
+    "closePartPending": true,
+    "manualPMCreation": true,
+    "showPastDuePM": true,
+    "updateStatus": true,
+    "trackWorkDuration": true,
+    "trackLocation": true
+  },
+  "finance" : {
+    "isEnabled": false
+  },
+  "partRequisition": {
+    "holdReasons": [
+      {
+        "id": "Waiting for contract approval",
+        "name": "Waiting for contract approval"
+      },
+      {
+        "id": "Waiting for sales dept. Approval",
+        "name": "Waiting for sales dept. Approval"
+      },{
+        "id": "Waiting for parts",
+        "name": "Waiting for parts"
+      },{
+        "id": "Waiting for customer approval",
+        "name": "Waiting for customer approval"
+      },{
+        "id": "Waiting for inter branch transfer",
+        "name": "Waiting for inter branch transfer"
+      },
+      {
+        "id": "Credit on hold",
+        "name": "Credit on hold"
+      }
+    ]
+  },
+  "sparePart": {
+    "code": true
+  },
+  "consumable": {
+    "code": true
+  },
+  "accessory": {
+    "code": false
+  },
+  "product": {
+    "code": false,
+    "manufacturer": false,
+    "hasMeters": true
+  },
+  "model": {
+    "code": false,
+    "hasMeters": true
+  },
+  "contract": {
+    "numberPrefix": "CON",
+    "seqCounterStart": 10000,
+    "fillNameFromType": true,
+    "types": [
+      {
+        "id": "Extd WAR ATCO",
+        "name": "Extd WAR ATCO"
+      },
+      {
+        "id": "SAL",
+        "name": "SAL"
+      },
+      {
+        "id": "SAP WITHOUT DRUM/ TONER",
+        "name": "SAP WITHOUT DRUM/ TONER"
+      },
+      {
+        "id": "SAP WITHOUT TONER",
+        "name": "SAP WITHOUT TONER"
+      },
+      {
+        "id": "SAPT",
+        "name": "SAPT"
+      },
+      {
+        "id": "CHARGE",
+        "name": "CHARGE"
+      },
+      {
+        "id": "CCA",
+        "name": "CCA"
+      },
+      {
+        "id": "ATCO_TEMPORARY",
+        "name": "ATCO_TEMPORARY"
+      },
+      {
+        "id": "LP",
+        "name": "LP"
+      },
+      {
+        "id": "RENTAL",
+        "name": "RENTAL"
+      },
+      {
+        "id": "DEMO",
+        "name": "DEMO"
+      },
+      {
+        "id": "SAPT -UNLIMITED",
+        "name": "SAPT -UNLIMITED"
+      },
+      { "id": "WARRANTY",
+        "name":"WARRANTY"
+      }
+    ]
+  },
+  "attendance": {
+    "isEnabled":  true
+  },
+  "asset": {
+    "status": [
+      "01_draft",
+      "02_in_stock",
+      "04_in_use"
+    ],
+    "belongsTo": "branch",
+    "primaryIdentifier": "serialNumber",
+    "hasMeter": true,
+    "fields": {
+      "serialNumber": {
+        "label": "Serial Number",
+        "required": true
+      },
+      "secondaryCode": {
+        "label": "Equipment Id",
+        "unique": false
+      }
+    },
+    "open":{
+      "actions": {
+        "raiseSupportTicket": true,
+        "requestForConsumables": true,
+        "raiseInstallationTicket": true,
+        "viewServiceHistory": true,
+        "captureMeterReading": true
+      }
+    }
+  },
+  "dashboard": {
+    "version": "v2"
+  }
+}

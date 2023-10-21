@@ -1,0 +1,181 @@
+{
+  "isEnabled": false,
+  "code": true,
+  "primaryIdentifier": "name",
+  "actions": {
+    "list": true,
+    "edit": true
+  },
+  "list": {
+    "fields": [
+
+    ]
+  },
+  "details": {
+    "sections": [
+      {
+        "id": "smsCreds",
+        "name": "SMS Credentials",
+        "size": "col-6",
+        "fields": [
+          {
+            "id": "apiKey",
+            "width":"40"
+          },
+          {
+            "id": "senderId",
+            "width":"40"
+          },
+          {
+            "id": "sid",
+            "width":"40"
+          },
+          {
+            "id": "pe_id",
+            "width":"40"
+          }
+        ]
+      },
+      {
+        "id": "smsTemplates",
+        "name": "SMS Templates",
+        "size": "col-6",
+        "fields": [
+          {
+            "id": "smsTemplateTicketCreationId"
+          },
+          {
+            "id": "smsTemplateTicketCreationText"
+          },
+          {
+            "id": "smsTemplateTicketClosureId"
+          },
+          {
+            "id": "smsTemplateTicketClosureText"
+          }
+        ]
+      }
+    ]
+  },
+  "edit": {
+    "sections": [
+      {
+        "id": "smsCreds",
+        "name": "SMS Credentials",
+        "size": "col-6",
+        "fields": [
+          {
+            "id": "apiKey",
+            "isPrimary":true,
+            "width":"40"
+          },
+          {
+            "id": "senderId",
+            "isPrimary":true,
+            "width":"40"
+          },
+          {
+            "id": "sid",
+            "isPrimary":true,
+            "width":"40"
+          },
+          {
+            "id": "pe_id",
+            "isPrimary":true,
+            "width":"40"
+          }
+        ]
+      },
+      {
+        "id": "smsTemplates",
+        "name": "SMS Template Ids",
+        "size": "col-6",
+        "fields": [
+          {
+            "id": "smsTemplateTicketCreationId",
+            "name": "Ticket Creation Template ID",
+            "isPrimary":true
+          },
+          {
+            "id": "smsTemplateTicketCreationText",
+            "name": "Ticket Creation Template",
+            "isPrimary":true,
+            "info": "Namaste, We have registered a ticket against your request for {#var#}. The ticket number is {#var#}. Dealership_Name"
+          },
+          {
+            "id": "smsTemplateTicketClosureId",
+            "name": "Ticket Closed Template ID",
+            "isPrimary":true
+          },
+          {
+            "id": "smsTemplateTicketClosureText",
+            "name": "Ticket Closed Template",
+            "isPrimary":true,
+            "info": "Namaste, This is to inform you that your ticket {#var#} for {#var#} has been closed. Dealership_Name"
+          }
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "apiKey": {
+      "path": "custom.apiKey"
+
+    },
+    "senderId": {
+      "path": "custom.senderId"
+    },
+    "sid":{
+      "path": "custom.sid"
+    },
+    "pe_id":{
+      "path": "custom.pe_id"
+    },
+    "feedbackUrl":{
+      "path": "custom.feedbackUrl"
+    },
+    "smsTemplateLoginOTPId": {
+      "path": "custom.smsTemplates.loginOTP.id"
+    },
+    "smsTemplateLoginOTPText": {
+      "path": "custom.smsTemplates.loginOTP.text",
+      "type": "textarea"
+    },
+    "smsTemplateBookingTrackerId": {
+      "path": "custom.smsTemplates.bookingTracker.id"
+    },
+    "smsTemplateBookingTrackerText": {
+      "path": "custom.smsTemplates.bookingTracker.text",
+      "type": "textarea"
+    },
+    "smsTemplateBookingStatusUpdateId": {
+      "path": "custom.smsTemplates.bookingStatusUpdate.id"
+    },
+    "smsTemplateBookingStatusUpdateText": {
+      "path": "custom.smsTemplates.bookingStatusUpdate.text",
+      "type": "textarea"
+    },
+    "smsTemplateTicketCreationId": {
+      "path": "custom.smsTemplates.ticketCreation.id"
+    },
+    "smsTemplateTicketCreationText": {
+      "path": "custom.smsTemplates.ticketCreation.text",
+      "type": "textarea"
+    },
+    "smsTemplateTicketStatusUpdateId": {
+      "path": "custom.smsTemplates.ticketStatusUpdate.id"
+    },
+    "smsTemplateTicketStatusUpdateText": {
+      "path": "custom.smsTemplates.ticketStatusUpdate.text",
+      "type": "textarea"
+    },
+    "smsTemplateTicketClosureId": {
+      "path": "custom.smsTemplates.ticketClosure.id"
+    },
+    "smsTemplateTicketClosureText": {
+      "path": "custom.smsTemplates.ticketClosure.text",
+      "type": "textarea"
+    }
+  }
+
+}

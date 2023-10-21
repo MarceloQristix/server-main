@@ -1,0 +1,224 @@
+{
+  "isEnabled": false,
+  "isQRCodesEnabled": true,
+  "autoCreateFromCustomer": false,
+  "publicHomeProtected": false,
+  "actions": {
+    "create": true,
+    "list": true,
+    "addFiles": true,
+    "edit": true
+  },
+  "qrCode": {
+    "isEnabled": false
+  },
+  "list": {
+    "fields": [
+      {
+        "id": "name",
+        "width": "60",
+        "target": "site",
+        "targetIdField": "id"
+      },
+      {
+        "id": "code",
+        "width": "20"
+      },
+      {
+        "id": "customerName"
+      },
+      {
+        "id": "clusterName"
+      },
+      {
+        "id":"technicianName",
+        "width":"20"
+      },
+      {
+        "id":"salesExecName",
+        "width":"20"
+      },
+      {
+        "id":"numAssets", 
+        "width":"20"
+      }
+    ]
+  },
+  "details": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name"
+          },
+          {
+            "id": "code"
+          },
+          {
+            "id": "customerName"
+          },
+          {
+            "id": "clusterName"
+          },
+          {
+            "id": "technicianName"
+          },
+          {
+            "id": "salesExecName"
+          },
+          {
+            "id": "numAssets"
+          }
+        ]
+      },
+      {
+        "id": "files",
+        "name": "Files",
+        "type": "files"
+      },
+      {
+        "id": "qrCode",
+        "name": "QR Code",
+        "type": "qrCode",
+        "dependsOn": "qrCode.isEnabled"
+      }
+    ]
+  },
+  "edit": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name",
+            "required": true,
+            "isPrimary": true
+          },
+          {
+            "id": "customer",
+            "type": "singleSelect",
+            "entity": "customer",
+            "name": "Customer",
+            "placeholder": "Type customer name",
+            "isPrimary": true
+          },
+          {
+            "id": "customerId"
+          },
+          {
+            "id": "cluster",
+            "type": "singleSelect",
+            "entity": "cluster",
+            "name": "cluster",
+            "placeholder": "Type cluster code",
+            "isPrimary": true
+          },
+          {
+            "id": "clusterId"
+          },
+          {
+            "id": "technician",
+            "type": "singleSelect",
+            "entity": "org-user",
+            "name": "Technician",
+            "placeholder": "Type name",
+            "isPrimary": true
+          },
+          {
+            "id": "technicianId"
+          },
+          {
+            "id": "salesExec",
+            "type": "singleSelect",
+            "entity": "org-user",
+            "name": "Sales Exec",
+            "placeholder": "Type name",
+            "isPrimary": true
+          },
+          {
+            "id": "salesExecId"
+          }
+        ]
+      },
+      {
+        "id": "address",
+        "type": "address",
+        "name": "Address",
+        "fields": [
+          {
+            "id":"address",
+            "isPrimary":true
+          }
+        ]
+      },
+      {
+        "id": "contact",
+        "type": "contact",
+        "name": "Contact",
+        "fields": [
+          {
+            "id":"contact",
+            "required": true,
+            "isPrimary":true
+          }
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "name":{
+    },
+    "code":{
+    },
+    "customer": {
+
+    },
+    "customerId": {
+
+    },
+    "cluster": {
+
+    },
+    "clusterId": {
+
+    },
+    "technician": {
+
+    },
+    "technicianId": {
+
+    },
+    "salesExec": {
+
+    },
+    "salesExecId": {
+
+    },
+    "customerName": {
+      "path": "customer.name"
+    },
+    "clusterName": {
+      "path": "cluster.displayName"
+    },
+    "technicianName": {
+      "path":"technician.name"
+    },
+    "salesExecName": {
+      "path": "salesExec.name"
+    },
+
+    "numAssets":{
+
+    },
+    "address": {
+      "type": "address"
+    },
+    "contact": {
+      "type": "contact"
+    }
+
+  }
+}

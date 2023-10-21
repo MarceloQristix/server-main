@@ -1,0 +1,79 @@
+{
+  "isEnabled": true,
+  "code": true,
+  "actions": {
+    "create": true,
+    "list": true,
+    "edit": true
+  },
+  "mType": [
+    "product",
+    "sparePart",
+    "consumable",
+    "accessory"
+  ],
+  "list": {
+    "fields": [
+      {
+        "id": "name",
+        "width": "60",
+        "target": "sku",
+        "targetIdField": "id"
+      },
+      {
+        "id": "code",
+        "width": "20"
+      },
+      {
+        "id": "brand",
+        "width": "20"
+      }
+    ]
+  },
+  "details": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name"
+          },
+          {
+            "id": "code"
+          },
+          {
+            "id": "brand"
+          }
+        ]
+      }
+    ]
+  },
+  "edit": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name",
+            "required":true,
+            "isPrimary": true
+          },          
+          {
+            "id": "brand",
+            "isPrimary": true
+          }
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "name": {
+    },
+    "code": {
+    },
+    "brand": {
+    }
+  }
+}

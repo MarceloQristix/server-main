@@ -1,0 +1,128 @@
+{
+  "isEnabled": false,
+  "actions": {
+    "create": true,
+    "list": true,
+    "edit": false,
+    "uploadAssets": true,
+    "checkProgress": true,
+    "commit": true,
+    "dryRun": true,
+    "sendAssetStatusUpdate": true
+  },
+  "status": [
+    "queued",
+    "dryRun",
+    "commit",
+    "finished"
+  ],
+  "endStatuses": ["finished"],
+  "list": {
+    "fields": [
+      {
+        "id": "code",
+        "width": "20"
+      },
+      {
+        "id": "orgUnitName"
+      },
+      {
+        "id": "status"
+
+      },
+      {
+        "id": "createdOn",
+        "type": "date"
+      },
+      {
+        "id": "runEndAt",
+        "type": "date"
+      },
+      {
+        "id": "total"
+      },
+      {
+        "id": "processed"
+      }
+    ]
+  },
+  "details": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name"
+          },
+          {
+            "id": "code"
+          },
+          {
+            "id": "orgUnitName"
+          },
+          {
+            "id": "createdOn",
+            "type": "date"
+          },
+          {
+            "id": "runStartAt",
+            "type": "date"
+          },
+          {
+            "id": "runEndAt"
+          }
+        ]
+      }
+    ]
+  },
+  "edit": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name",
+            "required": true,
+            "isPrimary": true
+          }
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "runEndAt": {
+      "type": "date"
+    },
+    "runStartAt": {
+      "type": "date"
+    },
+    "name": {
+    },
+    "code": {
+
+    },
+    "orgUnitName": {
+      "path": "orgUnit.name"
+    },
+    "createdOn": {
+      "type": "date"
+    },
+    "lastModifiedOn": {
+
+    },
+    "total": {
+
+    },
+    "processed": {
+    },
+    "status": {
+      "translateNameSpace": "status"
+    },
+    "fileName": {
+      "path": "file.name",
+      "todo": "Need to provide a mechanism to download uploaded file"
+    }
+  }
+}

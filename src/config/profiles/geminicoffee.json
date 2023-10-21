@@ -1,0 +1,68 @@
+{
+  "name": "Unique Bevarages SA",
+  "shortName": "UniqueBev",
+  "logo": "/images/logos/unique_bevarages_logo.jpg",
+  "code": "C21YT44W",
+  "qrCodeStickerLogo": "/images/logos/unique_bevarages_logo.jpg",
+  "owner": {
+    "name": "Prasad Murthy",
+    "uniqueId": "murthy@uniquebeverages.net"
+  },
+  "roundupEmail-disabled": ["murthy@uniquebeverages.net"],
+  "support": {
+    "email": "murthy@uniquebeverages.net"
+  },
+  "ticket": {
+  },
+  "contract": {
+    "types": [
+      {
+        "id": "contract",
+        "name": "Contract"
+      },
+      {
+        "id": "warranty",
+        "name": "Warranty"
+      }
+    ]
+  },
+  "asset": {
+    "hasMeter": false,
+    "ownershipTypes": [
+      {
+        "id": "customer_owned",
+        "name": "Customer Owned"
+      },
+      {
+        "id": "on_hire",
+        "name": "On Hire"
+      },
+      {
+        "id": "on_rental",
+        "name": "On Rental"
+      }
+    ],
+    "defaultOwnershipType": "customer_owned"
+  },
+  "product": {
+    "hasMeters": false
+  },
+  "model": {
+    "hasMeters": false
+  },
+  "customer": {
+    "types": [
+      {
+        "id": "business",
+        "name": "Business"
+      },
+      {
+        "id": "individual",
+        "name": "Individual"
+      }
+    ]
+  },
+  "orgUnit": {
+    "isEnabled": false
+  }
+}

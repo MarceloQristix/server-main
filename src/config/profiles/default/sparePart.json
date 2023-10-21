@@ -1,0 +1,133 @@
+{
+  "isEnabled": true,
+  "code": true,
+  "actions": {
+    "create": true,
+    "list": true,
+    "edit": true
+  },
+  "list": {
+    "fields": [
+      {
+        "id": "name",
+        "width": "60",
+        "target": "spare-part",
+        "targetIdField": "id"
+      },
+      {
+        "id": "code",
+        "width": "20"
+      }
+    ]
+  },
+  "details": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name"
+          },
+          {
+            "id": "code"
+          },
+          {
+            "id": "desc"
+          },
+          {
+            "id":"brand"
+          },
+          {
+            "id": "manufacturer"
+          },
+          {
+            "id":"warranty"
+          },
+          {
+            "id":"listPrice"
+          },
+          {
+            "id":"packQuantity"
+          },
+          {
+            "id":"uom"
+          }
+        ]
+      }
+    ]
+  },
+  "edit": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name",
+            "isPrimary": true,
+            "required": true
+          },
+          {
+            "id": "code",
+            "isPrimary": true,
+            "required": true
+          },
+          {
+            "id": "desc",
+            "isPrimary": true
+          },
+          {
+            "id":"brand",
+            "isPrimary":true
+          },
+          {
+            "id": "manufacturer",
+            "isPrimary": true
+          },
+          {
+            "id":"warranty",
+            "isPrimary":true,
+            "type":"number"
+          },
+          {
+            "id":"listPrice",
+            "isPrimary":true,
+            "type":"number"
+          },
+          {
+            "id":"packQuantity",
+            "isPrimary":true,
+            "type":"number"
+          },
+          {
+            "id":"uom",
+            "isPrimary":true,
+            "type":"select"
+          }
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "name": {
+    },
+    "code": {
+    },
+    "uom":{
+    },
+    "packQuantity":{
+    },
+    "listPrice":{ 
+    },
+    "warranty":{
+    },
+    "brand":{
+    },
+    "manufacturer":{
+    },
+    "desc":{
+
+    }
+  }
+}

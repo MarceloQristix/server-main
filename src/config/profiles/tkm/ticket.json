@@ -1,0 +1,520 @@
+{
+  "isEnabled": true,
+  "detailsV2": true,
+  "hideDefaultFilters": true,
+  "isCustomForm": true,
+  "isAdhoc": true,
+  "notifyCustomerTicketStatusUpdate": true,
+  "isSMSEnabled": true,
+  "isCustomSMS": true,
+  "isParent2Level": true,
+  "additionalSearchFields": ["custom.vehicleNumber"],
+  "subType": [
+    "partsRelated",
+    "insuranceRelated",
+    "bookingAmountRefundRelated"
+  ],
+  "subStatus": {
+    "awaitingParts": {
+      "messages": [
+        {
+          "primaryField": "expectedDateOfPartsArrival"
+        },
+        {
+          "primaryField": "expectedDateOfDelivery"
+        }
+      ]
+    },
+    "awaitingSurveyorVisit": {
+      "messages": [
+        {
+          "primaryField": "expectedDateOfSurveyorVisit"
+        }
+      ]
+    },
+    "awaitingInsuranceApproval": {
+      "messages": [
+        {
+          "primaryField": "expectedDateOfInsuranceApproval"
+        }
+      ]
+    },
+    "awaitingDocumentsSubmission": {
+      "messages": [
+        {
+          "primaryField": "documentsSubmissionDate"
+        }
+      ]
+    },
+    "awaitingRefund": {
+      "messages": [
+        {
+          "primaryField": "refundInitiatedDate"
+        },
+        {
+          "primaryField": "expectedDateOfRefund"
+        }
+      ]
+    }
+  },
+  "actionDialogs": {
+    "quickUpdate": {
+      "title": "Update Request",
+      "sections": [
+        {
+          "id": "quickUpdate",
+          "name": "Update Request",
+          "fields": [
+            {
+              "id": "subStatus",
+              "type": "select",
+              "isPrimary": true,
+              "choices": [
+                {
+                  "id": "awaitingSurveyorVisit",
+                  "name": "Waiting for Surveyor Visit",
+                  "filterCond": {
+                    "subType": "insuranceRelated"
+                  },
+                  "requires": [
+                    "expectedDateOfSurveyorVisit"
+                  ]
+                },
+                {
+                  "id": "awaitingInsuranceApproval",
+                  "name": "Waiting for Insurance Approval",
+                  "filterCond": {
+                    "subType": "insuranceRelated"
+                  },
+                  "requires": [
+                    "expectedDateOfInsuranceApproval"
+                  ]
+                },
+                {
+                  "id": "awaitingDocumentsSubmission",
+                  "name": "Request Documents",
+                  "filterCond": {
+                    "subType": "bookingAmountRefundRelated"
+                  },
+                  "requires": [
+                    "documentsSubmissionDate"
+                  ]
+                },
+                {
+                  "id": "awaitingRefund",
+                  "name": "Initiate Refund",
+                  "filterCond": {
+                    "subType": "bookingAmountRefundRelated"
+                  },
+                  "requires": [
+                    "refundInitiatedDate",
+                    "expectedDateOfRefund"
+                  ]
+                },
+                {
+                  "id": "awaitingParts",
+                  "name": "Waiting for Parts",
+                  "filterCond": {
+                    "subType": [
+                      "partsRelated",
+                      "insuranceRelated"
+                    ]
+                  },
+                  "requires": [
+                    "expectedDateOfPartsArrival",
+                    "expectedDateOfDelivery"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "expectedDateOfPartsArrival",
+              "required": true
+            },
+            {
+              "id": "expectedDateOfSurveyorVisit",
+              "required": true
+            },
+            {
+              "id": "expectedDateOfInsuranceApproval",
+              "required": true
+            },
+            {
+              "id": "expectedDateOfDelivery",
+              "required": true
+            },
+            {
+              "id": "documentsSubmissionDate",
+              "required": true
+            },
+            {
+              "id": "refundInitiatedDate",
+              "required": true
+            },
+            {
+              "id": "expectedDateOfRefund",
+              "required": true
+            },
+            {
+              "id": "closureRemarks",
+              "isPrimary": true
+            }
+          ]
+        }
+      ],
+      "submit": {
+        "name": "Update"
+      }
+    },
+    "quickClose": {
+      "title": "Close Request",
+      "sections": [
+        {
+          "id": "quickClose",
+          "name": "Close Request",
+          "fields": [
+            {
+              "id": "closureRemarks",
+              "required": true,
+              "isPrimary": true
+            }
+          ]
+        }
+      ],
+      "submit": {
+        "name": "Close"
+      }
+    }
+  },
+  "list": {
+    "actions": [
+      {
+        "id": "quickUpdate",
+        "name": "Update"
+      },
+      {
+        "id": "quickClose",
+        "name": "Close"
+      }
+    ],
+    "filters": [
+      {
+        "id": "status",
+        "size": "col-1",
+        "type": "dropdown",
+        "name": "Status"
+      },
+      {
+        "id": "subType",
+        "size": "col-1",
+        "type": "dropdown",
+        "name": "Ticket Type",
+        "choices": [
+          {
+            "id": "insuranceRelated",
+            "name": "Insurance Claim"
+          },
+          {
+            "id": "bookingAmountRefundRelated",
+            "name": "Booking Amt Refund"
+          },
+          {
+            "id": "partsRelated",
+            "name": "Related to Parts"
+          }
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "id": "code",
+        "width": "60",
+        "routerLink": ["/", "ticket", "v2"]
+      },
+      {
+        "id": "contactName",
+        "width": "40"
+      },
+      {
+        "id": "contactPhoneNumber",
+        "width": "40"
+      },
+      {
+        "id": "orgUnitName"
+      },
+      {
+        "id": "name",
+        "width": "40"
+      },
+      {
+        "id": "subStatus",
+        "translateNameSpace": "subStatus"
+      },
+      {
+        "id": "lastModifiedOn",
+        "width": "40"
+      }
+    ]
+  },
+  "details": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Customer Details",
+        "fields": [
+          {
+            "id": "contactName"
+          },
+          {
+            "id": "contactPhoneNumber"
+          },
+          {
+            "id": "vinNumber"
+          },
+          {
+            "id": "vehicleNumber"
+          },
+          {
+            "id": "serviceDate"
+          }
+        ]
+      },
+      {
+        "id": "ticketDetails",
+        "name": "Ticket Details",
+        "fields": [
+          {
+            "id": "orgUnitName"
+          },
+          {
+            "id": "subType"
+          },
+          {
+            "id": "subStatus"
+          },
+
+          {
+            "id": "documentsSubmissionDate",
+            "filterCond": {
+              "subType": [
+                "bookingAmountRefundRelated"
+              ]
+            }
+          },
+          {
+            "id": "expectedDateOfSurveyorVisit",
+            "filterCond": {
+              "subType": [
+                "insuranceRelated"
+              ]
+            }
+          },
+          {
+            "id": "expectedDateOfInsuranceApproval",
+            "filterCond": {
+              "subType": [
+                "insuranceRelated"
+              ]
+            }
+          },
+          {
+            "id": "expectedDateOfPartsArrival",
+            "filterCond": {
+              "subType": [
+                "partsRelated",
+                "insuranceRelated"
+              ]
+            }
+          },
+          {
+            "id": "expectedDateOfDelivery",
+            "filterCond": {
+              "subType": [
+                "partsRelated",
+                "insuranceRelated"
+              ]
+            }
+          },
+          {
+            "id": "refundInitiatedDate",
+            "filterCond": {
+              "subType": "bookingAmountRefundRelated"
+            }
+          },
+          {
+            "id": "expectedDateOfRefund",
+            "filterCond": {
+              "subType": "bookingAmountRefundRelated"
+            }
+          },
+          {
+            "id": "closureRemarks"
+          }
+        ]
+      },
+      {
+        "id": "eventLog",
+        "type": "eventLog",
+        "name": "Audit Log"
+      }
+    ]
+  },
+  "edit": {
+    "sections": [
+      {
+        "id": "all",
+        "name": "",
+        "fields": [
+          {
+            "id": "orgUnitId",
+            "name": "Dealership",
+            "entity": "org-unit",
+            "type": "select",
+            "isPrimary": true,
+            "required": true,
+            "filterCond": {
+              "orgUnitType": "dealership"
+            }
+          },
+          {
+            "id": "subType",
+            "type": "select",
+            "isPrimary": true,
+            "choices": [
+              {
+                "id": "insuranceRelated",
+                "name": "Insurance Claim",
+                "requires": [
+                  "expectedDateOfSurveyorVisit"
+                ]
+              },
+              {
+                "id": "bookingAmountRefundRelated",
+                "name": "Booking Amt Refund",
+                "requires": [
+                  "documentsSubmissionDate",
+                  "refundInitiatedDate",
+                  "expectedDateOfRefund"
+                ]
+              },
+              {
+                "id": "partsRelated",
+                "name": "Related to Parts",
+                "requires": [
+                  "expectedDateOfPartsArrival",
+                  "expectedDateOfDelivery"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "vehicleNumber",
+            "required": true,
+            "isPrimary": true
+          },
+          {
+            "id": "contactName",
+            "required": true,
+            "isPrimary": true
+          },
+          {
+            "id": "contactPhoneNumber",
+            "required": true,
+            "isPrimary": true
+          },
+          {
+            "id": "vinNumber",
+            "isPrimary": true
+          },
+          {
+            "id": "serviceDate",
+            "type": "date",
+            "isPrimary": true
+          }
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "orgUnitName": {
+      "path": "orgUnit.name"
+    },
+    "subType": {
+      "translateNameSpace": "subType"
+    },
+    "vehicleNumber": {
+      "path": "custom.vehicleNumber"
+    },
+    "contactName": {
+      "path": "contact.name"
+    },
+    "contactPhoneNumber": {
+      "path": "contact.phoneNumber"
+    },
+    "vinNumber": {
+      "path": "custom.vinNumber"
+    },
+    "documentsSubmissionDate": {
+      "path": "custom.documentsSubmissionDate",
+      "type": "date"
+    },
+    "expectedDateOfDelivery": {
+      "path": "custom.expectedDateOfDelivery",
+      "type": "date"
+    },
+    "expectedDateOfPartsArrival": {
+      "path": "custom.expectedDateOfPartsArrival",
+      "type": "date"
+    },
+    "expectedDateOfSurveyorVisit": {
+      "path": "custom.expectedDateOfSurveyorVisit",
+      "type": "date"
+    },
+    "expectedDateOfInsuranceApproval": {
+      "path": "custom.expectedDateOfInsuranceApproval",
+      "type": "date"
+    },
+    "expectedDateOfPartsArrival": {
+      "path": "custom.expectedDateOfPartsArrival",
+      "caption": "Longest Parts Arrival Date",
+      "type": "date"
+    },
+    "expectedDateOfDelivery": {
+      "path": "custom.expectedDateOfDelivery",
+      "type": "date"
+    },
+    "refundInitiatedDate": {
+      "path": "custom.refundInitiatedDate",
+      "type": "date"
+    },
+    "expectedDateOfRefund": {
+      "path": "custom.expectedDateOfRefund",
+      "type": "date"
+    },
+    "subStatus": {
+      "translateNameSpace": "subStatus"
+    },
+    "serviceDate": {
+      "path": "custom.serviceDate",
+      "type": "date"
+    },
+    "closureRemarks": {
+      "path": "closure.remarks"
+    },
+    "orgUnitId": {
+    }
+  },
+  "actions": {
+    "create": true,
+    "quickClose": true,
+    "quickUpdate": true
+  },
+  "watchers": {
+    "isEnabled": true
+  },
+  "autoAssignment": {
+    "isEnabled": false
+  },
+  "lifeCycle": "closure",
+  "trackWorkDuration": false
+}

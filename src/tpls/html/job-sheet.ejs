@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Job Card for <%= ticket.code %></title>
+    <style>
+        * {
+            line-height: 1.5em;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+        body{
+            padding: 1em;
+            size: A4;
+            width: 21cm;
+            height: 29.7cm;
+            font-family: Roboto, Helvetica Neue, Helvetica, Arial;
+        }
+        table {
+            width: 100%;
+            margin: 1em;
+        }
+        #bill-table {
+            border-collapse:collapse;
+            border: 1px solid gray;
+        }
+        #bill-table td,th{
+            padding:3px;
+            border:1px solid black;
+        }
+        #entity-address {
+            text-align: center;
+        }
+        #entity-logo-container {
+
+        }
+        #entity-logo {
+
+        }
+        @media print {
+            @page {
+                size: A4;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td colspan="3" style="text-align: center;vertical-align: middle">
+                    JobSheet <br/>
+                    <%= ticket.completedOn %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="entity-logo-container">
+                        <img id="entity-logo" alt="Logo" src="<%=logo%>">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p id="entity-address">
+                        <%if(orgUnit?.legalName) {%>
+                        <%=orgUnit.legalName%>,
+                        <%}%>
+                        <%if(orgUnit?.registeredAddress){%>
+                        <%=orgUnit.registeredAddress%>
+                        <%}%>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <hr />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody><!--- customer & asset details -->
+            <tr>
+                <td style="">
+                    <b>Complaint/Ref No </b>: <span class="underline"><%= ticket.code %></span>
+                </td>
+                <td style="text-align: right">
+                    <b>Received Date Time </b>: <span class="underline"><%= ticket.creationDateTime %></span>
+                </td>
+            </tr>
+        <tr>
+            <td>
+
+            </td>
+            <td style="text-align: right">
+                <b>Completed Date Time </b>: <span class="underline"><%= ticket.completedDateTime %></span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <b>Customer Name & Address</b>:
+                    <span class="underline"><%=customer.name%></span> <br />
+                    <span class="underline"><%=address%></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <b>Asset Name &amp; ID </b>:
+                    <span class="underline"><%=asset?.name||''%></span>&nbsp;&nbsp;&nbsp;
+                    <span class="underline"><%=asset?.serialNumber%></span>
+                    <% if(asset.secondaryCode) { %>
+                        <span class="underline"><%= asset.secondaryCode %> </span>
+                    <%}%>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+        <tr>
+            <td>
+                <b>Warranty/Contract Details</b>:
+                <span class="underline"><%= contract?.code||'N/A' %></span>
+            </td>
+            <% if (contract.code) {%>
+            <td>
+                <span class="underline"><%= contract?.name||'N/A' %></span>
+            </td>
+            <td>
+                <b>Valid Until</b> : <span class="underline"><%= contract?.endDate||'--' %></span>
+            </td>
+            <%}%>
+        </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <b>Problem Description </b>:
+                    <span class="underline"><%= desc %></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+            <tr style="margin-bottom: 1em;">
+                <td>
+                    <b>Technician</b>:
+                    <span class="underline"><%=technician?.name||'N/A'%></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+        <tr>
+            <td>
+                <b>Resolution </b>:
+                <span class="underline"><%=resolution%></span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+        <tr>
+            <td>
+                <b>Remarks</b>: <span class="underline"><%=remarks||'N/A'%></span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+        <tr>
+            <% for(let index=0, numMeters= meterReadings.length; index< numMeters; index++) {%>
+                <%let meter= meterReadings[index];%>
+                <td style="width:20%;vertical-align: center; text-align:center" >
+                    <b><%=meter.name%></b>: <%=meter.reading%>
+                </td>
+            <%}%>
+        </tr>
+        </tbody>
+    </table>
+    <table id="bill-table">
+        <thead>
+            <tr>
+                <th>Sr No</th>
+                <th>Item</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% bill.items.forEach(function(item, index){ %>
+            <tr>
+                <td style="text-align: center">
+                    <%= index + 1 %>
+                </td>
+                <td>
+                    <%= item.name %> <%if(item.iType ==='service') { %>
+                     Service
+                    <%}%>
+                </td>
+                <td style="text-align: right">
+                    <%= item.unitPrice %>
+                </td>
+                <td style="text-align: right">
+                    <%= item.quantity %>
+                </td>
+                <td style="text-align: right">
+                    <%= item.totalPrice %>
+                </td>
+            </tr>
+        <% }) %>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="5" style="text-align: right"><%= bill.total %></td>
+        </tr>
+        </tfoot>
+    </table>
+    <table>
+        <tbody>
+            <tr>
+                <% if (media?.assetPhotoAtClosure) {%>
+                <td style="width:40%;vertical-align: center" >
+                    <img width="250px" height="250px" src="<%=media.assetPhotoAtClosure.base64||media.assetPhotoAtClosure.url%>" />
+                </td>
+                <%}%>
+                <% if (media?.assetPhoto1AtClosure) {%>
+                <td style="width:40%;vertical-align: center" >
+                    <img width="250px" height="250px" src="<%=media.assetPhoto1AtClosure.base64||media.assetPhoto1AtClosure.url%>" />
+                </td>
+                <%}%>
+                <% if (media?.customerSignature) {%>
+                <td style="width:40%;vertical-align: center" >
+                    <img width="250px" height="250px" src="<%=media.customerSignature.base64||media.customerSignature.url%>" />
+                </td>
+                <%}%>
+            </tr>
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        window.onload= ()=>{
+            window.print();
+        }
+    </script>
+
+</body>
+</html>
+

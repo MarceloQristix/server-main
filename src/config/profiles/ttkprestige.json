@@ -1,0 +1,486 @@
+{
+  "name": "TTK Prestige",
+  "shortName": "ttkprestige",
+  "logo": "/images/logos/ttkprestige.jpg",
+  "qrCodeStickerLogo": "/images/logos/ttkprestige_qr.jpg",
+  "code": "R4YX1KKK",
+  "owner": {
+    "name": "Richard",
+    "uniqueId": "servicehead@ttkprestige.com"
+  },
+  "website": "",
+  "website1": "https://www.ttkprestige.com/",
+  "support": {
+    "numbers1": [
+      "1800-123-334411"
+    ],
+    "whatsapp": "9742334411",
+    "email1": "customercare@ttkprestige.com"
+  },
+  "qrSticker": {
+    "topLine": "Great service is just a scan away.",
+    "bottomLine": "Please scan the QR Code to register a complaint."
+  },
+  "strings": {
+    "task": {
+      "label": "Upload Dealer Data",
+      "fields": {
+        "orgUnitName": "Dealership",
+        "total": "Total",
+        "status": "Status",
+        "code": "Unique Code",
+        "fileName": "File",
+        "createdOn": "Uploaded On",
+        "lastModifiedOn": "Last Updated On",
+        "runStartAt": "Last Run Started On",
+        "runEndAt": "Last Run Ended On"
+      },
+      "status": {
+        "queued": "Queued",
+        "dryRun": "Validating",
+        "commit": "Updating",
+        "finished": "Completed"
+      }
+    },
+    "site": {
+      "fields": {
+        "technicianName": "TST",
+        "salesExecName": "TSO",
+        "customerName": "Customer",
+        "customer": "Customer",
+        "technician": "TST",
+        "salesExec": "TSO",
+        "cluster": "Cluster"
+      }
+    },
+    "ticket": {
+      "supportTicketRegistrationHeading": "Report Defective Stock",
+      "problemSelectionLabel": "Nature of Complaint",
+      "warrantyStatus": {
+        "underWarranty": "Under Warranty",
+        "outOfWarranty": "Out of Warranty"
+      },
+      "fields": {
+        "code": "REQ #",
+        "closureRemarks": "Complaint Numbers on VCARE System",
+        "createdOn": "Created On",
+        "desc": "Nature of Complaint",
+        "skuQuantity": "Qty",
+        "skuModel": "Model",
+        "skuName": "Product",
+        "assetOwnerType": "Type",
+        "siteName": "Dealer",
+        "addressStr": "Address",
+        "pinCode": "Pincode",
+        "siteContactNumber": "Contact",
+        "warrantyStatus": "Warranty",
+        "purchaseDate": "D.O.P."
+      },
+      "assetOwnerType": {
+        "trader": "TRADER STOCK",
+        "customer": "CUSTOMER PRODUCT"
+      }
+    }
+  },
+  "site": {
+    "isEnabled": true,
+    "isQRCodesEnabled": true,
+    "publicHomeProtected": true,
+    "autoCreateVirtualUser": true,
+    "virtualUserRole": "dealer",
+    "open": {
+      "actions": [
+      ]
+    },
+    "fields": {
+      "technician": {
+        "filter": {
+          "role": "technician"
+        }
+      },
+      "salesExec": {
+        "filter": {
+          "role": "tso"
+        }
+      }
+    }
+  },
+  "customer": {
+  },
+  "cluster": {
+    "isEnabled": true,
+    "isGroupOfSites": true
+  },
+  "orgUser": {
+    "roles": [
+      {
+        "id": "dealer",
+        "name": "Dealer",
+        "isVirtual": true,
+        "dataScope": {
+          "default": "site"
+        },
+        "settings": {
+          "redirect2NewTicket": true
+        },
+        "access": {
+          "ticket": {
+            "create": true
+          }
+        },
+        "weight": 14
+      },
+      {
+        "id": "salesExec",
+        "name": "TSO",
+        "dataScope": {
+          "default": "site"
+        },
+        "access": {
+          "ticket": {
+            "assign": true,
+            "updateDueDate": false,
+            "updateStatus": true,
+            "work": false
+          }
+        },
+        "weight": 12
+      },
+      {
+        "id": "technician",
+        "name": "TST",
+        "dataScope": {
+          "default": "site"
+        },
+        "access": {
+          "ticket": {
+            "updateStatus": true,
+            "work": true
+          }
+        },
+        "weight": 10
+      },
+      {
+        "id": "serviceManager",
+        "name": "Service Manager",
+        "dataScope": {
+          "default": "cluster"
+        },
+        "access": {
+          "ticket": {
+            "updateStatus": true,
+            "cancel": true,
+            "quickClose": true
+          },
+          "report": "*"
+        },
+        "hasReports": true,
+        "weight": 6
+      },
+      {
+        "id": "agent",
+        "name": "Call Center Agent",
+        "access": {
+          "ticket": {
+            "updateDueDate": true,
+            "assign": true,
+            "cancel": true,
+            "work": false,
+            "quickClose": true
+          }
+        },
+        "hasReports": false,
+        "weight": 10
+      },
+      {
+        "id": "asm",
+        "name": "Sales manager",
+        "dataScope": {
+          "default": "cluster"
+        },
+        "access": {
+          "ticket": {
+            "updateDueDate": true,
+            "assign": true,
+            "cancel": true,
+            "work": false,
+            "quickClose": true
+          },
+          "report": "*"
+        },
+        "hasReports": true,
+        "weight": 10
+      },
+      {
+        "id": "bm",
+        "name": "Business/Regional manager",
+        "dataScope": {
+          "default": "cluster"
+        },
+        "access": "*",
+        "hasReports": true,
+        "weight": 10
+      },
+      {
+        "id": "business_head",
+        "name": "Business Head",
+        "access": "*",
+        "hasReports": true,
+        "weight": 3
+      }
+    ],
+    "fields": {
+      "code": {
+        "required": false
+      }
+    },
+    "welcomeMessage": {
+      "sms": true,
+      "email": "true"
+    }
+  },
+  "orgUnit": {
+    "isEnabled": true,
+    "actions": {
+      "create": true,
+      "update": true,
+      "list": true
+    },
+    "types": [
+      {
+        "id": "region",
+        "name": "Region",
+        "isLeaf": false
+      },
+      {
+        "id": "branch",
+        "name": "Branch",
+        "isLeaf": false
+      },
+      {
+        "id": "asc",
+        "name": "ASC",
+        "isLeaf": true
+      },
+      {
+        "id": "rsc",
+        "name": "RSC",
+        "isLeaf": true
+      }
+    ]
+  },
+  "ticket": {
+    "seqCodePrefix": "REQ",
+    "regType": "product",
+    "status": [
+      "01_open",
+      "05_closed"
+    ],
+    "actions": {
+      "create": false,
+      "quickClose": true
+    },
+    "actionDialogs": {
+      "quickClose": {
+        "title": "Close Request",
+        "sections": [
+          {
+            "id": "quickClose",
+            "fields": [
+              {
+                "id": "closureRemarks",
+                "required": true,
+                "isPrimary": true
+              }
+            ]
+          }
+        ],
+        "submit": {
+          "name": "Close"
+        }
+      }
+    },
+    "quickClose": true,
+    "disableDetails": true,
+    "watchers": {
+      "isEnabled": true
+    },
+    "autoAssignment": {
+      "isEnabled": false
+    },
+    "lifeCycle": "closure",
+    "trackWorkDuration": false,
+    "list": {
+      "filters": [
+        {
+          "id": "siteId",
+          "type": "typeahead",
+          "entity": "site",
+          "name": "Customer",
+          "placeholder": "Type customer name/phone"
+        },
+        {
+          "id": "status",
+          "type": "dropdown",
+          "name": "Status"
+        }
+      ],
+      "actions": [
+        {
+          "id": "quickClose",
+          "name": "CLOSE",
+          "icon": "check2-square"
+        }
+      ],
+      "fields": [
+        {
+          "id": "code",
+          "width": 20
+        },
+        {
+          "id": "siteName",
+          "width": 20
+        },
+        {
+          "id": "siteContactNumber",
+          "width": 20
+        },
+        {
+          "id": "addressStr",
+          "width": 20
+        },
+        {
+          "id": "pinCode",
+          "width": 10
+        },
+        {
+          "id": "assetOwnerType"
+        },
+        {
+          "id": "skuName"
+        },
+        {
+          "id": "skuModel"
+        },
+        {
+          "id": "skuQuantity"
+        },
+        {
+          "id": "warrantyStatus",
+          "type": "warranty"
+        },
+        {
+          "id": "desc",
+          "width": 40
+        }
+      ]
+    },
+    "fields": {
+      "addressStr": {
+        "path": "address.area"
+      },
+      "pinCode": {
+        "path": "address.pinCode"
+      },
+      "skuName": {
+        "path": "sku.name"
+      },
+      "siteName": {
+        "path": "site.name"
+      },
+      "siteContactNumber": {
+        "path": "contact.phoneNumber"
+      },
+      "createdOn": {
+        "type": "date"
+      },
+      "assetOwnerType": {
+        "translateNameSpace": "assetOwnerType"
+      },
+      "status": {
+        "translateNameSpace": ""
+      },
+      "warrantyStatus": {
+        "translateNameSpace": "warrantyStatus"
+      },
+      "purchaseDate": {
+        "type": "date"
+      },
+      "closureRemarks": {
+        "path": "closure.remarks"
+      }
+    }
+  },
+  "sku": {
+    "fields": [
+      {
+        "name": "TST Service Applicable For",
+        "id": "additionalField1",
+        "type": "enum",
+        "values": [
+          "ONLY TRADER",
+          "ONLY CUSTOMER",
+          "TRADER & CUSTOMER"
+        ]
+      }
+    ]
+  },
+  "asset": {
+    "isEnabled": false,
+    "open": {
+      "menu": {
+        "items": [
+        ]
+      }
+    }
+  },
+  "vendor": {
+    "isEnabled": false
+  },
+  "report": {
+    "isEnabled": true,
+    "groups": [
+      {
+        "id": "Tickets",
+        "name": "Tickets/Work Orders",
+        "description": "List reports related to tickets/work-orders",
+        "types": [
+          "ttkCustomTicketReport"
+        ]
+      }
+    ]
+  },
+  "partRequisition": {
+    "isEnabled": false
+  },
+  "contract": {
+    "isEnabled": false
+  },
+  "service": {
+    "isEnabled": false
+  },
+  "meterType": {
+    "isEnabled": false
+  },
+  "purchaseOrder": {
+    "isEnabled": false
+  },
+  "attendance": {
+    "isEnabled": false
+  },
+  "technicianLocation": {
+    "isEnabled": false
+  },
+  "technicianPerformance": {
+    "isEnabled": false
+  },
+  "task": {
+    "isEnabled": true,
+    "defaultType": "uploadDealers",
+    "type": {
+      "uploadDealers": {
+        "template": "/images/app-images/ttkprestige/TTK DSRC Template V2.xlsx"
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "isEnabled": true,
+  "code": true,
+  "actions": {
+    "create": true,
+    "list": true,
+    "edit": true
+  },
+  "list": {
+    "filters": [
+      {
+        "id": "orgUnitType",
+        "type": "dropdown",
+        "name": "Type"
+      }
+    ],
+    "fields": [
+      {
+        "id": "name",
+        "width": "60",
+        "target": "org-unit",
+        "targetIdField": "id"
+      },
+      {
+        "id": "code",
+        "width":"40"
+      },
+      {
+        "id": "orgUnitType",
+        "width":"40"
+      }
+    ]
+  },
+  "details": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name",
+            "width":"40"
+          },
+          {
+            "id": "code",
+            "width":"40"
+          },
+          {
+            "id": "parentName"
+          },
+          {
+            "id": "orgUnitType",
+            "width":"40"
+          }
+        ]
+      },
+      {
+        "id": "addressDetails",
+        "name": "Address/Contact",
+        "fields": [
+          {
+            "id": "address",
+            "type": "address"
+          },
+          {
+            "id": "contactEmail"
+          },
+          {
+            "id": "contactPhoneNumber"
+          }
+        ]
+      }
+    ]
+  },
+  "edit": {
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Overview",
+        "fields": [
+          {
+            "id": "name",
+            "isPrimary": true,
+            "required":true
+          },
+          {
+            "id": "code",
+            "isPrimary": true,
+            "required":true
+          },
+          {
+            "id":"parent",
+            "width":"40",
+            "isPrimary":true,
+            "type":"select"
+          },
+          {
+            "id": "orgUnitType",
+            "type":"select",
+            "isPrimary": true,
+            "required":true
+          }
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "name": {
+    },
+    "code": { 
+    },
+    "orgUnitType":{
+    },
+    "parentName": {
+      "path": "parent.name"
+    },
+    "parentId": {
+      "path":"parent._id",
+      "formFieldPath": "parent"
+    }
+  },
+  "types": [
+    {
+      "id": "branch",
+      "name": "Branch",
+      "isLeaf": true
+    }
+  ]
+}

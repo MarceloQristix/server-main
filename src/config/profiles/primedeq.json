@@ -1,0 +1,447 @@
+{
+  "size": "medium",
+  "name": "Primedeq India Private Limited",
+  "shortName": "primedeq",
+  "logo": "/images/logos/primedeq.png",
+  "qrCodeStickerLogo": "/images/logos/primedeq_qr.png",
+  "code": "8X5WKWRC",
+  "strings": {
+    "report":{
+      "productName": "ASSET DESCRIPTION",
+      "closureRemarks": "Repair Type"
+    }
+  },
+  "owner": {
+    "name": "PrimedeQ",
+    "uniqueId": "info@primedeq.com"
+  },
+  "roundupEmail-disabled": ["shanthimathur@primedeq.com"],
+  "website": "www.primedeq.com",
+  "registeredAddress": "No.164/F ,Ground Floor , 3rd Cross , 5th Main , 3rd Phase , JP Nagar , Bangalore - 560078 , Karnataka",
+  "legalName": "PrimedeQ India Private Ltd",
+  "support": {
+    "title4Numbers": "In case of emergency",
+    "numbers": ["+91 8971223957", "7019759765" ],
+    "email": "support@primedeq.com"
+  },
+  "qrSticker": {
+    "orientation":  "landscape",
+    "size": "large",
+    "topLine": "Scan this QR Code to register a Service Request."
+  },
+  "report": {
+    "preferredTransformationFunction": "fun2"
+  },
+  "site": {
+    "isEnabled": true,
+    "fields": {
+      "technician": {
+        "required": true
+      }
+    }
+  },
+  "customer": {
+    "accountManager": {
+      "isEnabled": true
+    }
+  },
+  "orgUser": {
+    "roles": [
+      {
+        "id": "technician",
+        "name": "Technician",
+        "dataScope": {
+          "default": "self"
+        },
+        "access": {
+          "ticket": {
+            "updateDueDate": false,
+            "work": true
+          }
+        },
+        "weight": 10
+      },
+      {
+        "id": "manager",
+        "name": "Manager",
+        "dataScope": {
+          "default": "customer"
+        },
+        "access": {
+          "ticket": {
+            "updateDueDate": true,
+            "assign": true,
+            "cancel": true,
+            "work": true
+          },
+          "menu": {
+            "manage": true
+          },
+          "orgUser": {
+            "create": true,
+            "update": true,
+            "list": true,
+            "updatePasswd": true,
+            "deactivate": true
+          }
+        },
+        "hasReports": true,
+        "weight": 8
+      },
+      {
+        "id": "supervisor",
+        "name": "Supervisor",
+        "dataScope": {
+          "default": "reports"
+        },
+        "access": {
+          "ticket": {
+            "updateDueDate": true,
+            "updateStatus": true,
+            "assign": true,
+            "cancel": true,
+            "work": true
+          }
+        },
+        "hasReports": true,
+        "weight": 8
+      },
+      {
+        "id": "business_head",
+        "name": "Business Head",
+        "access": "*",
+        "hasReports": true,
+        "weight": 3
+      }
+    ]
+  },
+  "ticket": {
+    "updateStatus": true,
+    "trackLocation": true,
+    "pmCheckList": {
+      "sections": [
+        {
+          "name" : "SPECIAL PRECAUTIONS",
+          "id" : "SPECIAL PRECAUTIONS",
+          "choices": [
+            {
+              "id": "YES",
+              "name": "YES"
+            },
+            {
+              "id": "NO",
+              "name": "NO"
+            },
+            {
+              "id": "NA",
+              "name": "NA"
+            }
+          ],
+          "fields": [
+            {
+              "id": "There is an evidence of Blood/Body Fluid",
+              "name" :"There is an evidence of Blood/Body Fluid"
+            },
+            {
+              "id": "Personal protection gear/wear",
+              "name" :"Personal protection gear/wear"
+            },
+            {
+              "id": "Equipment subjected for decontamination",
+              "name" :"Equipment subjected for decontamination"
+            },
+            {
+              "id": "Equipment Bioharzardous",
+              "name" :"Equipment Bioharzardous"
+            },
+            {
+              "id": "Equipment subjected for cleaning",
+              "name" :"Equipment subjected for cleaning"
+            },
+            {
+              "id": "Other precautions to be taken",
+              "name" :"Other precautions to be taken"
+            }
+          ]
+        },
+        {
+          "name" : "QUALITATIVE TASKS",
+          "id" : "QUALITATIVE TASKS",
+          "choices": [
+            {
+              "id" : "Pass",
+              "name": "Pass"
+            },
+            {
+              "id" : "Fail",
+              "name": "Fail"
+            },
+            {
+              "id" : "NA",
+              "name": "NA"
+            }
+          ],
+          "fields": [
+            {
+              "id": "Chassis/Housing",
+              "name" :"Chassis/Housing"
+            },
+            {
+              "id": "AC Plug/Receptacle",
+              "name" :"AC Plug/Receptacle"
+            },
+            {
+              "id": "Line Cord/power cord",
+              "name" :"Line Cord/power cord"
+            },
+            {
+              "id": "Circuit Breaker/Fuse",
+              "name" :"Circuit Breaker/Fuse"
+            },
+            {
+              "id": "Fittings/Connectors",
+              "name" :"Fittings/Connectors"
+            },
+            {
+              "id": "NIBP module/Accessories",
+              "name" :"NIBP module/Accessories"
+            },
+            {
+              "id": "ECG module/ Accessories",
+              "name" :"ECG module/ Accessories"
+            },
+            {
+              "id": "SPO2 module/ Accessories",
+              "name" :"SPO2 module/ Accessories"
+            },
+            {
+              "id": "ETCO2 module/ Accessories",
+              "name" :"ETCO2 module/ Accessories"
+            },
+            {
+              "id": "Display",
+              "name" :"Display"
+            },
+            {
+              "id": "Rotary knob",
+              "name" :"Rotary knob"
+            },
+            {
+              "id": "Parameters check",
+              "name" :"Parameters check"
+            },
+            {
+              "id": "Controls/Switches",
+              "name" :"Controls/Switches"
+            },
+            {
+              "id": "Battery/Charger",
+              "name" :"Battery/Charger"
+            },
+            {
+              "id": "Indicators/Displays",
+              "name" :"Indicators/Displays"
+            },
+            {
+              "id": "User Calibration/ Self-Test",
+              "name" :"User Calibration/ Self-Test"
+            },
+            {
+              "id": "Audible Signals",
+              "name" :"Audible Signals"
+            },
+            {
+              "id": "Labeling",
+              "name" :"Labeling"
+            },
+            {
+              "id": "Others",
+              "name" :"Others"
+            }
+          ]
+        },
+        {
+          "name" : "PREVENTIVE MAINTENANCE TASKS",
+          "id": "PREVENTIVE MAINTENANCE TASKS",
+          "choices": [
+            {
+              "id" : "Pass",
+              "name": "Pass"
+            },
+            {
+              "id" : "Fail",
+              "name": "Fail"
+            },
+            {
+              "id" : "NA",
+              "name": "NA"
+            }
+          ],
+          "fields": [
+            {
+              "id": "Clean the Exterior / Accessories",
+              "name": "Clean the Exterior / Accessories"
+            },
+            {
+              "id": "Inspect / Clean Interior",
+              "name": "Inspect / Clean Interior"
+            },
+            {
+              "id": "Lubricate",
+              "name": "Lubricate"
+            },
+            {
+              "id": "Calibrate Electrical Components",
+              "name": "Calibrate Electrical Components"
+            },
+            {
+              "id": "Adjust Mechanical Components",
+              "name": "Adjust Mechanical Components"
+            },
+            {
+              "id": "Replace",
+              "name": "Replace"
+            },
+            {
+              "id": "Others",
+              "name": "Others"
+            }
+          ]
+        }
+      ],
+      "technicianSignature": {
+        "name": "Signature of Engineer"
+      },
+      "customerSignature": {
+        "name": "Signature of User"
+      },
+      "remarks": {
+        "name": "Comments"
+      }
+    },
+    "fields": {
+      "servicedByType": {
+        "label": "Serviced By"
+      }
+    },
+    "closure": {
+      "fields": {
+        "servicedByType": {
+          "label":"Serviced By",
+          "values": [
+            {
+              "id": "self",
+              "name": "Primedeq"
+            },
+            {
+              "id": "OEM",
+              "name": "OEM"
+            },
+            {
+              "id": "Vendor",
+              "name": "Vendor"
+            }
+          ]
+        },
+        "servicedByTypeName": {
+          "label": "OEM/Vendor"
+        },
+        "servicedByEngineer": {
+          "label": "Engineer"
+        },
+        "jobDone": {
+          "label": "Action Taken",
+          "required": true
+        }
+      }
+    }
+  },
+  "sparePart": {
+    "code": false
+  },
+  "accessory": {
+    "code": false
+  },
+  "product": {
+    "code": false,
+    "manufacturer": false,
+    "hasMeters": false
+  },
+  "model": {
+    "code": false,
+    "hasMeters": false
+  },
+  "consumable": {
+    "isEnabled": false
+  },
+  "asset": {
+    "nameTemplate": "${product.name}/${name}",
+    "primaryIdentifier": "secondaryCode",
+    "criticalClassification": true,
+    "isManufacturerPartOfProductName": true,
+    "hasMeter": false,
+    "fields": {
+      "locatedAt": {
+        "label": "Department"
+      },
+      "serialNumber": {
+        "label": "Serial Number",
+        "isOptional": true,
+        "isUnique": false
+      },
+      "secondaryCode": {
+        "label": "Asset Number"
+      },
+      "serviceProvidedBy": {
+        "label": "Type of Service"
+      },
+      "isUnderWarranty": {
+        "label": "Under Warranty"
+      },
+      "warrantyStartDate": {
+        "label": "Warranty Start Date"
+      },
+      "warrantyEndDate": {
+        "label": "Warranty End Date"
+      },
+      "purchaseCost": {
+        "label": "Purchase Cost"
+      },
+      "isCritical": {
+        "label": "Is Critical?"
+      },
+      "criticalityRating": {
+        "label": "Category",
+        "values": [
+          {
+            "id": "A",
+            "name": "A"
+          },
+          {
+            "id": "B",
+            "name": "B"
+          },
+          {
+            "id": "C",
+            "name": "C"
+          }
+        ]
+      },
+      "supplier": {
+        "label": "Supplier"
+      }
+    },
+    "open":{
+      "actions": {
+        "raiseSupportTicket": true,
+        "requestForConsumables": false,
+        "raiseInstallationTicket": true,
+        "viewServiceHistory": true,
+        "captureMeterReading": false
+      }
+    }
+  },
+  "attendance": {
+    "isEnabled":  true
+  }
+}

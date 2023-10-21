@@ -1,0 +1,162 @@
+{
+  "ticket": {
+    "label": "Request",
+    "subType": {
+      "partsRelated": "Related to Parts",
+      "insuranceRelated": "Insurance Claim",
+      "bookingAmountRefundRelated": "Booking Amt Refund"
+    },
+    "subStatus": {
+      "awaitingParts": "Waiting for Parts",
+      "awaitingDelivery": "Expected Delivery Date",
+      "awaitingSurveyorVisit": "Waiting for Surveyor Visit",
+      "awaitingInsuranceApproval": "Waiting for Insurance Approval",
+      "awaitingDocumentsSubmission": "Request Documents",
+      "awaitingRefund": "Expected Date Of Refund"
+    },
+    "abbrFields": {
+      "documentsSubmissionDate": "Doc Reqstd On",
+      "expectedDateOfSurveyorVisit": "Surveyor Visit Exptd By",
+      "expectedDateOfInsuranceApproval": "Insrnce Apprvl Exptd By",
+      "expectedDateOfPartsArrival": "Parts Exptd On",
+      "expectedDateOfDelivery": "Vhcle Dlvry Exptd On",
+      "refundInitiatedDate": "Refund Initiated On",
+      "expectedDateOfRefund": "Expect Refund By"
+    },
+    "fields": {
+      "orgUnitName": "Dealership",
+      "orgUnitId": "Dealership",
+      "serviceDate": "Date of Service",
+      "remarks": "Remarks",
+      "name": "Request Type",
+      "subType": "Type",
+      "subStatus": "Current Status",
+      "vehicleNumber": "Vehicle Number",
+      "contactName": "Customer Name",
+      "contactPhoneNumber": "Mobile Number",
+      "vinNumber": "VIN Number",
+      "documentsSubmissionDate": "Document Submission",
+      "expectedDateOfSurveyorVisit": "Expected Date of Surveyor Visit",
+      "expectedDateOfInsuranceApproval": "Expected Date of Insurance Approval",
+      "expectedDateOfPartsArrival": "Expected Parts Arrival Date",
+      "expectedDateOfDelivery": "Expected Delivery Date",
+      "refundInitiatedDate": "Refund Initiation",
+      "expectedDateOfRefund": "Expected Date of Refund"
+    }
+  },
+  "sku": {
+    "label": "Vehicle Model"
+  },
+  "orgUnit": {
+    "fields": {
+      "feedbackUrl": "Feedback URL",
+      "parentName": "Group Dealership"
+    }
+  },
+  "asset": {
+    "label": "Booking",
+    "auditLog": "Update/Communication Log",
+    "fields": {
+      "lastStatusUpdateTriggeredOn": "Update Last Sent On",
+      "serialNumber": "Booking Id",
+      "installedOn": "Booking Date",
+      "code": "Code",
+      "name": "Vehicle",
+      "skuName": "Name",
+      "orgUnitName": "Dealership",
+      "customerName": "Customer",
+      "status": "Status",
+      "salesOfficer": "Sales Officer",
+      "initialBookingSequenceNumber": "Initial Booking Sequence Number",
+      "currentBookingSequenceNumber": "Current Booking Sequence Number",
+      "tentativeDeliveryQuoted": "Tentative Delivery quoted",
+      "tentativeDeliveryQuotedFmt": "Tentative Delivery quoted",
+      "waitingPeriodInWeeksQuoted": "Waiting Period In Weeks Quoted",
+      "currentWaitingPeriodInWeeks": "Current Waiting Period In Weeks"
+    },
+    "status": {
+      "booked": "Booked",
+      "readyForDelivery": "Ready For Delivery",
+      "delivered": "Delivered",
+      "cancelled": "Cancelled" ,
+      "accepted": "Accepted"
+    }
+  },
+  "campaign": {
+    "listHeading": "Campaigns",
+    "label": "Campaign"
+  },
+  "task": {
+    "label": "Upload Booking Update",
+    "fields": {
+      "orgUnitName": "Dealership",
+      "total": "Total",
+      "status": "Status",
+      "code": "Unique Code",
+      "fileName": "File",
+      "createdOn": "Uploaded On",
+      "lastModifiedOn": "Last Updated On",
+      "runStartAt": "Last Run Started On",
+      "runEndAt": "Last Run Ended On"
+    },
+    "status": {
+      "queued": "Queued",
+      "dryRun": "Validating",
+      "commit": "Updating",
+      "finished": "Completed"
+    }
+  },
+  "sendUpdatesTask": {
+    "label": "Booking Update Task",
+    "fields": {
+      "total": "Total",
+      "orgUnitName": "Group Dealership",
+      "processed": "Sent",
+      "status": "Status",
+      "code": "Unique Code",
+      "fileName": "File",
+      "createdOn": "Uploaded On",
+      "lastModifiedOn": "Last Updated On",
+      "runStartAt": "Last Run Started On",
+      "runEndAt": "Last Run Ended On"
+    },
+    "status": {
+      "queued": "Queued",
+      "dryRun": "Validating",
+      "commit": "Updating",
+      "finished": "Completed"
+    }
+  },
+  "orgUnitProfile": {
+    "label": "Group Dealership Settings",
+    "labels": "Group Dealership Settings",
+    "fields": {
+      "apiKey": "API Key",
+      "senderId": "Sender Id",
+      "sid": "SID",
+      "pe_id": "PE Id",
+      "smsTemplateLoginOTPId": "Login OTP Template ID",
+      "smsTemplateLoginOTPText": "Login OTP Template",
+      "smsTemplateBookingTrackerId": "Thank you for booking Template ID",
+      "smsTemplateBookingTrackerText": "Thank you for booking Template",
+      "smsTemplateBookingStatusUpdateId": "Booking Status Update Template ID",
+      "smsTemplateBookingStatusUpdateText": "Booking Status Update Template",
+      "smsTemplateTicketCreationId": "Ticket Creation Template ID",
+      "smsTemplateTicketCreationText": "Ticket Creation Template",
+      "smsTemplateTicketStatusUpdateId": "Ticket Status Update Template ID",
+      "smsTemplateTicketStatusUpdateText": "Ticket Status Update Template",
+      "smsTemplateTicketClosureId": "Ticket Closed Template ID",
+      "smsTemplateTicketClosureText": "Ticket Closed Template",
+      "feedbackUrl": "Customer Feedback Google Form Link"
+    }
+  },
+  "orgUnitRunningStats": {
+    "label": "Booking Updates History",
+    "labels": "Booking Updates History",
+    "fields": {
+      "name": "Dealership/Group Dealership",
+      "activeBookings": "Active Bookings",
+      "lastCommunicationTriggeredAt": "Last Communication Sent On"
+    }
+  }
+}

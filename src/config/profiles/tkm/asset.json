@@ -1,0 +1,253 @@
+{
+  "isCustomName": true,
+  "menuItemsAtOrgUnit": true,
+  "qrCode": {
+    "isEnabled": false
+  },
+  "service": {
+    "isEnabled": false
+  },
+  "isPartOfContract": false,
+  "synchronousPostSave": true,
+  "dontSyncReplicatedCollections": true,
+  "technicianMapping": {
+    "isEnabled": false
+  },
+  "primaryIdentifier": "serialNumber",
+  "orgUnitMapping": {
+    "isEnabled": true,
+    "id": "dealership"
+  },
+  "trackStatusUpdate": true,
+  "sendStatusUpdates2Customer": true,
+  "hideDrafts": true,
+  "numDigits": 8,
+  "seqCodePrefix": "BOOKING",
+  "publicUrlVersion": "V2",
+  "autoAssignStatus": false,
+  "hasMeter": false,
+  "endStatuses": [
+    "delivered",
+    "cancelled"
+  ],
+  "status": [
+    "booked",
+    "accepted",
+    "cancelled",
+    "readyForDelivery",
+    "delivered"
+  ],
+  "list": {
+    "actions": [],
+    "filters": [
+      {
+        "id": "customerId",
+        "type": "typeahead",
+        "entity": "customer",
+        "name": "Customer",
+        "placeholder": "Type customer name/phone"
+      },
+      {
+        "id": "orgUnitId",
+        "type": "typeahead",
+        "entity": "orgUnit",
+        "name": "Dealership/SBU",
+        "placeholder": "Dealership/SBU"
+      },
+      {
+        "id": "updatesTrigger",
+        "type": "dropdown",
+        "size": "col-3",
+        "name": "Updates Communication Status",
+        "choices": [
+          {
+            "id": "yet2Trigger",
+            "name": "Yet to send"
+          },
+          {
+            "id": "alreadyTriggered",
+            "name": "Already Sent"
+          }
+        ]
+      },
+      {
+        "id": "status",
+        "type": "dropdown",
+        "name": "Status"
+      }
+    ],
+    "fields": [
+      {
+        "id": "name",
+        "width": "30",
+        "target": "asset",
+        "targetIdField": "id"
+      },
+      {
+        "id": "serialNumber",
+        "width": "10"
+      },
+      {
+        "id": "orgUnitName",
+        "width": "20"
+      },
+      {
+        "id": "customerName",
+        "width": "10"
+      },
+      {
+        "id": "status",
+        "width": "5"
+      },
+      {
+        "id": "lastStatusUpdateTriggeredOn",
+        "width": "5"
+      }
+    ]
+  },
+  "details": {
+    "advancedSection": false,
+    "sections": [
+      {
+        "id": "basic",
+        "name": "Booking Details",
+        "size": "col-4",
+        "fields": [
+          {
+            "id": "customerName"
+          },
+          {
+            "id": "name"
+          },
+          {
+            "id": "orgUnitName"
+          },
+          {
+            "id": "serialNumber"
+          },
+          {
+            "id": "salesOfficer"
+          }
+        ]
+      },
+      {
+        "id": "statusAtTheTimeOfBooking",
+        "name": "Booking Details",
+        "size": "col-4",
+        "fields": [
+          {
+            "id": "initialBookingSequenceNumber"
+          },
+          {
+            "id": "waitingPeriodInWeeksQuoted"
+          },
+          {
+            "id": "tentativeDeliveryQuotedFmt"
+          },
+          {
+            "id": "installedOn"
+          }
+        ]
+      },
+      {
+        "id": "currentStatus",
+        "name": "Current Status of Booking",
+        "size": "col-4",
+        "fields": [
+          {
+            "id": "currentBookingSequenceNumber"
+          },
+          {
+            "id": "currentWaitingPeriodInWeeks"
+          }
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "lastStatusUpdateTriggeredOn": {
+      "type": "date"
+    },
+    "name": {
+    },
+    "waitingPeriodInWeeksQuoted": {
+      "path": "custom.waitingPeriodInWeeksQuoted"
+    },
+    "currentWaitingPeriodInWeeks": {
+      "path": "custom.currentWaitingPeriodInWeeks"
+    },
+    "initialBookingSequenceNumber": {
+      "path": "custom.initialBookingSequenceNumber"
+    },
+    "currentBookingSequenceNumber": {
+      "path": "custom.currentBookingSequenceNumber"
+    },
+    "salesOfficer": {
+      "path": "custom.salesOfficer"
+    },
+    "tentativeDeliveryQuoted": {
+      "path": "custom.tentativeDeliveryQuoted",
+      "type": "date"
+    },
+    "tentativeDeliveryQuotedFmt": {
+      "path": "custom.tentativeDeliveryQuotedFmt"
+    },
+    "orgUnitName": {
+      "path": "orgUnit.name"
+    }
+  },
+  "actions": {
+    "create": false,
+    "upload": true,
+    "sendComm2Customer": true,
+    "uploadBookingUpdate": true,
+    "downloadBookingUpdateTemplate": true,
+    "updateBookingStatus": true,
+    "updatePrimaryDetails": false,
+    "updateTechnician": false,
+    "updateCustomer": false,
+    "updateLocation": false,
+    "updateContact": false
+  },
+  "open": {
+    "customerHome": true,
+    "firstTimeRedirect": true,
+    "menu": {
+      "items": [
+        {
+          "id": "bookingStatus",
+          "type": "internalLink",
+          "route": [
+            "page",
+            "asset-status"
+          ],
+          "icon": "/images/app-icons/tkm/open/check_booking_status.png",
+          "name": " Check Booking Status"
+        },
+        {
+          "id": "messages",
+          "type": "internalLink",
+          "route": [
+            "notification"
+          ],
+          "icon": "/images/app-icons/tkm/open/messages.png",
+          "name": "Messages"
+        },
+        {
+          "id": "feedback",
+          "type": "externalLink",
+          "link": "https://docs.google.com/forms/d/e/1FAIpQLSfaD8i-jWr0FgkZ0RbeUVRwf_bkWPfhzpr4zOXg93g5cAj5zA/viewform",
+          "icon": "/images/app-icons/tkm/open/feedback.png",
+          "name": "Feedback and Complaints"
+        },
+        {
+          "id": "TShield",
+          "type": "externalLink",
+          "link": "https://www.toyotabharat.com/q-service/t-shield/",
+          "icon": "/images/app-icons/tkm/open/tshield.png",
+          "name": "T- Shield"
+        }
+      ]
+    }
+  }
+}
