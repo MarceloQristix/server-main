@@ -47,8 +47,7 @@
         "icon": "quick-access/Customertkm.svg"
       },
       "campaignsList": {
-        "isDisabled": false,
-        "icon": "quick-access/Campaigntkm.svg"
+        "isDisabled": false
       },
       "ticketList": {
         "name": "Tickets",
